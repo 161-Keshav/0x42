@@ -36,6 +36,10 @@ CREATE TABLE IF NOT EXISTS teacher_decisions (
     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (student_id, skill_id)
 );
+CREATE TABLE IF NOT EXISTS parent_links (
+    parent_account_id TEXT PRIMARY KEY,
+    student_id TEXT NOT NULL UNIQUE
+);
 """
 
 
@@ -59,6 +63,20 @@ class SQLiteTraceRepository:
         data.setdefault("origin", "system")
         return data
 
+    @classmethod
+    def _payloads_equivalent(cls, stored: str, incoming: str) -> bool:
+        stored_data = cls._payload_data(stored)
+        incoming_data = cls._payload_data(incoming)
+        # `self_reported_confidence` was added later and is optional. A legacy
+        # row without it must remain reloadable without inventing confidence.
+        if (
+            "self_reported_confidence" not in stored_data
+            or stored_data["self_reported_confidence"] is None
+        ):
+            stored_data.pop("self_reported_confidence", None)
+            incoming_data.pop("self_reported_confidence", None)
+        return stored_data == incoming_data
+
     def append(self, attempt: Attempt) -> None:
         payload = self._payload(attempt)
         with self._lock, self._conn:
@@ -67,7 +85,7 @@ class SQLiteTraceRepository:
                 (attempt.attempt_id, attempt.version),
             ).fetchone()
             if row is not None:
-                if self._payload_data(row["payload"]) != self._payload_data(payload):
+                if not self._payloads_equivalent(row["payload"], payload):
                     raise ValueError(
                         f"Conflicting payload for immutable ({attempt.attempt_id}, v{attempt.version})"
                     )
@@ -97,6 +115,22 @@ class SQLiteTraceRepository:
                 ORDER BY a.timestamp, a.attempt_id
                 """,
                 (student_id, skill_id),
+            ).fetchall()
+        return [Attempt(**json.loads(row["payload"])) for row in rows]
+
+    def all_history(self, student_id: str) -> list[Attempt]:
+        """Return the latest version of every attempt for one student."""
+        with self._lock:
+            rows = self._conn.execute(
+                """
+                SELECT a.payload FROM attempts a
+                JOIN (
+                    SELECT attempt_id, MAX(version) AS v FROM attempts
+                    WHERE student_id=? GROUP BY attempt_id
+                ) latest ON latest.attempt_id=a.attempt_id AND latest.v=a.version
+                ORDER BY a.timestamp, a.attempt_id
+                """,
+                (student_id,),
             ).fetchall()
         return [Attempt(**json.loads(row["payload"])) for row in rows]
 
@@ -130,6 +164,45 @@ class SQLiteTraceRepository:
                 (student_id, skill_id),
             ).fetchone()
         return row["decision"] if row else None
+
+    def link_parent(self, parent_account_id: str, student_id: str) -> None:
+        with self._lock, self._conn:
+            existing = self._conn.execute(
+                "SELECT student_id FROM parent_links WHERE parent_account_id=?",
+                (parent_account_id,),
+            ).fetchone()
+            if existing is not None and existing["student_id"] != student_id:
+                raise ValueError("Parent account is already linked to another student")
+            other = self._conn.execute(
+                "SELECT parent_account_id FROM parent_links WHERE student_id=?",
+                (student_id,),
+            ).fetchone()
+            if other is not None and other["parent_account_id"] != parent_account_id:
+                raise ValueError("Student is already linked to another parent account")
+            self._conn.execute(
+                "INSERT OR REPLACE INTO parent_links (parent_account_id, student_id) VALUES (?, ?)",
+                (parent_account_id, student_id),
+            )
+
+    def get_linked_student(self, parent_account_id: str, requested_student_id: str | None = None) -> str:
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT student_id FROM parent_links WHERE parent_account_id=?",
+                (parent_account_id,),
+            ).fetchone()
+        if row is None:
+            raise PermissionError("Parent account has no linked student")
+        linked = row["student_id"]
+        if requested_student_id is not None and requested_student_id != linked:
+            raise PermissionError("Parent account cannot access this student")
+        return linked
+
+    def parent_accounts(self) -> list[str]:
+        with self._lock:
+            rows = self._conn.execute(
+                "SELECT parent_account_id FROM parent_links ORDER BY parent_account_id"
+            ).fetchall()
+        return [row["parent_account_id"] for row in rows]
 
     def embedding_keys(self, model_version: str) -> set[str]:
         with self._lock:

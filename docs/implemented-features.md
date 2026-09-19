@@ -136,6 +136,19 @@ The following controls are also implemented on top of the original MVP:
   result, confidence, and counts grouped by skill and trend status.
 - Teachers can download a plain-text student summary containing trend,
   verifier reasoning, concrete evidence, and remediation status.
+- The teacher dashboard has a separate student-initiated check-in queue.
+- `src/skill_erosion/metrics.py` reports hint-dependency ratio, retention
+  decay, repeated-error ratio, and error-pattern diversity without inventing
+  values when evidence is missing.
+- Confidence calibration is calculated from optional self-reported confidence
+  values and returns `well_calibrated`, `overconfident`, `underconfident`, or
+  `insufficient_data`.
+- Cross-skill transfer checks related-skill improvement without direct target
+  practice and returns `transfer_detected`, `no_transfer_detected`, or
+  `insufficient_data`. `calculate_metrics` now actually calls this (it
+  previously hardcoded the result to `None` regardless of evidence); the
+  teacher dashboard passes the related skill's own history alongside the
+  scoped skill's history so the comparison has real evidence on both sides.
 
 ## Shared contracts and storage
 
@@ -160,7 +173,9 @@ Storage features:
 - Version-aware attempt identity.
 - Idempotent re-import behavior.
 - Conflict rejection for incompatible versions.
-- Local hashed n-gram embeddings without model downloads.
+- Chroma-backed local sentence embeddings for misconception and remediation
+  retrieval. The trace collector still maintains its existing local derived
+  embedding index for ingestion bookkeeping.
 
 The default database is:
 
@@ -202,6 +217,14 @@ Current features:
 - Display misconception clusters.
 - Display remediation plan status and teacher summary.
 - Preview the explanation shown to the student.
+- Show learning-quality signals including hint dependency, retention decay,
+  error-pattern diversity, confidence calibration, and transfer status when
+  the required evidence exists.
+- Plot hint-dependency ratio per checkpoint alongside the existing gap
+  chart, using the evidence attempts already attached to each checkpoint.
+- Cohort roll-up now renders a bar chart of trend-status counts per skill
+  (previously table-only), and a second bar chart of confidence-calibration
+  categories across the cohort.
 
 ## Student portal
 
@@ -229,6 +252,32 @@ Current features:
 - Show whether the independent score moved and whether the gap narrowed.
 - Show toast notifications for data loading, plan creation, follow-up results,
   and failures.
+
+## Parent portal
+
+Location: `apps/parent_portal/app.py`
+
+Run with:
+
+```powershell
+python -m streamlit run apps/parent_portal/app.py --server.port 8503
+```
+
+The local demo maps each parent account to exactly one synthetic learner and
+provides supportive, trend-oriented progress updates. Viewing an update
+automatically loads the synthetic fixture when the selected learner has no
+history, while the refresh button can reload it explicitly. Load and analysis
+errors are shown in the UI and written to `data/logs/parent_portal.log`.
+Parent accounts are stored in the SQLite `parent_links` table and the portal
+loads only the linked learner; there is no learner dropdown. The question box
+calls `src/skill_erosion/agents/parent_chat/agent.py`, which answers from the
+linked learner's scoped journey data and retrieves the most relevant
+teacher-curated resource through the local Chroma collection rather than
+returning a static template. The chatbot does not retrieve data for any other
+student.
+It intentionally omits raw scores, verifier confidence, misconception labels,
+peer comparisons, and accusatory language. Production authentication and
+parent-to-student linking are not implemented yet.
 
 ## Follow-up retest loop
 
@@ -339,10 +388,22 @@ python -m unittest discover -s tests/unit -p "test_*.py" -v
 - The verifier is rule-based and does not currently make an LLM call.
 - Remediation uses a fixed curated catalog rather than generated resources.
 - The follow-up retest currently contains one deterministic demo question.
-- There is no authentication or authorization layer.
+- Parent linking is a minimal local authorization boundary, not production
+  authentication; teacher and student dashboards still have no account system.
 - There is no cohort-wide benchmarking.
 - There are no historical multi-week visualization controls beyond the stored
   checkpoints in the current journey.
 - Multiple skill domains are not presented as a single cohort workflow.
 - The Streamlit dashboards use local state and are not production deployments.
 - The current pipeline does not automatically schedule a day-two retest.
+- Confidence calibration remains `insufficient_data` for legacy attempts that
+  do not contain self-reported confidence.
+- Cross-skill transfer remains `insufficient_data` unless related-skill
+  metadata and two unassisted observations for each of the two skills are
+  available; the dashboard currently only checks the first related skill
+  listed for a given skill in the taxonomy, not all of them.
+- Chroma's default embedding function downloads a ~90 MB ONNX model from
+  Hugging Face on first use. This is not cached in the repository; on a
+  slow or restricted network this download can fail or hang. Run the app
+  once on a stable connection before relying on it offline or on
+  event wifi.

@@ -54,6 +54,7 @@ and the widening scenario yields a ready remediation plan.
 python -m pip install -e ".[ui]"
 python -m streamlit run apps/teacher_dashboard/app.py --server.port 8501 --server.address 127.0.0.1
 python -m streamlit run apps/student_portal/app.py --server.port 8502 --server.address 127.0.0.1
+python -m streamlit run apps/parent_portal/app.py --server.port 8503 --server.address 127.0.0.1
 ```
 
 Open http://localhost:8501 (teacher: trends, gap chart, evidence, intervention)

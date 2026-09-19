@@ -13,7 +13,7 @@ from skill_erosion.contracts.models import (
     FlagVerification,
     TrendReport,
 )
-from skill_erosion.logging_utils import get_logger
+from skill_erosion.logging_utils import get_logger, timed_agent
 from skill_erosion.storage import default_repository
 
 logger = get_logger("verification")
@@ -52,6 +52,7 @@ def _rushed_unassisted(trend: TrendReport) -> list[str]:
     return rushed
 
 
+@timed_agent(logger, "verification")
 def verify_flag(trend: TrendReport | Mapping) -> FlagVerification:
     """Confirm a flag with a confidence label, or downgrade it as noise."""
     trend = _coerce_trend(trend)

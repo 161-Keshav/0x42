@@ -8,6 +8,7 @@ import argparse
 import csv
 import json
 from dataclasses import fields
+from datetime import date, timedelta
 from pathlib import Path
 import sys
 
@@ -45,12 +46,45 @@ def pattern_correctness(pattern: str, index: int, weeks: int) -> list[float]:
     if pattern == "stable":
         return [round(0.66 + 0.03 * (index % 4), 2)] * weeks
     if pattern == "contradictory":
-        gaps = CONTRADICTORY_GAPS[index % len(CONTRADICTORY_GAPS):] + CONTRADICTORY_GAPS[: index % len(CONTRADICTORY_GAPS)]
-        return [round(0.85 - g, 2) for g in gaps[:weeks]]
-    return [round(0.72 - 0.03 * index, 2), round(0.63 - 0.03 * index, 2)][:weeks]
+        return [
+            round(
+                0.85 - CONTRADICTORY_GAPS[
+                    (index + j) % len(CONTRADICTORY_GAPS)
+                ],
+                2,
+            )
+            for j in range(weeks)
+        ]
+    return [
+        round(max(0.0, 0.72 - 0.03 * index - 0.02 * j), 2)
+        for j in range(weeks)
+    ]
 
 
-def build_students(extra: int) -> dict[str, tuple[str, list[float]]]:
+def _allocate_records(total: int) -> dict[str, int]:
+    base = {
+        "widening": 66,
+        "narrowing": 66,
+        "stable": 46,
+        "contradictory": 20,
+        "insufficient_data": 12,
+    }
+    raw = {pattern: total * count / sum(base.values()) for pattern, count in base.items()}
+    allocation = {pattern: int(value // 2 * 2) for pattern, value in raw.items()}
+    remainder = total - sum(allocation.values())
+    order = sorted(base, key=lambda pattern: raw[pattern] - allocation[pattern], reverse=True)
+    for pattern in order:
+        if remainder < 2:
+            break
+        allocation[pattern] += 2
+        remainder -= 2
+    if allocation["insufficient_data"] % 4:
+        allocation["insufficient_data"] -= 2
+        allocation["stable"] += 2
+    return allocation
+
+
+def build_students(extra: int, extra_records: int = 0) -> dict[str, tuple[str, list[float]]]:
     students: dict[str, tuple[str, list[float]]] = dict(DEMO_STUDENTS)
     plan = [("widening", 6), ("narrowing", 6), ("stable", 4), ("contradictory", 2), ("insufficient_data", 2)]
     for pattern, count in plan:
@@ -61,6 +95,26 @@ def build_students(extra: int) -> dict[str, tuple[str, list[float]]]:
     for i in range(extra):
         pattern = "widening" if i % 2 == 0 else "narrowing"
         students[f"syn-extra-{i + 1}"] = (pattern, pattern_correctness(pattern, i + 10, 5))
+    if extra_records:
+        allocation = _allocate_records(extra_records)
+        for pattern, records in allocation.items():
+            weeks_per_student = 2 if pattern == "insufficient_data" else 5
+            full_records = records // (weeks_per_student * 2)
+            remainder_records = records % (weeks_per_student * 2)
+            for i in range(full_records):
+                name = f"syn-expanded-{pattern}-{i + 1}"
+                students[name] = (
+                    pattern,
+                    pattern_correctness(pattern, i + 30, weeks_per_student),
+                )
+            if remainder_records:
+                name = f"syn-expanded-{pattern}-1"
+                students[name] = (
+                    pattern,
+                    pattern_correctness(
+                        pattern, 30, weeks_per_student + remainder_records // 2
+                    ),
+                )
     return students
 
 
@@ -74,7 +128,7 @@ def make_attempt(student: str, week: int, assistance: str, correctness: float, t
         "task_id": f"loops-set-{week}-{assistance}",
         "matched_task_set_id": f"loops-set-{week}",
         "checkpoint_id": f"week-{week}",
-        "timestamp": f"{WEEK_DATES[week - 1]}T10:00:00Z",
+        "timestamp": f"{date(2026, 9, 7) + timedelta(days=7 * (week - 1))}T10:00:00Z",
         "assistance": assistance,
         "task_type": "written",
         "response_text": text,
@@ -84,15 +138,26 @@ def make_attempt(student: str, week: int, assistance: str, correctness: float, t
         "rubric_version": RUBRIC,
         "synthetic": True,
         "similarity_to_prior": None,
+        "origin": "system",
+        "self_reported_confidence": round(
+            min(1.0, max(0.0, correctness + (0.05 if assistance == "unassisted" else 0.02))),
+            2,
+        ),
     }
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--extra", type=int, default=0, help="extra 5-checkpoint students")
+    parser.add_argument(
+        "--extra-records",
+        type=int,
+        default=0,
+        help="additional records allocated by the existing scenario proportions",
+    )
     args = parser.parse_args()
 
-    students = build_students(args.extra)
+    students = build_students(args.extra, args.extra_records)
     records: list[dict] = []
     expected: dict[str, dict] = {}
     for student, (pattern, series) in students.items():

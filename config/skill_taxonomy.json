@@ -1,6 +1,17 @@
 {
   "version": "pilot-v1",
   "skills": [
-    {"skill_id": "python.loops", "name": "Loop boundaries and iteration", "domain": "introductory_python"}
+    {
+      "skill_id": "python.loops",
+      "name": "Loop boundaries and iteration",
+      "domain": "introductory_python",
+      "related_skills": ["python.iteration"]
+    },
+    {
+      "skill_id": "python.iteration",
+      "name": "Iteration reasoning transfer check",
+      "domain": "introductory_python",
+      "related_skills": ["python.loops"]
+    }
   ]
 }

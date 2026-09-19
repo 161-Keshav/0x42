@@ -9,7 +9,7 @@ checkpoint, and rubric version. Fewer than three paired checkpoints yields
 from collections import defaultdict
 
 from skill_erosion.contracts.models import Attempt, CheckpointScore, TrendReport, TrendStatus
-from skill_erosion.logging_utils import get_logger
+from skill_erosion.logging_utils import get_logger, timed_agent
 from skill_erosion.storage import default_repository
 
 logger = get_logger("divergence_scoring")
@@ -72,6 +72,7 @@ def _classify(gaps: list[float]) -> TrendStatus:
     return "contradictory"
 
 
+@timed_agent(logger, "divergence_scoring")
 def score_divergence(student_id: str, skill_id: str) -> TrendReport:
     """Score the assisted/unassisted gap across matched, ordered checkpoints."""
     history = default_repository().history(student_id, skill_id)

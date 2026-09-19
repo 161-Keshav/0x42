@@ -9,5 +9,6 @@ uvicorn>=0.30          # serves it
 streamlit>=1.40,<2
 pandas>=2.0
 fastmcp>=2,<4
+chromadb>=0.5
 # dev
 pytest>=8.0

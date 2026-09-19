@@ -12,12 +12,24 @@ class TraceRepository(Protocol):
         """Latest version per attempt, sorted by UTC timestamp; no cross-student data."""
         ...
 
+    def all_history(self, student_id: str) -> list[Attempt]:
+        """Latest version of every attempt for one student across skills."""
+        ...
+
     def set_teacher_decision(
         self, student_id: str, skill_id: str, decision: str
     ) -> None:
         ...
 
     def get_teacher_decision(self, student_id: str, skill_id: str) -> str | None:
+        ...
+
+    def link_parent(self, parent_account_id: str, student_id: str) -> None:
+        ...
+
+    def get_linked_student(
+        self, parent_account_id: str, requested_student_id: str | None = None
+    ) -> str:
         ...
 
 

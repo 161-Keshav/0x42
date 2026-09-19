@@ -9,7 +9,7 @@ from typing import Mapping
 from skill_erosion.config import known_skill_ids
 from skill_erosion.contracts.models import Attempt, IngestionResult
 from skill_erosion.embeddings.local import HashingTextEncoder
-from skill_erosion.logging_utils import get_logger
+from skill_erosion.logging_utils import get_logger, timed_agent
 from skill_erosion.storage import default_repository
 
 logger = get_logger("trace_collector")
@@ -57,6 +57,13 @@ def _validate(attempt: Attempt) -> Attempt:
         isinstance(similarity, (int, float)) and math.isfinite(similarity) and 0.0 <= similarity <= 1.0
     ):
         raise ValueError("similarity_to_prior must be null or in [0, 1]")
+    confidence = attempt.self_reported_confidence
+    if confidence is not None and not (
+        isinstance(confidence, (int, float))
+        and math.isfinite(confidence)
+        and 0.0 <= confidence <= 1.0
+    ):
+        raise ValueError("self_reported_confidence must be null or in [0, 1]")
     return replace(attempt, timestamp=_normalize_timestamp(attempt.timestamp))
 
 
@@ -84,6 +91,7 @@ def _index_missing(attempts: Sequence[Attempt]) -> None:
         )
 
 
+@timed_agent(logger, "trace_collector")
 def collect_traces(attempts: Sequence[Attempt | Mapping]) -> IngestionResult:
     """Validate and persist versions, then index embeddings using stable version IDs."""
     if not attempts:

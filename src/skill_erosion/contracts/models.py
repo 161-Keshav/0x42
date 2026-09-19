@@ -29,6 +29,7 @@ class Attempt:
     synthetic: bool
     similarity_to_prior: float | None = None
     origin: Literal["system", "student_initiated", "follow_up"] = "system"
+    self_reported_confidence: float | None = None
 
 
 @dataclass(frozen=True)

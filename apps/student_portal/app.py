@@ -21,6 +21,7 @@ from skill_erosion.data import (
 from skill_erosion.agents.remediation.agent import recommend_remediation
 from skill_erosion.logging_utils import get_logger
 from skill_erosion.orchestration.pipeline import run_journey
+from skill_erosion.storage import default_repository
 
 logger = get_logger("student_portal", separate_file=True)
 
@@ -55,7 +56,11 @@ if not st.session_state.seeded:
 
 if st.session_state.seeded and st.button("Get my practice step"):
     try:
-        st.session_state.result = asyncio.run(run_journey(None, student_id, skill_id))
+        with st.spinner("Preparing your practice step..."):
+            st.session_state.result = asyncio.run(
+                run_journey(None, student_id, skill_id)
+            )
+        st.session_state.result_scope = (student_id, skill_id)
         st.toast("Plan ready", icon="✅")
     except Exception as exc:
         logger.exception("analysis failed for %s", student_id)
@@ -63,40 +68,47 @@ if st.session_state.seeded and st.button("Get my practice step"):
         st.toast("Plan failed - see log", icon="❌")
 
 if st.session_state.seeded and st.button("Something feels off - request a check-in"):
-    from skill_erosion.agents.trace_collector.agent import collect_traces
-    from skill_erosion.storage import default_repository
+    try:
+        from skill_erosion.agents.trace_collector.agent import collect_traces
 
-    history = default_repository().history(student_id, skill_id)
-    n = len([a for a in history if a.origin == "student_initiated"]) + 1
-    now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    collect_traces(
-        [
-            Attempt(
-                attempt_id=f"{student_id}-student-flag-{n}",
-                version=1,
-                student_id=student_id,
-                skill_id=skill_id,
-                task_id=f"student-initiated-checkin-{n}",
-                matched_task_set_id=f"student-initiated-{n}",
-                checkpoint_id=f"student-checkin-{n}",
-                timestamp=now,
-                assistance="unassisted",
-                task_type="written",
-                response_text="Student requested a mentor check-in.",
-                correctness=0.0,
-                time_taken_seconds=0,
-                hint_count=0,
-                rubric_version="student-checkin-v1",
-                synthetic=True,
-                origin="student_initiated",
-            )
-        ]
-    )
-    st.toast("Check-in request sent to your teacher", icon="📣")
-    st.info("Your teacher can now review this request alongside your trend.")
+        history = default_repository().history(student_id, skill_id)
+        n = len([a for a in history if a.origin == "student_initiated"]) + 1
+        now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+        collect_traces(
+            [
+                Attempt(
+                    attempt_id=f"{student_id}-student-flag-{n}",
+                    version=1,
+                    student_id=student_id,
+                    skill_id=skill_id,
+                    task_id=f"student-initiated-checkin-{n}",
+                    matched_task_set_id=f"student-initiated-{n}",
+                    checkpoint_id=f"student-checkin-{n}",
+                    timestamp=now,
+                    assistance="unassisted",
+                    task_type="written",
+                    response_text="Student requested a mentor check-in.",
+                    correctness=0.0,
+                    time_taken_seconds=0,
+                    hint_count=0,
+                    rubric_version="student-checkin-v1",
+                    synthetic=True,
+                    origin="student_initiated",
+                )
+            ]
+        )
+        st.toast("Check-in request sent to your teacher", icon="📣")
+        st.success("Your teacher can now review this request alongside your trend.")
+    except Exception as exc:
+        logger.exception("check-in request failed")
+        st.error(f"Could not send the check-in request: {exc}")
 
 result = st.session_state.get("result")
-if st.session_state.seeded and result is not None:
+if (
+    st.session_state.seeded
+    and result is not None
+    and st.session_state.get("result_scope") == (student_id, skill_id)
+):
     explanation = result.explanation
 
     st.subheader("Why am I seeing this?")
@@ -193,7 +205,6 @@ if st.session_state.seeded and result is not None:
                 st.error("Pick an answer first.")
             else:
                 from skill_erosion.agents.trace_collector.agent import collect_traces
-                from skill_erosion.storage import default_repository
 
                 history = default_repository().history(student_id, skill_id)
                 followups = [a for a in history if a.task_id.startswith("followup-")]
@@ -234,5 +245,8 @@ if st.session_state.seeded and result is not None:
                 else:
                     st.info(f"Follow-up recorded. Independent score: {new_score:.2f}.")
                     st.toast("Follow-up recorded", icon="✅")
-                st.session_state.result = asyncio.run(run_journey(None, student_id, skill_id))
+                st.session_state.result = asyncio.run(
+                    run_journey(None, student_id, skill_id)
+                )
+                st.session_state.result_scope = (student_id, skill_id)
                 st.rerun()

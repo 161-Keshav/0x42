@@ -8,13 +8,27 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT / "src") not in sys.path:
     sys.path.insert(0, str(ROOT / "src"))
 
+import json
+
 import streamlit as st
 
+from skill_erosion.config import taxonomy_path
 from skill_erosion.data import load_expected_trends, load_synthetic_attempts
 from skill_erosion.agents.remediation.agent import recommend_remediation
 from skill_erosion.logging_utils import get_logger
+from skill_erosion.metrics import calculate_metrics
 from skill_erosion.orchestration.pipeline import run_journey
 from skill_erosion.storage import default_repository
+
+
+def _related_skill_for(skill_id: str) -> str | None:
+    """First related skill for skill_id per the taxonomy, or None."""
+    taxonomy = json.loads(taxonomy_path().read_text(encoding="utf-8"))
+    for item in taxonomy["skills"]:
+        if item["skill_id"] == skill_id:
+            related = item.get("related_skills", [])
+            return related[0] if related else None
+    return None
 
 logger = get_logger("teacher_dashboard", separate_file=True)
 
@@ -51,11 +65,35 @@ skill_id = expected[student_id]["skill_id"]
 if not st.session_state.seeded:
     st.info("Load the synthetic data first.")
 
+if st.session_state.seeded and st.button("Show student check-in queue"):
+    requests = []
+    for queued_student in students:
+        queued_skill = expected[queued_student]["skill_id"]
+        for attempt in default_repository().history(queued_student, queued_skill):
+            if attempt.origin == "student_initiated":
+                requests.append(
+                    {
+                        "student": queued_student,
+                        "skill": queued_skill,
+                        "checkpoint": attempt.checkpoint_id,
+                        "requested_at": attempt.timestamp,
+                        "status": "needs teacher review",
+                    }
+                )
+    st.subheader("Student-initiated check-ins")
+    if requests:
+        st.dataframe(requests, use_container_width=True, hide_index=True)
+    else:
+        st.info("No student-initiated check-ins are waiting.")
+
 if st.session_state.seeded and st.button("Show cohort roll-up"):
     rows = []
     for cohort_student in students:
         cohort_skill = expected[cohort_student]["skill_id"]
         cohort_result = asyncio.run(run_journey(None, cohort_student, cohort_skill))
+        cohort_metrics = calculate_metrics(
+            default_repository().history(cohort_student, cohort_skill)
+        )
         rows.append(
             {
                 "student": cohort_student,
@@ -63,19 +101,34 @@ if st.session_state.seeded and st.button("Show cohort roll-up"):
                 "trend": cohort_result.trend.status,
                 "verdict": cohort_result.verification.verdict,
                 "confidence": cohort_result.verification.confidence,
+                "calibration": cohort_metrics["confidence_calibration"],
             }
         )
     import pandas as pd
 
+    cohort_df = pd.DataFrame(rows)
+
     st.subheader("Cohort roll-up")
-    st.dataframe(pd.DataFrame(rows), use_container_width=True)
+    st.dataframe(cohort_df, use_container_width=True)
+
     counts = (
-        pd.DataFrame(rows)
-        .groupby(["skill", "trend"])
-        .size()
-        .reset_index(name="students")
+        cohort_df.groupby(["skill", "trend"]).size().reset_index(name="students")
     )
     st.dataframe(counts, use_container_width=True, hide_index=True)
+    st.markdown("**Trend status by skill**")
+    st.caption(
+        "One student with a widening gap is a student to check on. A third of "
+        "the class showing the same widening gap on the same skill is a "
+        "curriculum question, not a student question — this chart is what "
+        "makes that distinction visible at a glance."
+    )
+    st.bar_chart(counts.pivot(index="skill", columns="trend", values="students").fillna(0))
+
+    st.markdown("**Confidence calibration across the cohort**")
+    calibration_counts = (
+        cohort_df.groupby("calibration").size().reset_index(name="students")
+    )
+    st.bar_chart(calibration_counts.set_index("calibration"))
 
 
 def suggestion_from(verification, trend) -> str:
@@ -89,18 +142,35 @@ def suggestion_from(verification, trend) -> str:
 
 if st.session_state.seeded and st.button("Run analysis"):
     try:
-        result = asyncio.run(run_journey(None, student_id, skill_id))
-        st.session_state.teacher_result = result
+        with st.spinner("Running the analysis pipeline..."):
+            st.session_state.teacher_result = asyncio.run(
+                run_journey(None, student_id, skill_id)
+            )
         st.session_state.teacher_result_scope = (student_id, skill_id)
+        st.toast("Analysis ready", icon="✅")
     except Exception as exc:
         logger.exception("analysis failed for %s", student_id)
         st.error(f"Analysis failed: {exc}")
         st.toast("Analysis failed - see log", icon="❌")
         st.stop()
 
+result = st.session_state.get("teacher_result")
+if result is not None and st.session_state.get("teacher_result_scope") == (student_id, skill_id):
     trend = result.trend
     verification = result.verification
     decision = default_repository().get_teacher_decision(student_id, skill_id)
+    student_attempts = default_repository().history(student_id, skill_id)
+    related_skill_id = _related_skill_for(skill_id)
+    related_attempts = (
+        default_repository().history(student_id, related_skill_id)
+        if related_skill_id
+        else None
+    )
+    scoped_metrics = calculate_metrics(
+        student_attempts,
+        related_skill_id=related_skill_id,
+        related_skill_attempts=related_attempts,
+    )
 
     st.subheader(f"{student_id} - {skill_id}")
 
@@ -133,6 +203,25 @@ if st.session_state.seeded and st.button("Run analysis"):
         gap_col.metric("Latest gap", f"{trend.checkpoints[-1].gap:+.2f}")
     model_col.metric("Scorer", trend.model_version)
     st.write(trend.explanation)
+    with st.expander("Learning-quality signals"):
+        st.metric("Hint-dependency ratio", f"{scoped_metrics['hint_dependency_ratio']:.0%}")
+        st.caption(f"Confidence calibration: {scoped_metrics['confidence_calibration'].replace('_', ' ')}")
+        if scoped_metrics["retention_decay"] is None:
+            st.caption("Retention decay: not enough delayed follow-ups yet.")
+        else:
+            st.metric("Retention decay", f"{scoped_metrics['retention_decay']:+.2f}")
+        if scoped_metrics["error_pattern_diversity"] is None:
+            st.caption("Error-pattern diversity: not enough unassisted errors yet.")
+        else:
+            st.metric("Error-pattern diversity", f"{scoped_metrics['error_pattern_diversity']:.0%}")
+        transfer = scoped_metrics["cross_skill_transfer"]
+        if transfer == "insufficient_data" or transfer is None:
+            st.caption(
+                "Cross-skill transfer: not enough related-skill evidence yet"
+                + (f" for {related_skill_id}." if related_skill_id else " (no related skill configured for this skill).")
+            )
+        else:
+            st.caption(f"Cross-skill transfer ({related_skill_id}): {transfer.replace('_', ' ')}")
 
     if trend.checkpoints:
         import pandas as pd
@@ -156,6 +245,24 @@ if st.session_state.seeded and st.button("Run analysis"):
         st.line_chart(series)
         st.markdown("**Gap (assisted - unassisted)**")
         st.line_chart(pd.DataFrame({"gap": [c.gap for c in trend.checkpoints]}, index=labels))
+
+        attempts_by_id = {a.attempt_id: a for a in student_attempts}
+        hint_ratio_per_checkpoint = []
+        for c in trend.checkpoints:
+            evidence = [attempts_by_id[aid] for aid in c.evidence_attempt_ids if aid in attempts_by_id]
+            hint_ratio_per_checkpoint.append(
+                sum(1 for a in evidence if a.hint_count > 0) / len(evidence) if evidence else None
+            )
+        if any(v is not None for v in hint_ratio_per_checkpoint):
+            st.markdown("**Hint-dependency ratio over time**")
+            st.caption(
+                "A rising line here often shows up before the assisted/unassisted "
+                "gap does, since leaning on hints is usually an earlier signal than "
+                "the gap itself."
+            )
+            st.line_chart(
+                pd.DataFrame({"hint_dependency_ratio": hint_ratio_per_checkpoint}, index=labels)
+            )
 
         rows = []
         previous = None

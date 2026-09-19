@@ -13,7 +13,7 @@ from skill_erosion.contracts.models import (
     MisconceptionCluster,
     TrendReport,
 )
-from skill_erosion.logging_utils import get_logger
+from skill_erosion.logging_utils import get_logger, timed_agent
 
 logger = get_logger("explanation")
 
@@ -47,6 +47,7 @@ def _coerce_cluster(raw: MisconceptionCluster | Mapping | None) -> Misconception
     return MisconceptionCluster(**dict(raw))
 
 
+@timed_agent(logger, "explanation")
 def explain_flag(
     trend: TrendReport | Mapping,
     verification: FlagVerification | Mapping,

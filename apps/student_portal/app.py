@@ -21,6 +21,7 @@ from skill_erosion.data import (
 from skill_erosion.agents.remediation.agent import recommend_remediation
 from skill_erosion.logging_utils import get_logger
 from skill_erosion.orchestration.pipeline import run_journey
+from skill_erosion.storage import default_repository
 
 logger = get_logger("student_portal", separate_file=True)
 
@@ -193,7 +194,6 @@ if st.session_state.seeded and result is not None:
                 st.error("Pick an answer first.")
             else:
                 from skill_erosion.agents.trace_collector.agent import collect_traces
-                from skill_erosion.storage import default_repository
 
                 history = default_repository().history(student_id, skill_id)
                 followups = [a for a in history if a.task_id.startswith("followup-")]

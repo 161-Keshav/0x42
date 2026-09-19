@@ -1,0 +1,122 @@
+{
+  "demo-widening": {
+    "skill_id": "python.loops",
+    "expected_status": "widening",
+    "paired_checkpoints": 3
+  },
+  "demo-narrowing": {
+    "skill_id": "python.loops",
+    "expected_status": "narrowing",
+    "paired_checkpoints": 3
+  },
+  "demo-stable": {
+    "skill_id": "python.loops",
+    "expected_status": "stable",
+    "paired_checkpoints": 3
+  },
+  "demo-sparse": {
+    "skill_id": "python.loops",
+    "expected_status": "insufficient_data",
+    "paired_checkpoints": 2
+  },
+  "syn-widening-1": {
+    "skill_id": "python.loops",
+    "expected_status": "widening",
+    "paired_checkpoints": 5
+  },
+  "syn-widening-2": {
+    "skill_id": "python.loops",
+    "expected_status": "widening",
+    "paired_checkpoints": 5
+  },
+  "syn-widening-3": {
+    "skill_id": "python.loops",
+    "expected_status": "widening",
+    "paired_checkpoints": 5
+  },
+  "syn-widening-4": {
+    "skill_id": "python.loops",
+    "expected_status": "widening",
+    "paired_checkpoints": 5
+  },
+  "syn-widening-5": {
+    "skill_id": "python.loops",
+    "expected_status": "widening",
+    "paired_checkpoints": 5
+  },
+  "syn-widening-6": {
+    "skill_id": "python.loops",
+    "expected_status": "widening",
+    "paired_checkpoints": 5
+  },
+  "syn-narrowing-1": {
+    "skill_id": "python.loops",
+    "expected_status": "narrowing",
+    "paired_checkpoints": 5
+  },
+  "syn-narrowing-2": {
+    "skill_id": "python.loops",
+    "expected_status": "narrowing",
+    "paired_checkpoints": 5
+  },
+  "syn-narrowing-3": {
+    "skill_id": "python.loops",
+    "expected_status": "narrowing",
+    "paired_checkpoints": 5
+  },
+  "syn-narrowing-4": {
+    "skill_id": "python.loops",
+    "expected_status": "narrowing",
+    "paired_checkpoints": 5
+  },
+  "syn-narrowing-5": {
+    "skill_id": "python.loops",
+    "expected_status": "narrowing",
+    "paired_checkpoints": 5
+  },
+  "syn-narrowing-6": {
+    "skill_id": "python.loops",
+    "expected_status": "narrowing",
+    "paired_checkpoints": 5
+  },
+  "syn-stable-1": {
+    "skill_id": "python.loops",
+    "expected_status": "stable",
+    "paired_checkpoints": 5
+  },
+  "syn-stable-2": {
+    "skill_id": "python.loops",
+    "expected_status": "stable",
+    "paired_checkpoints": 5
+  },
+  "syn-stable-3": {
+    "skill_id": "python.loops",
+    "expected_status": "stable",
+    "paired_checkpoints": 5
+  },
+  "syn-stable-4": {
+    "skill_id": "python.loops",
+    "expected_status": "stable",
+    "paired_checkpoints": 5
+  },
+  "syn-contradictory-1": {
+    "skill_id": "python.loops",
+    "expected_status": "contradictory",
+    "paired_checkpoints": 5
+  },
+  "syn-contradictory-2": {
+    "skill_id": "python.loops",
+    "expected_status": "contradictory",
+    "paired_checkpoints": 5
+  },
+  "syn-insufficient-1": {
+    "skill_id": "python.loops",
+    "expected_status": "insufficient_data",
+    "paired_checkpoints": 2
+  },
+  "syn-insufficient-2": {
+    "skill_id": "python.loops",
+    "expected_status": "insufficient_data",
+    "paired_checkpoints": 2
+  }
+}

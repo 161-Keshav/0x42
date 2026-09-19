@@ -5,5 +5,9 @@ sqlite-vec>=0.1.9      # vector search inside the run database
 fastembed>=0.4         # local embeddings - no API key, no rate limit
 fastapi>=0.115         # the expert callback form
 uvicorn>=0.30          # serves it
+# Skill Erosion Tracker UI and MCP transport
+streamlit>=1.40,<2
+pandas>=2.0
+fastmcp>=2,<4
 # dev
 pytest>=8.0

@@ -1,163 +1,127 @@
-# Agentic Slice Kit
+# Agentic Slice Kit + Skill Erosion Tracker
 
-A starter kit for building a **working agentic slice** in two days.
+This repository preserves the organizer's Agentic Slice Kit and integrates the
+working Multi-Agent Skill Erosion Tracker implementation as a submitted
+agentic slice.
 
-Not a framework. Not a library. About 1,100 lines you are expected to read,
-understand, and edit — because the architecture is the thing being taught, and
-you cannot learn an architecture you have imported.
+## Organizer kit
 
-> **Status: spine complete. 64 tests — 61 of them run with no key and no
-> network; the three in `tests/test_integration.py` need a live key and a
-> reachable provider. `demo/` is next.**
+The organizer kit is the reusable workflow spine:
 
----
+- `slice/` - durable state, typed records, budgets, retrieval, callbacks, and
+  the bounded runner
+- `demo/` - the organizer demo domain and smoke flow
+- `web/` - expert callback form
+- `corpus/` - reference material
+- `scripts/` - doctor, bakeoff, smoke, and architecture checks
+- `tests/` - organizer architecture, store, budget, callback, runner, and smoke
+  tests
+- `docs/` - builder, designer, verifier, principles, and event guidance
 
-## Start here
+Read the organizer guides first:
 
-Click **Open in Codespaces**. Nothing to install — no Python, no Node, no
-Docker. You need a browser and a GitHub account.
+- [Principles brief](docs/PRINCIPLES-BRIEF.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Builder guide](docs/BUILDER.md)
+- [Designer guide](docs/DESIGNER.md)
+- [Verifier guide](docs/VERIFIER.md)
+- [Event-day guide](docs/ON-THE-DAY.md)
 
-```bash
-cp .env.example .env      # then paste the key from the registration desk
-python -m pytest          # should be green
+The organizer kit expects Python 3.11+, an optional OpenRouter key for live
+LLM integration, and can be checked with:
+
+```powershell
+python -m pytest
+python scripts/doctor.py
 ```
 
-Only `OPENROUTER_API_KEY` is required. Everything else in `.env` is an upgrade
-you can add at hour four, not a blocker at hour zero.
+## Skill Erosion Tracker
 
----
+The integrated implementation tracks the difference between assisted and
+unassisted student performance over time:
 
-## What "agentic" means here
-
-A single-prompt LLM wrapper does not qualify, however clever the prompt. A real
-agentic slice demonstrates at least one of:
-
-- **state persistence** across steps
-- **autonomous tool or API use**
-- **multi-step reasoning or decomposition**
-- **human-in-the-loop callback mechanics**
-
-Useful as that list is, one line does most of the sorting: **an agent is a
-workflow that can go backwards.** Straight through A → B → C is a pipeline,
-however many models are in it. The moment a later step can hand work back to an
-earlier one and the run carries on from there, you have the thing. That
-back-edge is the cheapest part to leave out and the most expensive to retrofit,
-so decide early where yours is.
-
-This kit demonstrates all four. [`docs/PRINCIPLES-BRIEF.md`](docs/PRINCIPLES-BRIEF.md)
-is the short version — the ideas, in a page or two, and the file to paste into a
-chat when you want a critic rather than an enthusiast.
-[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) is the long version: nine
-principles, tiered by build order, each anchored to the line of code it actually
-lives on.
-
-**Read the brief before you write anything.** It will save you the rewrite that
-hits teams on the second morning who start with prompts.
-
----
-
-## Who does what
-
-A team of four will not all do the same job, and the strongest teams split it
-three ways. This is a strong recommendation, not a rule - organise differently if
-you have a better idea, but decide deliberately rather than by drift.
-
-| | owns | reads |
-|---|---|---|
-| **Designer** | the problem and the spec - what it does, what makes an answer wrong, what it refuses | [`docs/DESIGNER.md`](docs/DESIGNER.md) |
-| **Builder** | the machinery - environment, the spine, `demo/flow.py`, unblocking everyone else | [`docs/BUILDER.md`](docs/BUILDER.md) |
-| **Verifier** | real people using it, the stress test, the design rationale | [`docs/VERIFIER.md`](docs/VERIFIER.md) |
-
-**Everyone starts in the same place.** Part one of
-[`docs/DESIGNER.md`](docs/DESIGNER.md) is a guided design session &mdash; about
-three hours, any frontier chat, no keys, nothing installed &mdash; and the whole
-team should be in it. It produces a spec for your own agent, which is near
-enough what a strong preliminary submission has to say. The roles start
-mattering on the first morning, not during the fortnight.
-
-The ideas the three guides assume are in
-[`docs/PRINCIPLES-BRIEF.md`](docs/PRINCIPLES-BRIEF.md) &mdash; short, and worth
-reading before any of them. [`docs/ON-THE-DAY.md`](docs/ON-THE-DAY.md) is the
-operational page: keys, money, deadlines, what the two error codes mean, and who
-to ask when something non-technical is in your way.
-
-**The Verifier role is not the consolation prize.** Roughly a third of what you are judged on is evidence that real people used
-your agent and that you changed it in response - and it is the part almost every
-team leaves until the last afternoon, by which point it is too late to do honestly.
-
----
-
-## Layout
-
-```
-slice/      THE SPINE — read this, edit it, do not treat it as a black box
-  records.py    what a run is made of                   stdlib   88
-  store.py      durable append-only state               stdlib  246
-  config.py     the one place .env is read              stdlib   64
-  budget.py     the fences: attempts and tokens         stdlib   94
-  llm.py        the ONE place a model is ever called            277
-  retrieve.py   chunk / embed / search, in the same db          138
-  callback.py   suspend on a human, resume, time out             81
-  runner.py     the state machine                               101
-  __init__.py   what this package is, and what it is not  stdlib   16
-
-demo/       THE DOMAIN — rewrite this for your own problem
-web/        the form a human expert answers on
-scripts/    doctor · bakeoff · sync_architecture
-tests/      six files — the store, the fences, the callbacks, the runner,
-            a check that ARCHITECTURE.md still points at real code, and
-            one live-key integration test
+```text
+trace collector
+    -> divergence scorer
+    -> verifier
+    -> misconception clusterer
+    -> remediation agent
+    -> student explanation
+    -> teacher and student UIs
 ```
 
-The split is the point. Swap `demo/` for your problem and keep the machinery.
+The implementation is synthetic-data-first and includes:
 
----
+- Versioned SQLite trace storage
+- Idempotent ingestion and conflict detection
+- Assisted/unassisted longitudinal scoring
+- Noise and evidence verification
+- Misconception clustering
+- Curated remediation resources
+- Plain-language student explanations
+- Teacher decisions: intervene, monitor, or dismiss
+- Cohort roll-up
+- Student-initiated check-ins
+- Alternative remediation requests
+- Rotating follow-up questions
+- Downloadable teacher summaries
+- Separate runtime logs
+- Optional FastMCP transport
 
-## Three things that will bite you
+Key directories:
 
-**Your Codespaces quota is finite, and how much you get depends on your plan.**
-A free GitHub account includes 120 core-hours a month; the Student Developer Pack
-upgrades you to Pro, which includes more. On the 2-core machine this repo asks
-for, 120 core-hours is 60 hours of actual use. **Check your own** at
-[github.com/settings/billing](https://github.com/settings/billing) — the
-Codespaces tab shows what you have used against what is included, and it is the
-only figure that is definitely right for you.
+- `apps/` - Streamlit teacher and student applications
+- `src/skill_erosion/` - implementation package
+- `config/` - skill taxonomy
+- `data/synthetic/` - deterministic demo fixtures
+- `resources/remediation/` - curated intervention content
+- `tests/unit/`, `tests/integration/`, `tests/evaluation/` - tracker tests
+- `docs/implemented-features.md` - detailed feature inventory
+- `RUN.md` - tracker setup and run instructions
+- `docs/skill-erosion-architecture.md` - tracker architecture
 
-For scale, measured on this repo in September 2026: **a two-hour working session
-on the 2-core machine costs 4.1 core-hours** — roughly 3% of a free account's
-monthly allowance, at $0.18 an hour. Storage over the same period was 0.28
-GB-hours, which is nothing. That is about thirty sessions a month before the free
-tier runs out, so a team has room for the event several times over.
+## Run the Skill Erosion Tracker
 
-Billing lags a day or so, so a session you have just finished will not show up
-straight away.
+From the repository root:
 
-What actually eats the allowance is not working, it is **walking away**. Closing
-the browser tab does not stop a codespace; it idles for 30 minutes first. Stop it
-from [github.com/codespaces](https://github.com/codespaces), and consider
-dropping the idle timeout to 5 minutes in your Codespaces settings. If you do get
-blocked, push your work to a branch and a teammate can open a fresh codespace on
-it.
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -e .
+.\.venv\Scripts\python.exe scripts/check_scaffold.py
+.\.venv\Scripts\python.exe -m unittest discover -s tests/unit -p "test_*.py" -v
+```
 
-**Your API key has a hard cap.** It is enforced, and it refuses a request
-*before* running it if the worst case would exceed your balance — so an
-oversized `max_tokens` produces a 402 while you still have credit. Leave
-`SLICE_MAX_TOKENS` where it is unless you know why you are changing it.
+Start the two dashboards on separate ports:
 
-**Default to the cheap model.** `SLICE_MODEL` is Flash-class and will carry
-almost everything. `SLICE_ESCALATION_MODEL` costs roughly thirty times as much
-per token. Escalate for the one hard subproblem, deliberately — not by habit
-when something is not working and you are tired.
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run apps/teacher_dashboard/app.py --server.port 8501
+.\.venv\Scripts\python.exe -m streamlit run apps/student_portal/app.py --server.port 8610
+```
 
----
+Open `http://127.0.0.1:8501` for the teacher view and
+`http://127.0.0.1:8610` for the student view. Port `8610` avoids the Windows
+reserved range that can include Streamlit's usual `8502` port.
 
-## The bar you are actually being judged against
+The tracker uses synthetic data by default. Its SQLite database is
+`data/processed/traces.sqlite3`; override it with `SKILL_EROSION_DB`.
 
-Working code is necessary, not sufficient. You also owe: three fellow students
-who walked your flow with their feedback captured and one visible iteration; a
-recorded stress test where a classmate tried to break your agent, and the fix
-commit that answers it; a short design rationale saying what your agent does and
-where its limits are; and a repo someone else could pick up and continue.
+## Validation
 
-Budget for that. Teams that treat the second morning as a feature deadline rather than a
-feedback deadline consistently ship the least convincing demos.
+Run the organizer suite independently:
+
+```powershell
+python -m pytest tests
+```
+
+Run the tracker suite and checks independently:
+
+```powershell
+python -m unittest discover -s tests/unit -p "test_*.py" -v
+python scripts/check_scaffold.py
+python -m compileall -q src apps scripts
+```
+
+The organizer and tracker implementations are kept in separate package
+directories. The integration preserves both rather than replacing one with the
+other.

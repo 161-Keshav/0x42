@@ -1,0 +1,9 @@
+[
+  {
+    "resource_id": "loops-boundaries-01",
+    "skill_id": "python.loops",
+    "misconception": "Exclusive range stop mistaken for an inclusive endpoint",
+    "path": "loop-boundaries.md",
+    "source": "Team-authored synthetic pilot resource"
+  }
+]

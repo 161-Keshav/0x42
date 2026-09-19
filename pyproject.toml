@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-erosion-tracker"
+version = "0.1.0"
+description = "Four-agent scaffold for longitudinal assisted versus unassisted skill tracking"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+mcp = ["fastmcp>=2,<4"]
+ui = ["streamlit>=1.40,<2"]
+intelligence = ["chromadb>=1,<2", "sentence-transformers>=3,<6", "scikit-learn>=1.5,<2"]
+diagrams = ["Pillow>=10"]
+
+[project.scripts]
+skill-erosion-mcp = "skill_erosion.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

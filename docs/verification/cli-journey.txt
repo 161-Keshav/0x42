@@ -1,0 +1,136 @@
+2026-09-19 23:00:25,184 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 23:00:26,081 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:26,082 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.86
+2026-09-19 23:00:26,082 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:26,082 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 23:00:26,083 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:26,083 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 23:00:26,763 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 23:00:27,007 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 23:00:27,230 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 23:00:27,424 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:27,618 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1534.73
+2026-09-19 23:00:27,620 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:27,621 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:27,816 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=196.61
+2026-09-19 23:00:27,816 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:27,817 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.16
+{
+  "trend": {
+    "student_id": "S-W001",
+    "skill_id": "python.loops",
+    "status": "widening",
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint-1",
+        "timestamp": "2026-01-05T00:00:00+00:00",
+        "assisted_score": 0.895,
+        "unassisted_score": 0.795,
+        "gap": 0.09999999999999998,
+        "evidence_attempt_ids": [
+          "S-W001-python.loops-0-assisted@v1",
+          "S-W001-python.loops-0-unassisted@v1"
+        ]
+      },
+      {
+        "checkpoint_id": "checkpoint-2",
+        "timestamp": "2026-01-12T00:00:00+00:00",
+        "assisted_score": 0.895,
+        "unassisted_score": 0.645,
+        "gap": 0.25,
+        "evidence_attempt_ids": [
+          "S-W001-python.loops-1-assisted@v1",
+          "S-W001-python.loops-1-unassisted@v1"
+        ]
+      },
+      {
+        "checkpoint_id": "checkpoint-3",
+        "timestamp": "2026-01-19T00:00:00+00:00",
+        "assisted_score": 0.895,
+        "unassisted_score": 0.495,
+        "gap": 0.4,
+        "evidence_attempt_ids": [
+          "S-W001-python.loops-2-assisted@v1",
+          "S-W001-python.loops-2-unassisted@v1"
+        ]
+      },
+      {
+        "checkpoint_id": "checkpoint-4",
+        "timestamp": "2026-01-26T00:00:00+00:00",
+        "assisted_score": 0.895,
+        "unassisted_score": 0.345,
+        "gap": 0.55,
+        "evidence_attempt_ids": [
+          "S-W001-python.loops-3-assisted@v1",
+          "S-W001-python.loops-3-unassisted@v1"
+        ]
+      },
+      {
+        "checkpoint_id": "checkpoint-5",
+        "timestamp": "2026-02-02T00:00:00+00:00",
+        "assisted_score": 0.895,
+        "unassisted_score": 0.195,
+        "gap": 0.7,
+        "evidence_attempt_ids": [
+          "S-W001-python.loops-4-assisted@v1",
+          "S-W001-python.loops-4-unassisted@v1"
+        ]
+      }
+    ],
+    "model_version": "matched-gap-v1",
+    "explanation": "The difference between supported and independent work is increasing."
+  },
+  "verification": {
+    "verdict": "confirmed",
+    "confidence": "high",
+    "trend_status": "widening",
+    "reasons": [
+      "5 matched checkpoints span 28 days with consistent movement.",
+      "A gap describes assessment conditions; it does not establish a cause. A teacher reviews any next action."
+    ],
+    "verifier_model_version": "evidence-quality-v1"
+  },
+  "clusters": [
+    {
+      "student_id": "S-W001",
+      "skill_id": "python.loops",
+      "concept_summary": "See where range stops. Python range excludes the upper endpoint. Trace loop boundaries, off-by-one errors and the final iteration on a number line.",
+      "evidence_attempt_ids": [
+        "S-W001-python.loops-2-unassisted@v1",
+        "S-W001-python.loops-3-unassisted@v1",
+        "S-W001-python.loops-4-unassisted@v1"
+      ],
+      "embedding_model_version": "all-MiniLM-L6-v2-onnx/chroma-default-v1"
+    }
+  ],
+  "remediation": [
+    {
+      "status": "ready",
+      "teacher_summary": "Ask the learner to predict the first and last values before running the loop.",
+      "student_exercise": "Write every value in range(2, 6). Circle the last value, then explain why 6 is excluded.",
+      "resource_ids": [
+        "loops-number-line"
+      ]
+    }
+  ],
+  "explanation": {
+    "headline": "Make room for independent practice",
+    "explanation": "The difference between supported and independent work is increasing. Assessment conditions can vary. Review this together with your teacher.",
+    "evidence_points": [
+      "5 matched checkpoints are available.",
+      "Latest supported result: 90%; independent result: 20%; difference: 70%.",
+      "The difference changed by +60.0 percentage points across the matched history.",
+      "1 repeated independent-work patterns met the evidence threshold."
+    ],
+    "next_step": "Ask your teacher to review the evidence and agree on a practice step; repeat a short independent check-in afterwards."
+  }
+}
+{
+  "hint_dependency_ratio": 0.5,
+  "retention_decay": null,
+  "error_pattern_diversity": 0.6,
+  "repeated_error_ratio": 0.4,
+  "confidence_calibration": "overconfident",
+  "cross_skill_transfer": "declining_in_both"
+}
+{"skill-erosion-attempts": 10, "skill-erosion-resources": 8}

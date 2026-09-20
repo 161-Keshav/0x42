@@ -1,0 +1,20 @@
+test_alternative_follows_the_first_ready_plan_cluster (test_journey.JourneyTests.test_alternative_follows_the_first_ready_plan_cluster) ... FAIL
+test_journey_persistence_and_human_gate (test_journey.JourneyTests.test_journey_persistence_and_human_gate) ... ok
+test_unknown_and_parent_scope_refused (test_journey.JourneyTests.test_unknown_and_parent_scope_refused) ... ok
+
+======================================================================
+FAIL: test_alternative_follows_the_first_ready_plan_cluster (test_journey.JourneyTests.test_alternative_follows_the_first_ready_plan_cluster)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\amana\Downloads\suman hackathon\tests\unit\test_journey.py", line 43, in test_alternative_follows_the_first_ready_plan_cluster
+    self.assertEqual(alternative.status,"ready")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'no_matching_resource' != 'ready'
+- no_matching_resource
++ ready
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 5.946s
+
+FAILED (failures=1)

@@ -1,0 +1,25 @@
+$ python -m compileall -q src apps scripts
+(no output)
+Exit code: 0
+
+$ python scripts/check_scaffold.py
+slice/: 9 original files present and byte-identical
+demo/: 9 original files present and byte-identical
+web/: 2 original files present and byte-identical
+docs/: 9 original files present and byte-identical
+scripts/: 4 original files present and byte-identical
+tests/: 7 original files present and byte-identical
+docs/PRINCIPLES-BRIEF.md: present
+docs/ARCHITECTURE.md: present
+docs/DESIGNER.md: present
+docs/BUILDER.md: present
+docs/VERIFIER.md: present
+docs/ON-THE-DAY.md: present
+docs/SPEC-TEMPLATE.md: present
+Upstream revision: 090662b5de1601cb19debab3cc077d7028f41d28
+Protected files: 54; new required files: 13; failures: 0
+Exit code: 0
+
+$ python -m pip check
+No broken requirements found.
+Exit code: 0

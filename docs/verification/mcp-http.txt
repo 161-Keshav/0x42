@@ -1,0 +1,5 @@
+HTTP TOOLS ["cluster_misconceptions", "collect_traces", "explain_flag", "recommend_remediation", "score_divergence", "verify_flag"]
+HTTP JOURNEY widening confirmed remediation ready
+HTTP ALTERNATIVE ready ['loops-trace-table']
+SKILL_EROSION_MCP_URL execution: VERIFIED
+HTTP SERVER COLLECTIONS {"skill-erosion-attempts": 10, "skill-erosion-resources": 8}

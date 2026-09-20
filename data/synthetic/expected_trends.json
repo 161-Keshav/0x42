@@ -1,0 +1,1082 @@
+[
+  {
+    "student_id": "S-W001",
+    "skill_id": "python.loops",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W001",
+    "skill_id": "python.iteration",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W002",
+    "skill_id": "math.fractions",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W002",
+    "skill_id": "math.ratios",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-N001",
+    "skill_id": "python.loops",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N001",
+    "skill_id": "python.iteration",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N002",
+    "skill_id": "math.fractions",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N002",
+    "skill_id": "math.ratios",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-S001",
+    "skill_id": "python.loops",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S001",
+    "skill_id": "python.iteration",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S002",
+    "skill_id": "math.fractions",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S002",
+    "skill_id": "math.ratios",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-C001",
+    "skill_id": "python.loops",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C001",
+    "skill_id": "python.iteration",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C002",
+    "skill_id": "math.fractions",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C002",
+    "skill_id": "math.ratios",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-I001",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I001",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I002",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I002",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I003",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I003",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I004",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I004",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I005",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I005",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I006",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I006",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I007",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I007",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I008",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I008",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I009",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I009",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I010",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I010",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-W003",
+    "skill_id": "python.loops",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W003",
+    "skill_id": "python.iteration",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W004",
+    "skill_id": "math.fractions",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W004",
+    "skill_id": "math.ratios",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-N003",
+    "skill_id": "python.loops",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N003",
+    "skill_id": "python.iteration",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N004",
+    "skill_id": "math.fractions",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N004",
+    "skill_id": "math.ratios",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-S003",
+    "skill_id": "python.loops",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S003",
+    "skill_id": "python.iteration",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S004",
+    "skill_id": "math.fractions",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S004",
+    "skill_id": "math.ratios",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-C003",
+    "skill_id": "python.loops",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C003",
+    "skill_id": "python.iteration",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C004",
+    "skill_id": "math.fractions",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C004",
+    "skill_id": "math.ratios",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-I011",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I011",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I012",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I012",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I013",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I013",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I014",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I014",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I015",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I015",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I016",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I016",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I017",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I017",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I018",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I018",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I019",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I019",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I020",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I020",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-W005",
+    "skill_id": "python.loops",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W005",
+    "skill_id": "python.iteration",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W006",
+    "skill_id": "math.fractions",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W006",
+    "skill_id": "math.ratios",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-N005",
+    "skill_id": "python.loops",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N005",
+    "skill_id": "python.iteration",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N006",
+    "skill_id": "math.fractions",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N006",
+    "skill_id": "math.ratios",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-S005",
+    "skill_id": "python.loops",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S005",
+    "skill_id": "python.iteration",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S006",
+    "skill_id": "math.fractions",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S006",
+    "skill_id": "math.ratios",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-C005",
+    "skill_id": "python.loops",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C005",
+    "skill_id": "python.iteration",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C006",
+    "skill_id": "math.fractions",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C006",
+    "skill_id": "math.ratios",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-I021",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I021",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I022",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I022",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I023",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I023",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I024",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I024",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I025",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I025",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I026",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I026",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I027",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I027",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I028",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I028",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I029",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I029",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I030",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I030",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-W007",
+    "skill_id": "python.loops",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W007",
+    "skill_id": "python.iteration",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W008",
+    "skill_id": "math.fractions",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W008",
+    "skill_id": "math.ratios",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-N007",
+    "skill_id": "python.loops",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N007",
+    "skill_id": "python.iteration",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N008",
+    "skill_id": "math.fractions",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N008",
+    "skill_id": "math.ratios",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-S007",
+    "skill_id": "python.loops",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S007",
+    "skill_id": "python.iteration",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S008",
+    "skill_id": "math.fractions",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S008",
+    "skill_id": "math.ratios",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-C007",
+    "skill_id": "python.loops",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C007",
+    "skill_id": "python.iteration",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C008",
+    "skill_id": "math.fractions",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C008",
+    "skill_id": "math.ratios",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-I031",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I031",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I032",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I032",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I033",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I033",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I034",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I034",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I035",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I035",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I036",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I036",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I037",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I037",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I038",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I038",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I039",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I039",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I040",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I040",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-W009",
+    "skill_id": "python.loops",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W009",
+    "skill_id": "python.iteration",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W010",
+    "skill_id": "math.fractions",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W010",
+    "skill_id": "math.ratios",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-N009",
+    "skill_id": "python.loops",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N009",
+    "skill_id": "python.iteration",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N010",
+    "skill_id": "math.fractions",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N010",
+    "skill_id": "math.ratios",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-S009",
+    "skill_id": "python.loops",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S009",
+    "skill_id": "python.iteration",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S010",
+    "skill_id": "math.fractions",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S010",
+    "skill_id": "math.ratios",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-C009",
+    "skill_id": "python.loops",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C009",
+    "skill_id": "python.iteration",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C010",
+    "skill_id": "math.fractions",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C010",
+    "skill_id": "math.ratios",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-I041",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I041",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I042",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I042",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I043",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I043",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I044",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I044",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I045",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I045",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I046",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I046",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I047",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I047",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I048",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I048",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I049",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I049",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I050",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I050",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-W011",
+    "skill_id": "python.loops",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W011",
+    "skill_id": "python.iteration",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W012",
+    "skill_id": "math.fractions",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-W012",
+    "skill_id": "math.ratios",
+    "status": "widening"
+  },
+  {
+    "student_id": "S-N011",
+    "skill_id": "python.loops",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N011",
+    "skill_id": "python.iteration",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N012",
+    "skill_id": "math.fractions",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-N012",
+    "skill_id": "math.ratios",
+    "status": "narrowing"
+  },
+  {
+    "student_id": "S-S011",
+    "skill_id": "python.loops",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S011",
+    "skill_id": "python.iteration",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S012",
+    "skill_id": "math.fractions",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-S012",
+    "skill_id": "math.ratios",
+    "status": "stable"
+  },
+  {
+    "student_id": "S-C011",
+    "skill_id": "python.loops",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C011",
+    "skill_id": "python.iteration",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C012",
+    "skill_id": "math.fractions",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-C012",
+    "skill_id": "math.ratios",
+    "status": "contradictory"
+  },
+  {
+    "student_id": "S-I051",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I051",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I052",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I052",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I053",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I053",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I054",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I054",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I055",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I055",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I056",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I056",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I057",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I057",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I058",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I058",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I059",
+    "skill_id": "python.loops",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I059",
+    "skill_id": "python.iteration",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I060",
+    "skill_id": "math.fractions",
+    "status": "insufficient_data"
+  },
+  {
+    "student_id": "S-I060",
+    "skill_id": "math.ratios",
+    "status": "insufficient_data"
+  }
+]

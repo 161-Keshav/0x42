@@ -1,0 +1,1120 @@
+test_real_semantics_cluster_paraphrases_not_unrelated_answers (test_embeddings.EmbeddingTests.test_real_semantics_cluster_paraphrases_not_unrelated_answers) ... ok
+test_scope_latest_version_and_minimum_repetition (test_embeddings.EmbeddingTests.test_scope_latest_version_and_minimum_repetition) ... ok
+test_explanation_redacts_responses_and_cluster_labels (test_explanation.ExplanationTests.test_explanation_redacts_responses_and_cluster_labels) ... ok
+test_rejects_foreign_cluster (test_explanation.ExplanationTests.test_rejects_foreign_cluster) ... agent=explain_flag event=failed student_id=s1 skill_id=python.loops error_type=ValueError elapsed_ms=0.00
+ok
+test_decisions_persist_and_invalid_values_fail (test_foundation.FoundationTests.test_decisions_persist_and_invalid_values_fail) ... ok
+test_ingestion_is_idempotent (test_foundation.FoundationTests.test_ingestion_is_idempotent) ... ok
+test_invalid_records_rejected (test_foundation.FoundationTests.test_invalid_records_rejected) ... agent=collect_traces event=failed student_id=s1 skill_id=unknown error_type=ValueError elapsed_ms=0.03
+ok
+test_parent_backend_refuses_other_student (test_foundation.FoundationTests.test_parent_backend_refuses_other_student) ... ok
+test_versions_append_and_conflicts_are_atomic (test_foundation.FoundationTests.test_versions_append_and_conflicts_are_atomic) ... agent=collect_traces event=failed student_id=s1 skill_id=python.loops error_type=ValueError elapsed_ms=2.39
+agent=collect_traces event=failed student_id=s1 skill_id=python.loops error_type=ValueError elapsed_ms=1.66
+agent=collect_traces event=failed student_id=s2 skill_id=python.loops error_type=ValueError elapsed_ms=1.84
+ok
+test_alternative_follows_the_first_ready_plan_cluster (test_journey.JourneyTests.test_alternative_follows_the_first_ready_plan_cluster) ... ok
+test_journey_persistence_and_human_gate (test_journey.JourneyTests.test_journey_persistence_and_human_gate) ... ok
+test_unknown_and_parent_scope_refused (test_journey.JourneyTests.test_unknown_and_parent_scope_refused) ... ok
+test_stdout_shared_and_app_log_have_redacted_agent_summary (test_logging.LoggingTests.test_stdout_shared_and_app_log_have_redacted_agent_summary) ... ok
+2026-09-19 22:59:34,769 INFO agent=collect_traces event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:34,775 INFO agent=collect_traces event=complete student_id=s1 skill_id=python.loops stored_versions=6 elapsed_ms=6.15
+2026-09-19 22:59:34,790 INFO agent=score_divergence event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:34,790 INFO agent=score_divergence event=complete student_id=s1 skill_id=python.loops status=widening elapsed_ms=0.42
+2026-09-19 22:59:34,793 INFO agent=verify_flag event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:34,793 INFO agent=verify_flag event=complete student_id=s1 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.28
+2026-09-19 22:59:34,797 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:35,315 INFO agent=cluster_misconceptions event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:35,315 INFO chroma operation=upsert collection=skill-erosion-attempts items=6
+2026-09-19 22:59:35,751 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=6
+2026-09-19 22:59:35,930 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=6
+2026-09-19 22:59:36,106 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:36,290 INFO agent=cluster_misconceptions event=complete student_id=s1 skill_id=python.loops count=1 elapsed_ms=975.03
+2026-09-19 22:59:36,297 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:36,298 INFO agent=recommend_remediation event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:36,299 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:36,482 INFO agent=recommend_remediation event=complete student_id=s1 skill_id=python.loops status=ready elapsed_ms=183.22
+2026-09-19 22:59:36,485 INFO agent=explain_flag event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:36,485 INFO agent=explain_flag event=complete student_id=s1 skill_id=python.loops result=ready elapsed_ms=0.17
+2026-09-19 22:59:36,504 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:36,505 INFO agent=recommend_remediation event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:36,506 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:36,702 INFO agent=recommend_remediation event=complete student_id=s1 skill_id=python.loops status=ready elapsed_ms=197.02
+2026-09-19 22:59:36,709 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:37,208 INFO agent=score_divergence event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:37,209 INFO agent=score_divergence event=complete student_id=s1 skill_id=python.loops status=widening elapsed_ms=0.40
+2026-09-19 22:59:37,209 INFO agent=verify_flag event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:37,209 INFO agent=verify_flag event=complete student_id=s1 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.10
+2026-09-19 22:59:37,209 INFO agent=cluster_misconceptions event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:37,209 INFO chroma operation=upsert collection=skill-erosion-attempts items=6
+2026-09-19 22:59:37,636 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=6
+2026-09-19 22:59:37,836 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=6
+2026-09-19 22:59:38,033 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:38,239 INFO agent=cluster_misconceptions event=complete student_id=s1 skill_id=python.loops count=1 elapsed_ms=1029.51
+2026-09-19 22:59:38,241 INFO agent=recommend_remediation event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:38,242 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:38,435 INFO agent=recommend_remediation event=complete student_id=s1 skill_id=python.loops status=ready elapsed_ms=194.06
+2026-09-19 22:59:38,436 INFO agent=explain_flag event=start student_id=s1 skill_id=python.loops
+2026-09-19 22:59:38,436 INFO agent=explain_flag event=complete student_id=s1 skill_id=python.loops result=ready elapsed_ms=0.12
+test_all_six_tools_and_remote_orchestration (test_mcp.MCPTests.test_all_six_tools_and_remote_orchestration) ... ok
+test_all_confidence_categories (test_metrics.MetricsTests.test_all_confidence_categories) ... ok
+test_ratios_and_retention (test_metrics.MetricsTests.test_ratios_and_retention) ... ok
+test_transfer_is_really_wired_into_aggregator (test_metrics.MetricsTests.test_transfer_is_really_wired_into_aggregator) ... ok
+test_transfer_requires_distinct_checkpoints_not_question_timestamps (test_metrics.MetricsTests.test_transfer_requires_distinct_checkpoints_not_question_timestamps) ... ok
+test_defense_in_depth_filter (test_parent_chat.ParentChatTests.test_defense_in_depth_filter) ... ok
+test_multiple_intents_never_disclose_restricted_information (test_parent_chat.ParentChatTests.test_multiple_intents_never_disclose_restricted_information) ... ok
+test_all_teacher_student_parent_controls (test_portals.PortalTests.test_all_teacher_student_parent_controls) ... 2026-09-19 22:59:38.456 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-09-19 22:59:39,893 INFO agent=collect_traces event=start student_id=multiple(108) skill_id=multiple(4)
+2026-09-19 22:59:39,927 INFO agent=collect_traces event=complete student_id=multiple(108) skill_id=multiple(4) stored_versions=1200 elapsed_ms=34.57
+2026-09-19 22:59:41,519 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:42,109 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:42,110 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.89
+2026-09-19 22:59:42,111 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:42,111 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.33
+2026-09-19 22:59:42,111 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:42,111 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:59:42,935 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:59:43,194 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:59:43,444 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:59:43,713 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:43,949 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1838.14
+2026-09-19 22:59:43,952 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:43,953 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:44,168 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=216.56
+2026-09-19 22:59:44,169 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:44,169 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.15
+2026-09-19 22:59:46,601 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:46,603 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:46,603 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.47
+2026-09-19 22:59:46,603 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:46,603 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:59:46,603 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:46,604 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:59:46,916 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:47,319 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:47,648 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:48,079 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:48,395 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1791.26
+2026-09-19 22:59:48,397 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:48,398 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:48,703 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=305.29
+2026-09-19 22:59:48,703 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:48,703 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.27
+2026-09-19 22:59:49,299 INFO agent=score_divergence event=start student_id=S-C001 skill_id=python.iteration
+2026-09-19 22:59:49,300 INFO agent=score_divergence event=complete student_id=S-C001 skill_id=python.iteration status=contradictory elapsed_ms=0.48
+2026-09-19 22:59:49,300 INFO agent=verify_flag event=start student_id=S-C001 skill_id=python.iteration
+2026-09-19 22:59:49,300 INFO agent=verify_flag event=complete student_id=S-C001 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.16
+2026-09-19 22:59:49,309 INFO agent=score_divergence event=start student_id=S-C001 skill_id=python.loops
+2026-09-19 22:59:49,310 INFO agent=score_divergence event=complete student_id=S-C001 skill_id=python.loops status=contradictory elapsed_ms=0.43
+2026-09-19 22:59:49,310 INFO agent=verify_flag event=start student_id=S-C001 skill_id=python.loops
+2026-09-19 22:59:49,310 INFO agent=verify_flag event=complete student_id=S-C001 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:49,323 INFO agent=score_divergence event=start student_id=S-C002 skill_id=math.fractions
+2026-09-19 22:59:49,323 INFO agent=score_divergence event=complete student_id=S-C002 skill_id=math.fractions status=contradictory elapsed_ms=0.45
+2026-09-19 22:59:49,324 INFO agent=verify_flag event=start student_id=S-C002 skill_id=math.fractions
+2026-09-19 22:59:49,324 INFO agent=verify_flag event=complete student_id=S-C002 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.16
+2026-09-19 22:59:49,334 INFO agent=score_divergence event=start student_id=S-C002 skill_id=math.ratios
+2026-09-19 22:59:49,334 INFO agent=score_divergence event=complete student_id=S-C002 skill_id=math.ratios status=contradictory elapsed_ms=0.45
+2026-09-19 22:59:49,335 INFO agent=verify_flag event=start student_id=S-C002 skill_id=math.ratios
+2026-09-19 22:59:49,335 INFO agent=verify_flag event=complete student_id=S-C002 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:49,349 INFO agent=score_divergence event=start student_id=S-C003 skill_id=python.iteration
+2026-09-19 22:59:49,349 INFO agent=score_divergence event=complete student_id=S-C003 skill_id=python.iteration status=contradictory elapsed_ms=0.59
+2026-09-19 22:59:49,350 INFO agent=verify_flag event=start student_id=S-C003 skill_id=python.iteration
+2026-09-19 22:59:49,350 INFO agent=verify_flag event=complete student_id=S-C003 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:49,362 INFO agent=score_divergence event=start student_id=S-C003 skill_id=python.loops
+2026-09-19 22:59:49,362 INFO agent=score_divergence event=complete student_id=S-C003 skill_id=python.loops status=contradictory elapsed_ms=0.55
+2026-09-19 22:59:49,362 INFO agent=verify_flag event=start student_id=S-C003 skill_id=python.loops
+2026-09-19 22:59:49,362 INFO agent=verify_flag event=complete student_id=S-C003 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:49,378 INFO agent=score_divergence event=start student_id=S-C004 skill_id=math.fractions
+2026-09-19 22:59:49,379 INFO agent=score_divergence event=complete student_id=S-C004 skill_id=math.fractions status=contradictory elapsed_ms=0.90
+2026-09-19 22:59:49,379 INFO agent=verify_flag event=start student_id=S-C004 skill_id=math.fractions
+2026-09-19 22:59:49,379 INFO agent=verify_flag event=complete student_id=S-C004 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.18
+2026-09-19 22:59:49,392 INFO agent=score_divergence event=start student_id=S-C004 skill_id=math.ratios
+2026-09-19 22:59:49,393 INFO agent=score_divergence event=complete student_id=S-C004 skill_id=math.ratios status=contradictory elapsed_ms=0.90
+2026-09-19 22:59:49,394 INFO agent=verify_flag event=start student_id=S-C004 skill_id=math.ratios
+2026-09-19 22:59:49,394 INFO agent=verify_flag event=complete student_id=S-C004 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.31
+2026-09-19 22:59:49,415 INFO agent=score_divergence event=start student_id=S-C005 skill_id=python.iteration
+2026-09-19 22:59:49,415 INFO agent=score_divergence event=complete student_id=S-C005 skill_id=python.iteration status=contradictory elapsed_ms=0.50
+2026-09-19 22:59:49,416 INFO agent=verify_flag event=start student_id=S-C005 skill_id=python.iteration
+2026-09-19 22:59:49,416 INFO agent=verify_flag event=complete student_id=S-C005 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:49,425 INFO agent=score_divergence event=start student_id=S-C005 skill_id=python.loops
+2026-09-19 22:59:49,426 INFO agent=score_divergence event=complete student_id=S-C005 skill_id=python.loops status=contradictory elapsed_ms=0.71
+2026-09-19 22:59:49,426 INFO agent=verify_flag event=start student_id=S-C005 skill_id=python.loops
+2026-09-19 22:59:49,426 INFO agent=verify_flag event=complete student_id=S-C005 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:49,439 INFO agent=score_divergence event=start student_id=S-C006 skill_id=math.fractions
+2026-09-19 22:59:49,440 INFO agent=score_divergence event=complete student_id=S-C006 skill_id=math.fractions status=contradictory elapsed_ms=0.48
+2026-09-19 22:59:49,440 INFO agent=verify_flag event=start student_id=S-C006 skill_id=math.fractions
+2026-09-19 22:59:49,440 INFO agent=verify_flag event=complete student_id=S-C006 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.13
+2026-09-19 22:59:49,451 INFO agent=score_divergence event=start student_id=S-C006 skill_id=math.ratios
+2026-09-19 22:59:49,451 INFO agent=score_divergence event=complete student_id=S-C006 skill_id=math.ratios status=contradictory elapsed_ms=0.69
+2026-09-19 22:59:49,452 INFO agent=verify_flag event=start student_id=S-C006 skill_id=math.ratios
+2026-09-19 22:59:49,452 INFO agent=verify_flag event=complete student_id=S-C006 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.18
+2026-09-19 22:59:49,464 INFO agent=score_divergence event=start student_id=S-C007 skill_id=python.iteration
+2026-09-19 22:59:49,464 INFO agent=score_divergence event=complete student_id=S-C007 skill_id=python.iteration status=contradictory elapsed_ms=0.43
+2026-09-19 22:59:49,464 INFO agent=verify_flag event=start student_id=S-C007 skill_id=python.iteration
+2026-09-19 22:59:49,464 INFO agent=verify_flag event=complete student_id=S-C007 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:49,473 INFO agent=score_divergence event=start student_id=S-C007 skill_id=python.loops
+2026-09-19 22:59:49,473 INFO agent=score_divergence event=complete student_id=S-C007 skill_id=python.loops status=contradictory elapsed_ms=0.44
+2026-09-19 22:59:49,473 INFO agent=verify_flag event=start student_id=S-C007 skill_id=python.loops
+2026-09-19 22:59:49,473 INFO agent=verify_flag event=complete student_id=S-C007 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:49,509 INFO agent=score_divergence event=start student_id=S-C008 skill_id=math.fractions
+2026-09-19 22:59:49,509 INFO agent=score_divergence event=complete student_id=S-C008 skill_id=math.fractions status=contradictory elapsed_ms=0.54
+2026-09-19 22:59:49,510 INFO agent=verify_flag event=start student_id=S-C008 skill_id=math.fractions
+2026-09-19 22:59:49,510 INFO agent=verify_flag event=complete student_id=S-C008 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.25
+2026-09-19 22:59:49,520 INFO agent=score_divergence event=start student_id=S-C008 skill_id=math.ratios
+2026-09-19 22:59:49,521 INFO agent=score_divergence event=complete student_id=S-C008 skill_id=math.ratios status=contradictory elapsed_ms=0.74
+2026-09-19 22:59:49,521 INFO agent=verify_flag event=start student_id=S-C008 skill_id=math.ratios
+2026-09-19 22:59:49,521 INFO agent=verify_flag event=complete student_id=S-C008 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.21
+2026-09-19 22:59:49,539 INFO agent=score_divergence event=start student_id=S-C009 skill_id=python.iteration
+2026-09-19 22:59:49,540 INFO agent=score_divergence event=complete student_id=S-C009 skill_id=python.iteration status=contradictory elapsed_ms=0.76
+2026-09-19 22:59:49,540 INFO agent=verify_flag event=start student_id=S-C009 skill_id=python.iteration
+2026-09-19 22:59:49,540 INFO agent=verify_flag event=complete student_id=S-C009 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.22
+2026-09-19 22:59:49,566 INFO agent=score_divergence event=start student_id=S-C009 skill_id=python.loops
+2026-09-19 22:59:49,567 INFO agent=score_divergence event=complete student_id=S-C009 skill_id=python.loops status=contradictory elapsed_ms=0.47
+2026-09-19 22:59:49,567 INFO agent=verify_flag event=start student_id=S-C009 skill_id=python.loops
+2026-09-19 22:59:49,567 INFO agent=verify_flag event=complete student_id=S-C009 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:49,578 INFO agent=score_divergence event=start student_id=S-C010 skill_id=math.fractions
+2026-09-19 22:59:49,578 INFO agent=score_divergence event=complete student_id=S-C010 skill_id=math.fractions status=contradictory elapsed_ms=0.46
+2026-09-19 22:59:49,578 INFO agent=verify_flag event=start student_id=S-C010 skill_id=math.fractions
+2026-09-19 22:59:49,578 INFO agent=verify_flag event=complete student_id=S-C010 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:49,588 INFO agent=score_divergence event=start student_id=S-C010 skill_id=math.ratios
+2026-09-19 22:59:49,588 INFO agent=score_divergence event=complete student_id=S-C010 skill_id=math.ratios status=contradictory elapsed_ms=0.45
+2026-09-19 22:59:49,588 INFO agent=verify_flag event=start student_id=S-C010 skill_id=math.ratios
+2026-09-19 22:59:49,588 INFO agent=verify_flag event=complete student_id=S-C010 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:49,600 INFO agent=score_divergence event=start student_id=S-C011 skill_id=python.iteration
+2026-09-19 22:59:49,601 INFO agent=score_divergence event=complete student_id=S-C011 skill_id=python.iteration status=contradictory elapsed_ms=0.63
+2026-09-19 22:59:49,601 INFO agent=verify_flag event=start student_id=S-C011 skill_id=python.iteration
+2026-09-19 22:59:49,601 INFO agent=verify_flag event=complete student_id=S-C011 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:49,611 INFO agent=score_divergence event=start student_id=S-C011 skill_id=python.loops
+2026-09-19 22:59:49,611 INFO agent=score_divergence event=complete student_id=S-C011 skill_id=python.loops status=contradictory elapsed_ms=0.60
+2026-09-19 22:59:49,612 INFO agent=verify_flag event=start student_id=S-C011 skill_id=python.loops
+2026-09-19 22:59:49,612 INFO agent=verify_flag event=complete student_id=S-C011 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.22
+2026-09-19 22:59:49,628 INFO agent=score_divergence event=start student_id=S-C012 skill_id=math.fractions
+2026-09-19 22:59:49,628 INFO agent=score_divergence event=complete student_id=S-C012 skill_id=math.fractions status=contradictory elapsed_ms=0.81
+2026-09-19 22:59:49,629 INFO agent=verify_flag event=start student_id=S-C012 skill_id=math.fractions
+2026-09-19 22:59:49,629 INFO agent=verify_flag event=complete student_id=S-C012 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.21
+2026-09-19 22:59:49,641 INFO agent=score_divergence event=start student_id=S-C012 skill_id=math.ratios
+2026-09-19 22:59:49,642 INFO agent=score_divergence event=complete student_id=S-C012 skill_id=math.ratios status=contradictory elapsed_ms=0.95
+2026-09-19 22:59:49,643 INFO agent=verify_flag event=start student_id=S-C012 skill_id=math.ratios
+2026-09-19 22:59:49,643 INFO agent=verify_flag event=complete student_id=S-C012 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.35
+2026-09-19 22:59:49,659 INFO agent=score_divergence event=start student_id=S-I001 skill_id=python.iteration
+2026-09-19 22:59:49,660 INFO agent=score_divergence event=complete student_id=S-I001 skill_id=python.iteration status=insufficient_data elapsed_ms=0.59
+2026-09-19 22:59:49,660 INFO agent=verify_flag event=start student_id=S-I001 skill_id=python.iteration
+2026-09-19 22:59:49,660 INFO agent=verify_flag event=complete student_id=S-I001 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.23
+2026-09-19 22:59:49,674 INFO agent=score_divergence event=start student_id=S-I001 skill_id=python.loops
+2026-09-19 22:59:49,675 INFO agent=score_divergence event=complete student_id=S-I001 skill_id=python.loops status=insufficient_data elapsed_ms=0.57
+2026-09-19 22:59:49,675 INFO agent=verify_flag event=start student_id=S-I001 skill_id=python.loops
+2026-09-19 22:59:49,675 INFO agent=verify_flag event=complete student_id=S-I001 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.20
+2026-09-19 22:59:49,691 INFO agent=score_divergence event=start student_id=S-I002 skill_id=math.fractions
+2026-09-19 22:59:49,691 INFO agent=score_divergence event=complete student_id=S-I002 skill_id=math.fractions status=insufficient_data elapsed_ms=0.40
+2026-09-19 22:59:49,692 INFO agent=verify_flag event=start student_id=S-I002 skill_id=math.fractions
+2026-09-19 22:59:49,692 INFO agent=verify_flag event=complete student_id=S-I002 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:49,702 INFO agent=score_divergence event=start student_id=S-I002 skill_id=math.ratios
+2026-09-19 22:59:49,703 INFO agent=score_divergence event=complete student_id=S-I002 skill_id=math.ratios status=insufficient_data elapsed_ms=0.64
+2026-09-19 22:59:49,703 INFO agent=verify_flag event=start student_id=S-I002 skill_id=math.ratios
+2026-09-19 22:59:49,704 INFO agent=verify_flag event=complete student_id=S-I002 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.24
+2026-09-19 22:59:49,719 INFO agent=score_divergence event=start student_id=S-I003 skill_id=python.iteration
+2026-09-19 22:59:49,719 INFO agent=score_divergence event=complete student_id=S-I003 skill_id=python.iteration status=insufficient_data elapsed_ms=0.47
+2026-09-19 22:59:49,719 INFO agent=verify_flag event=start student_id=S-I003 skill_id=python.iteration
+2026-09-19 22:59:49,719 INFO agent=verify_flag event=complete student_id=S-I003 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.13
+2026-09-19 22:59:49,730 INFO agent=score_divergence event=start student_id=S-I003 skill_id=python.loops
+2026-09-19 22:59:49,731 INFO agent=score_divergence event=complete student_id=S-I003 skill_id=python.loops status=insufficient_data elapsed_ms=0.57
+2026-09-19 22:59:49,731 INFO agent=verify_flag event=start student_id=S-I003 skill_id=python.loops
+2026-09-19 22:59:49,731 INFO agent=verify_flag event=complete student_id=S-I003 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.20
+2026-09-19 22:59:49,742 INFO agent=score_divergence event=start student_id=S-I004 skill_id=math.fractions
+2026-09-19 22:59:49,742 INFO agent=score_divergence event=complete student_id=S-I004 skill_id=math.fractions status=insufficient_data elapsed_ms=0.33
+2026-09-19 22:59:49,742 INFO agent=verify_flag event=start student_id=S-I004 skill_id=math.fractions
+2026-09-19 22:59:49,743 INFO agent=verify_flag event=complete student_id=S-I004 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:49,751 INFO agent=score_divergence event=start student_id=S-I004 skill_id=math.ratios
+2026-09-19 22:59:49,751 INFO agent=score_divergence event=complete student_id=S-I004 skill_id=math.ratios status=insufficient_data elapsed_ms=0.29
+2026-09-19 22:59:49,751 INFO agent=verify_flag event=start student_id=S-I004 skill_id=math.ratios
+2026-09-19 22:59:49,751 INFO agent=verify_flag event=complete student_id=S-I004 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:49,761 INFO agent=score_divergence event=start student_id=S-I005 skill_id=python.iteration
+2026-09-19 22:59:49,762 INFO agent=score_divergence event=complete student_id=S-I005 skill_id=python.iteration status=insufficient_data elapsed_ms=0.30
+2026-09-19 22:59:49,762 INFO agent=verify_flag event=start student_id=S-I005 skill_id=python.iteration
+2026-09-19 22:59:49,762 INFO agent=verify_flag event=complete student_id=S-I005 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:49,769 INFO agent=score_divergence event=start student_id=S-I005 skill_id=python.loops
+2026-09-19 22:59:49,769 INFO agent=score_divergence event=complete student_id=S-I005 skill_id=python.loops status=insufficient_data elapsed_ms=0.22
+2026-09-19 22:59:49,770 INFO agent=verify_flag event=start student_id=S-I005 skill_id=python.loops
+2026-09-19 22:59:49,770 INFO agent=verify_flag event=complete student_id=S-I005 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.09
+2026-09-19 22:59:49,782 INFO agent=score_divergence event=start student_id=S-I006 skill_id=math.fractions
+2026-09-19 22:59:49,782 INFO agent=score_divergence event=complete student_id=S-I006 skill_id=math.fractions status=insufficient_data elapsed_ms=0.45
+2026-09-19 22:59:49,783 INFO agent=verify_flag event=start student_id=S-I006 skill_id=math.fractions
+2026-09-19 22:59:49,783 INFO agent=verify_flag event=complete student_id=S-I006 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.23
+2026-09-19 22:59:49,795 INFO agent=score_divergence event=start student_id=S-I006 skill_id=math.ratios
+2026-09-19 22:59:49,796 INFO agent=score_divergence event=complete student_id=S-I006 skill_id=math.ratios status=insufficient_data elapsed_ms=0.49
+2026-09-19 22:59:49,796 INFO agent=verify_flag event=start student_id=S-I006 skill_id=math.ratios
+2026-09-19 22:59:49,796 INFO agent=verify_flag event=complete student_id=S-I006 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.19
+2026-09-19 22:59:49,811 INFO agent=score_divergence event=start student_id=S-I007 skill_id=python.iteration
+2026-09-19 22:59:49,812 INFO agent=score_divergence event=complete student_id=S-I007 skill_id=python.iteration status=insufficient_data elapsed_ms=0.54
+2026-09-19 22:59:49,812 INFO agent=verify_flag event=start student_id=S-I007 skill_id=python.iteration
+2026-09-19 22:59:49,812 INFO agent=verify_flag event=complete student_id=S-I007 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.25
+2026-09-19 22:59:49,827 INFO agent=score_divergence event=start student_id=S-I007 skill_id=python.loops
+2026-09-19 22:59:49,828 INFO agent=score_divergence event=complete student_id=S-I007 skill_id=python.loops status=insufficient_data elapsed_ms=0.43
+2026-09-19 22:59:49,828 INFO agent=verify_flag event=start student_id=S-I007 skill_id=python.loops
+2026-09-19 22:59:49,828 INFO agent=verify_flag event=complete student_id=S-I007 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:49,845 INFO agent=score_divergence event=start student_id=S-I008 skill_id=math.fractions
+2026-09-19 22:59:49,845 INFO agent=score_divergence event=complete student_id=S-I008 skill_id=math.fractions status=insufficient_data elapsed_ms=0.45
+2026-09-19 22:59:49,845 INFO agent=verify_flag event=start student_id=S-I008 skill_id=math.fractions
+2026-09-19 22:59:49,846 INFO agent=verify_flag event=complete student_id=S-I008 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.19
+2026-09-19 22:59:49,857 INFO agent=score_divergence event=start student_id=S-I008 skill_id=math.ratios
+2026-09-19 22:59:49,857 INFO agent=score_divergence event=complete student_id=S-I008 skill_id=math.ratios status=insufficient_data elapsed_ms=0.31
+2026-09-19 22:59:49,857 INFO agent=verify_flag event=start student_id=S-I008 skill_id=math.ratios
+2026-09-19 22:59:49,857 INFO agent=verify_flag event=complete student_id=S-I008 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:49,871 INFO agent=score_divergence event=start student_id=S-I009 skill_id=python.iteration
+2026-09-19 22:59:49,871 INFO agent=score_divergence event=complete student_id=S-I009 skill_id=python.iteration status=insufficient_data elapsed_ms=0.37
+2026-09-19 22:59:49,871 INFO agent=verify_flag event=start student_id=S-I009 skill_id=python.iteration
+2026-09-19 22:59:49,871 INFO agent=verify_flag event=complete student_id=S-I009 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:49,879 INFO agent=score_divergence event=start student_id=S-I009 skill_id=python.loops
+2026-09-19 22:59:49,880 INFO agent=score_divergence event=complete student_id=S-I009 skill_id=python.loops status=insufficient_data elapsed_ms=0.35
+2026-09-19 22:59:49,880 INFO agent=verify_flag event=start student_id=S-I009 skill_id=python.loops
+2026-09-19 22:59:49,880 INFO agent=verify_flag event=complete student_id=S-I009 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.27
+2026-09-19 22:59:49,895 INFO agent=score_divergence event=start student_id=S-I010 skill_id=math.fractions
+2026-09-19 22:59:49,895 INFO agent=score_divergence event=complete student_id=S-I010 skill_id=math.fractions status=insufficient_data elapsed_ms=0.39
+2026-09-19 22:59:49,895 INFO agent=verify_flag event=start student_id=S-I010 skill_id=math.fractions
+2026-09-19 22:59:49,895 INFO agent=verify_flag event=complete student_id=S-I010 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:49,906 INFO agent=score_divergence event=start student_id=S-I010 skill_id=math.ratios
+2026-09-19 22:59:49,907 INFO agent=score_divergence event=complete student_id=S-I010 skill_id=math.ratios status=insufficient_data elapsed_ms=0.46
+2026-09-19 22:59:49,907 INFO agent=verify_flag event=start student_id=S-I010 skill_id=math.ratios
+2026-09-19 22:59:49,907 INFO agent=verify_flag event=complete student_id=S-I010 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.23
+2026-09-19 22:59:49,925 INFO agent=score_divergence event=start student_id=S-I011 skill_id=python.iteration
+2026-09-19 22:59:49,925 INFO agent=score_divergence event=complete student_id=S-I011 skill_id=python.iteration status=insufficient_data elapsed_ms=0.56
+2026-09-19 22:59:49,926 INFO agent=verify_flag event=start student_id=S-I011 skill_id=python.iteration
+2026-09-19 22:59:49,926 INFO agent=verify_flag event=complete student_id=S-I011 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.20
+2026-09-19 22:59:49,938 INFO agent=score_divergence event=start student_id=S-I011 skill_id=python.loops
+2026-09-19 22:59:49,938 INFO agent=score_divergence event=complete student_id=S-I011 skill_id=python.loops status=insufficient_data elapsed_ms=0.54
+2026-09-19 22:59:49,939 INFO agent=verify_flag event=start student_id=S-I011 skill_id=python.loops
+2026-09-19 22:59:49,939 INFO agent=verify_flag event=complete student_id=S-I011 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:49,953 INFO agent=score_divergence event=start student_id=S-I012 skill_id=math.fractions
+2026-09-19 22:59:49,953 INFO agent=score_divergence event=complete student_id=S-I012 skill_id=math.fractions status=insufficient_data elapsed_ms=0.43
+2026-09-19 22:59:49,953 INFO agent=verify_flag event=start student_id=S-I012 skill_id=math.fractions
+2026-09-19 22:59:49,953 INFO agent=verify_flag event=complete student_id=S-I012 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:49,962 INFO agent=score_divergence event=start student_id=S-I012 skill_id=math.ratios
+2026-09-19 22:59:49,962 INFO agent=score_divergence event=complete student_id=S-I012 skill_id=math.ratios status=insufficient_data elapsed_ms=0.43
+2026-09-19 22:59:49,963 INFO agent=verify_flag event=start student_id=S-I012 skill_id=math.ratios
+2026-09-19 22:59:49,963 INFO agent=verify_flag event=complete student_id=S-I012 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:49,977 INFO agent=score_divergence event=start student_id=S-I013 skill_id=python.iteration
+2026-09-19 22:59:49,977 INFO agent=score_divergence event=complete student_id=S-I013 skill_id=python.iteration status=insufficient_data elapsed_ms=0.39
+2026-09-19 22:59:49,977 INFO agent=verify_flag event=start student_id=S-I013 skill_id=python.iteration
+2026-09-19 22:59:49,978 INFO agent=verify_flag event=complete student_id=S-I013 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.17
+2026-09-19 22:59:49,987 INFO agent=score_divergence event=start student_id=S-I013 skill_id=python.loops
+2026-09-19 22:59:49,987 INFO agent=score_divergence event=complete student_id=S-I013 skill_id=python.loops status=insufficient_data elapsed_ms=0.28
+2026-09-19 22:59:49,987 INFO agent=verify_flag event=start student_id=S-I013 skill_id=python.loops
+2026-09-19 22:59:49,988 INFO agent=verify_flag event=complete student_id=S-I013 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:49,998 INFO agent=score_divergence event=start student_id=S-I014 skill_id=math.fractions
+2026-09-19 22:59:49,998 INFO agent=score_divergence event=complete student_id=S-I014 skill_id=math.fractions status=insufficient_data elapsed_ms=0.28
+2026-09-19 22:59:49,998 INFO agent=verify_flag event=start student_id=S-I014 skill_id=math.fractions
+2026-09-19 22:59:49,998 INFO agent=verify_flag event=complete student_id=S-I014 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:50,007 INFO agent=score_divergence event=start student_id=S-I014 skill_id=math.ratios
+2026-09-19 22:59:50,007 INFO agent=score_divergence event=complete student_id=S-I014 skill_id=math.ratios status=insufficient_data elapsed_ms=0.25
+2026-09-19 22:59:50,007 INFO agent=verify_flag event=start student_id=S-I014 skill_id=math.ratios
+2026-09-19 22:59:50,007 INFO agent=verify_flag event=complete student_id=S-I014 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,018 INFO agent=score_divergence event=start student_id=S-I015 skill_id=python.iteration
+2026-09-19 22:59:50,018 INFO agent=score_divergence event=complete student_id=S-I015 skill_id=python.iteration status=insufficient_data elapsed_ms=0.26
+2026-09-19 22:59:50,018 INFO agent=verify_flag event=start student_id=S-I015 skill_id=python.iteration
+2026-09-19 22:59:50,018 INFO agent=verify_flag event=complete student_id=S-I015 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,027 INFO agent=score_divergence event=start student_id=S-I015 skill_id=python.loops
+2026-09-19 22:59:50,028 INFO agent=score_divergence event=complete student_id=S-I015 skill_id=python.loops status=insufficient_data elapsed_ms=0.25
+2026-09-19 22:59:50,028 INFO agent=verify_flag event=start student_id=S-I015 skill_id=python.loops
+2026-09-19 22:59:50,028 INFO agent=verify_flag event=complete student_id=S-I015 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,039 INFO agent=score_divergence event=start student_id=S-I016 skill_id=math.fractions
+2026-09-19 22:59:50,040 INFO agent=score_divergence event=complete student_id=S-I016 skill_id=math.fractions status=insufficient_data elapsed_ms=0.49
+2026-09-19 22:59:50,040 INFO agent=verify_flag event=start student_id=S-I016 skill_id=math.fractions
+2026-09-19 22:59:50,040 INFO agent=verify_flag event=complete student_id=S-I016 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.21
+2026-09-19 22:59:50,051 INFO agent=score_divergence event=start student_id=S-I016 skill_id=math.ratios
+2026-09-19 22:59:50,052 INFO agent=score_divergence event=complete student_id=S-I016 skill_id=math.ratios status=insufficient_data elapsed_ms=0.57
+2026-09-19 22:59:50,052 INFO agent=verify_flag event=start student_id=S-I016 skill_id=math.ratios
+2026-09-19 22:59:50,052 INFO agent=verify_flag event=complete student_id=S-I016 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.22
+2026-09-19 22:59:50,065 INFO agent=score_divergence event=start student_id=S-I017 skill_id=python.iteration
+2026-09-19 22:59:50,066 INFO agent=score_divergence event=complete student_id=S-I017 skill_id=python.iteration status=insufficient_data elapsed_ms=0.33
+2026-09-19 22:59:50,066 INFO agent=verify_flag event=start student_id=S-I017 skill_id=python.iteration
+2026-09-19 22:59:50,066 INFO agent=verify_flag event=complete student_id=S-I017 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:50,080 INFO agent=score_divergence event=start student_id=S-I017 skill_id=python.loops
+2026-09-19 22:59:50,081 INFO agent=score_divergence event=complete student_id=S-I017 skill_id=python.loops status=insufficient_data elapsed_ms=0.85
+2026-09-19 22:59:50,081 INFO agent=verify_flag event=start student_id=S-I017 skill_id=python.loops
+2026-09-19 22:59:50,082 INFO agent=verify_flag event=complete student_id=S-I017 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.33
+2026-09-19 22:59:50,099 INFO agent=score_divergence event=start student_id=S-I018 skill_id=math.fractions
+2026-09-19 22:59:50,100 INFO agent=score_divergence event=complete student_id=S-I018 skill_id=math.fractions status=insufficient_data elapsed_ms=0.34
+2026-09-19 22:59:50,100 INFO agent=verify_flag event=start student_id=S-I018 skill_id=math.fractions
+2026-09-19 22:59:50,100 INFO agent=verify_flag event=complete student_id=S-I018 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.23
+2026-09-19 22:59:50,111 INFO agent=score_divergence event=start student_id=S-I018 skill_id=math.ratios
+2026-09-19 22:59:50,111 INFO agent=score_divergence event=complete student_id=S-I018 skill_id=math.ratios status=insufficient_data elapsed_ms=0.43
+2026-09-19 22:59:50,112 INFO agent=verify_flag event=start student_id=S-I018 skill_id=math.ratios
+2026-09-19 22:59:50,112 INFO agent=verify_flag event=complete student_id=S-I018 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.17
+2026-09-19 22:59:50,126 INFO agent=score_divergence event=start student_id=S-I019 skill_id=python.iteration
+2026-09-19 22:59:50,126 INFO agent=score_divergence event=complete student_id=S-I019 skill_id=python.iteration status=insufficient_data elapsed_ms=0.38
+2026-09-19 22:59:50,126 INFO agent=verify_flag event=start student_id=S-I019 skill_id=python.iteration
+2026-09-19 22:59:50,126 INFO agent=verify_flag event=complete student_id=S-I019 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.17
+2026-09-19 22:59:50,138 INFO agent=score_divergence event=start student_id=S-I019 skill_id=python.loops
+2026-09-19 22:59:50,138 INFO agent=score_divergence event=complete student_id=S-I019 skill_id=python.loops status=insufficient_data elapsed_ms=0.33
+2026-09-19 22:59:50,138 INFO agent=verify_flag event=start student_id=S-I019 skill_id=python.loops
+2026-09-19 22:59:50,138 INFO agent=verify_flag event=complete student_id=S-I019 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:50,150 INFO agent=score_divergence event=start student_id=S-I020 skill_id=math.fractions
+2026-09-19 22:59:50,150 INFO agent=score_divergence event=complete student_id=S-I020 skill_id=math.fractions status=insufficient_data elapsed_ms=0.36
+2026-09-19 22:59:50,150 INFO agent=verify_flag event=start student_id=S-I020 skill_id=math.fractions
+2026-09-19 22:59:50,150 INFO agent=verify_flag event=complete student_id=S-I020 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.17
+2026-09-19 22:59:50,159 INFO agent=score_divergence event=start student_id=S-I020 skill_id=math.ratios
+2026-09-19 22:59:50,159 INFO agent=score_divergence event=complete student_id=S-I020 skill_id=math.ratios status=insufficient_data elapsed_ms=0.27
+2026-09-19 22:59:50,159 INFO agent=verify_flag event=start student_id=S-I020 skill_id=math.ratios
+2026-09-19 22:59:50,159 INFO agent=verify_flag event=complete student_id=S-I020 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,170 INFO agent=score_divergence event=start student_id=S-I021 skill_id=python.iteration
+2026-09-19 22:59:50,171 INFO agent=score_divergence event=complete student_id=S-I021 skill_id=python.iteration status=insufficient_data elapsed_ms=0.45
+2026-09-19 22:59:50,171 INFO agent=verify_flag event=start student_id=S-I021 skill_id=python.iteration
+2026-09-19 22:59:50,171 INFO agent=verify_flag event=complete student_id=S-I021 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:50,180 INFO agent=score_divergence event=start student_id=S-I021 skill_id=python.loops
+2026-09-19 22:59:50,180 INFO agent=score_divergence event=complete student_id=S-I021 skill_id=python.loops status=insufficient_data elapsed_ms=0.34
+2026-09-19 22:59:50,180 INFO agent=verify_flag event=start student_id=S-I021 skill_id=python.loops
+2026-09-19 22:59:50,181 INFO agent=verify_flag event=complete student_id=S-I021 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.16
+2026-09-19 22:59:50,192 INFO agent=score_divergence event=start student_id=S-I022 skill_id=math.fractions
+2026-09-19 22:59:50,192 INFO agent=score_divergence event=complete student_id=S-I022 skill_id=math.fractions status=insufficient_data elapsed_ms=0.38
+2026-09-19 22:59:50,193 INFO agent=verify_flag event=start student_id=S-I022 skill_id=math.fractions
+2026-09-19 22:59:50,193 INFO agent=verify_flag event=complete student_id=S-I022 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,201 INFO agent=score_divergence event=start student_id=S-I022 skill_id=math.ratios
+2026-09-19 22:59:50,202 INFO agent=score_divergence event=complete student_id=S-I022 skill_id=math.ratios status=insufficient_data elapsed_ms=0.34
+2026-09-19 22:59:50,202 INFO agent=verify_flag event=start student_id=S-I022 skill_id=math.ratios
+2026-09-19 22:59:50,202 INFO agent=verify_flag event=complete student_id=S-I022 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.16
+2026-09-19 22:59:50,223 INFO agent=score_divergence event=start student_id=S-I023 skill_id=python.iteration
+2026-09-19 22:59:50,224 INFO agent=score_divergence event=complete student_id=S-I023 skill_id=python.iteration status=insufficient_data elapsed_ms=0.29
+2026-09-19 22:59:50,224 INFO agent=verify_flag event=start student_id=S-I023 skill_id=python.iteration
+2026-09-19 22:59:50,224 INFO agent=verify_flag event=complete student_id=S-I023 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,245 INFO agent=score_divergence event=start student_id=S-I023 skill_id=python.loops
+2026-09-19 22:59:50,245 INFO agent=score_divergence event=complete student_id=S-I023 skill_id=python.loops status=insufficient_data elapsed_ms=0.32
+2026-09-19 22:59:50,245 INFO agent=verify_flag event=start student_id=S-I023 skill_id=python.loops
+2026-09-19 22:59:50,245 INFO agent=verify_flag event=complete student_id=S-I023 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.19
+2026-09-19 22:59:50,255 INFO agent=score_divergence event=start student_id=S-I024 skill_id=math.fractions
+2026-09-19 22:59:50,255 INFO agent=score_divergence event=complete student_id=S-I024 skill_id=math.fractions status=insufficient_data elapsed_ms=0.25
+2026-09-19 22:59:50,256 INFO agent=verify_flag event=start student_id=S-I024 skill_id=math.fractions
+2026-09-19 22:59:50,256 INFO agent=verify_flag event=complete student_id=S-I024 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.09
+2026-09-19 22:59:50,263 INFO agent=score_divergence event=start student_id=S-I024 skill_id=math.ratios
+2026-09-19 22:59:50,263 INFO agent=score_divergence event=complete student_id=S-I024 skill_id=math.ratios status=insufficient_data elapsed_ms=0.23
+2026-09-19 22:59:50,264 INFO agent=verify_flag event=start student_id=S-I024 skill_id=math.ratios
+2026-09-19 22:59:50,264 INFO agent=verify_flag event=complete student_id=S-I024 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.13
+2026-09-19 22:59:50,285 INFO agent=score_divergence event=start student_id=S-I025 skill_id=python.iteration
+2026-09-19 22:59:50,285 INFO agent=score_divergence event=complete student_id=S-I025 skill_id=python.iteration status=insufficient_data elapsed_ms=0.31
+2026-09-19 22:59:50,285 INFO agent=verify_flag event=start student_id=S-I025 skill_id=python.iteration
+2026-09-19 22:59:50,285 INFO agent=verify_flag event=complete student_id=S-I025 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,294 INFO agent=score_divergence event=start student_id=S-I025 skill_id=python.loops
+2026-09-19 22:59:50,294 INFO agent=score_divergence event=complete student_id=S-I025 skill_id=python.loops status=insufficient_data elapsed_ms=0.28
+2026-09-19 22:59:50,294 INFO agent=verify_flag event=start student_id=S-I025 skill_id=python.loops
+2026-09-19 22:59:50,294 INFO agent=verify_flag event=complete student_id=S-I025 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,304 INFO agent=score_divergence event=start student_id=S-I026 skill_id=math.fractions
+2026-09-19 22:59:50,304 INFO agent=score_divergence event=complete student_id=S-I026 skill_id=math.fractions status=insufficient_data elapsed_ms=0.29
+2026-09-19 22:59:50,305 INFO agent=verify_flag event=start student_id=S-I026 skill_id=math.fractions
+2026-09-19 22:59:50,305 INFO agent=verify_flag event=complete student_id=S-I026 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,314 INFO agent=score_divergence event=start student_id=S-I026 skill_id=math.ratios
+2026-09-19 22:59:50,314 INFO agent=score_divergence event=complete student_id=S-I026 skill_id=math.ratios status=insufficient_data elapsed_ms=0.32
+2026-09-19 22:59:50,314 INFO agent=verify_flag event=start student_id=S-I026 skill_id=math.ratios
+2026-09-19 22:59:50,314 INFO agent=verify_flag event=complete student_id=S-I026 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,324 INFO agent=score_divergence event=start student_id=S-I027 skill_id=python.iteration
+2026-09-19 22:59:50,324 INFO agent=score_divergence event=complete student_id=S-I027 skill_id=python.iteration status=insufficient_data elapsed_ms=0.30
+2026-09-19 22:59:50,325 INFO agent=verify_flag event=start student_id=S-I027 skill_id=python.iteration
+2026-09-19 22:59:50,325 INFO agent=verify_flag event=complete student_id=S-I027 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.18
+2026-09-19 22:59:50,333 INFO agent=score_divergence event=start student_id=S-I027 skill_id=python.loops
+2026-09-19 22:59:50,333 INFO agent=score_divergence event=complete student_id=S-I027 skill_id=python.loops status=insufficient_data elapsed_ms=0.26
+2026-09-19 22:59:50,333 INFO agent=verify_flag event=start student_id=S-I027 skill_id=python.loops
+2026-09-19 22:59:50,334 INFO agent=verify_flag event=complete student_id=S-I027 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,345 INFO agent=score_divergence event=start student_id=S-I028 skill_id=math.fractions
+2026-09-19 22:59:50,346 INFO agent=score_divergence event=complete student_id=S-I028 skill_id=math.fractions status=insufficient_data elapsed_ms=0.28
+2026-09-19 22:59:50,346 INFO agent=verify_flag event=start student_id=S-I028 skill_id=math.fractions
+2026-09-19 22:59:50,346 INFO agent=verify_flag event=complete student_id=S-I028 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,357 INFO agent=score_divergence event=start student_id=S-I028 skill_id=math.ratios
+2026-09-19 22:59:50,357 INFO agent=score_divergence event=complete student_id=S-I028 skill_id=math.ratios status=insufficient_data elapsed_ms=0.35
+2026-09-19 22:59:50,357 INFO agent=verify_flag event=start student_id=S-I028 skill_id=math.ratios
+2026-09-19 22:59:50,357 INFO agent=verify_flag event=complete student_id=S-I028 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:50,370 INFO agent=score_divergence event=start student_id=S-I029 skill_id=python.iteration
+2026-09-19 22:59:50,370 INFO agent=score_divergence event=complete student_id=S-I029 skill_id=python.iteration status=insufficient_data elapsed_ms=0.44
+2026-09-19 22:59:50,371 INFO agent=verify_flag event=start student_id=S-I029 skill_id=python.iteration
+2026-09-19 22:59:50,371 INFO agent=verify_flag event=complete student_id=S-I029 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.18
+2026-09-19 22:59:50,382 INFO agent=score_divergence event=start student_id=S-I029 skill_id=python.loops
+2026-09-19 22:59:50,382 INFO agent=score_divergence event=complete student_id=S-I029 skill_id=python.loops status=insufficient_data elapsed_ms=0.47
+2026-09-19 22:59:50,382 INFO agent=verify_flag event=start student_id=S-I029 skill_id=python.loops
+2026-09-19 22:59:50,382 INFO agent=verify_flag event=complete student_id=S-I029 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:50,397 INFO agent=score_divergence event=start student_id=S-I030 skill_id=math.fractions
+2026-09-19 22:59:50,398 INFO agent=score_divergence event=complete student_id=S-I030 skill_id=math.fractions status=insufficient_data elapsed_ms=0.49
+2026-09-19 22:59:50,398 INFO agent=verify_flag event=start student_id=S-I030 skill_id=math.fractions
+2026-09-19 22:59:50,398 INFO agent=verify_flag event=complete student_id=S-I030 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:50,410 INFO agent=score_divergence event=start student_id=S-I030 skill_id=math.ratios
+2026-09-19 22:59:50,410 INFO agent=score_divergence event=complete student_id=S-I030 skill_id=math.ratios status=insufficient_data elapsed_ms=0.67
+2026-09-19 22:59:50,410 INFO agent=verify_flag event=start student_id=S-I030 skill_id=math.ratios
+2026-09-19 22:59:50,411 INFO agent=verify_flag event=complete student_id=S-I030 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.28
+2026-09-19 22:59:50,423 INFO agent=score_divergence event=start student_id=S-I031 skill_id=python.iteration
+2026-09-19 22:59:50,423 INFO agent=score_divergence event=complete student_id=S-I031 skill_id=python.iteration status=insufficient_data elapsed_ms=0.44
+2026-09-19 22:59:50,424 INFO agent=verify_flag event=start student_id=S-I031 skill_id=python.iteration
+2026-09-19 22:59:50,424 INFO agent=verify_flag event=complete student_id=S-I031 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,438 INFO agent=score_divergence event=start student_id=S-I031 skill_id=python.loops
+2026-09-19 22:59:50,438 INFO agent=score_divergence event=complete student_id=S-I031 skill_id=python.loops status=insufficient_data elapsed_ms=0.40
+2026-09-19 22:59:50,438 INFO agent=verify_flag event=start student_id=S-I031 skill_id=python.loops
+2026-09-19 22:59:50,438 INFO agent=verify_flag event=complete student_id=S-I031 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:50,450 INFO agent=score_divergence event=start student_id=S-I032 skill_id=math.fractions
+2026-09-19 22:59:50,450 INFO agent=score_divergence event=complete student_id=S-I032 skill_id=math.fractions status=insufficient_data elapsed_ms=0.43
+2026-09-19 22:59:50,450 INFO agent=verify_flag event=start student_id=S-I032 skill_id=math.fractions
+2026-09-19 22:59:50,451 INFO agent=verify_flag event=complete student_id=S-I032 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.17
+2026-09-19 22:59:50,459 INFO agent=score_divergence event=start student_id=S-I032 skill_id=math.ratios
+2026-09-19 22:59:50,460 INFO agent=score_divergence event=complete student_id=S-I032 skill_id=math.ratios status=insufficient_data elapsed_ms=0.25
+2026-09-19 22:59:50,460 INFO agent=verify_flag event=start student_id=S-I032 skill_id=math.ratios
+2026-09-19 22:59:50,460 INFO agent=verify_flag event=complete student_id=S-I032 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:50,470 INFO agent=score_divergence event=start student_id=S-I033 skill_id=python.iteration
+2026-09-19 22:59:50,470 INFO agent=score_divergence event=complete student_id=S-I033 skill_id=python.iteration status=insufficient_data elapsed_ms=0.29
+2026-09-19 22:59:50,470 INFO agent=verify_flag event=start student_id=S-I033 skill_id=python.iteration
+2026-09-19 22:59:50,470 INFO agent=verify_flag event=complete student_id=S-I033 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.16
+2026-09-19 22:59:50,478 INFO agent=score_divergence event=start student_id=S-I033 skill_id=python.loops
+2026-09-19 22:59:50,478 INFO agent=score_divergence event=complete student_id=S-I033 skill_id=python.loops status=insufficient_data elapsed_ms=0.25
+2026-09-19 22:59:50,479 INFO agent=verify_flag event=start student_id=S-I033 skill_id=python.loops
+2026-09-19 22:59:50,479 INFO agent=verify_flag event=complete student_id=S-I033 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.09
+2026-09-19 22:59:50,489 INFO agent=score_divergence event=start student_id=S-I034 skill_id=math.fractions
+2026-09-19 22:59:50,489 INFO agent=score_divergence event=complete student_id=S-I034 skill_id=math.fractions status=insufficient_data elapsed_ms=0.26
+2026-09-19 22:59:50,489 INFO agent=verify_flag event=start student_id=S-I034 skill_id=math.fractions
+2026-09-19 22:59:50,489 INFO agent=verify_flag event=complete student_id=S-I034 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,498 INFO agent=score_divergence event=start student_id=S-I034 skill_id=math.ratios
+2026-09-19 22:59:50,498 INFO agent=score_divergence event=complete student_id=S-I034 skill_id=math.ratios status=insufficient_data elapsed_ms=0.30
+2026-09-19 22:59:50,498 INFO agent=verify_flag event=start student_id=S-I034 skill_id=math.ratios
+2026-09-19 22:59:50,498 INFO agent=verify_flag event=complete student_id=S-I034 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,511 INFO agent=score_divergence event=start student_id=S-I035 skill_id=python.iteration
+2026-09-19 22:59:50,512 INFO agent=score_divergence event=complete student_id=S-I035 skill_id=python.iteration status=insufficient_data elapsed_ms=0.60
+2026-09-19 22:59:50,512 INFO agent=verify_flag event=start student_id=S-I035 skill_id=python.iteration
+2026-09-19 22:59:50,512 INFO agent=verify_flag event=complete student_id=S-I035 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:50,522 INFO agent=score_divergence event=start student_id=S-I035 skill_id=python.loops
+2026-09-19 22:59:50,522 INFO agent=score_divergence event=complete student_id=S-I035 skill_id=python.loops status=insufficient_data elapsed_ms=0.39
+2026-09-19 22:59:50,523 INFO agent=verify_flag event=start student_id=S-I035 skill_id=python.loops
+2026-09-19 22:59:50,523 INFO agent=verify_flag event=complete student_id=S-I035 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.16
+2026-09-19 22:59:50,537 INFO agent=score_divergence event=start student_id=S-I036 skill_id=math.fractions
+2026-09-19 22:59:50,537 INFO agent=score_divergence event=complete student_id=S-I036 skill_id=math.fractions status=insufficient_data elapsed_ms=0.41
+2026-09-19 22:59:50,537 INFO agent=verify_flag event=start student_id=S-I036 skill_id=math.fractions
+2026-09-19 22:59:50,538 INFO agent=verify_flag event=complete student_id=S-I036 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:50,562 INFO agent=score_divergence event=start student_id=S-I036 skill_id=math.ratios
+2026-09-19 22:59:50,562 INFO agent=score_divergence event=complete student_id=S-I036 skill_id=math.ratios status=insufficient_data elapsed_ms=0.77
+2026-09-19 22:59:50,563 INFO agent=verify_flag event=start student_id=S-I036 skill_id=math.ratios
+2026-09-19 22:59:50,564 INFO agent=verify_flag event=complete student_id=S-I036 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=1.15
+2026-09-19 22:59:50,594 INFO agent=score_divergence event=start student_id=S-I037 skill_id=python.iteration
+2026-09-19 22:59:50,595 INFO agent=score_divergence event=complete student_id=S-I037 skill_id=python.iteration status=insufficient_data elapsed_ms=0.91
+2026-09-19 22:59:50,595 INFO agent=verify_flag event=start student_id=S-I037 skill_id=python.iteration
+2026-09-19 22:59:50,595 INFO agent=verify_flag event=complete student_id=S-I037 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.24
+2026-09-19 22:59:50,622 INFO agent=score_divergence event=start student_id=S-I037 skill_id=python.loops
+2026-09-19 22:59:50,624 INFO agent=score_divergence event=complete student_id=S-I037 skill_id=python.loops status=insufficient_data elapsed_ms=1.28
+2026-09-19 22:59:50,624 INFO agent=verify_flag event=start student_id=S-I037 skill_id=python.loops
+2026-09-19 22:59:50,624 INFO agent=verify_flag event=complete student_id=S-I037 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.32
+2026-09-19 22:59:50,646 INFO agent=score_divergence event=start student_id=S-I038 skill_id=math.fractions
+2026-09-19 22:59:50,647 INFO agent=score_divergence event=complete student_id=S-I038 skill_id=math.fractions status=insufficient_data elapsed_ms=0.76
+2026-09-19 22:59:50,647 INFO agent=verify_flag event=start student_id=S-I038 skill_id=math.fractions
+2026-09-19 22:59:50,648 INFO agent=verify_flag event=complete student_id=S-I038 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:50,665 INFO agent=score_divergence event=start student_id=S-I038 skill_id=math.ratios
+2026-09-19 22:59:50,666 INFO agent=score_divergence event=complete student_id=S-I038 skill_id=math.ratios status=insufficient_data elapsed_ms=1.04
+2026-09-19 22:59:50,666 INFO agent=verify_flag event=start student_id=S-I038 skill_id=math.ratios
+2026-09-19 22:59:50,666 INFO agent=verify_flag event=complete student_id=S-I038 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.24
+2026-09-19 22:59:50,695 INFO agent=score_divergence event=start student_id=S-I039 skill_id=python.iteration
+2026-09-19 22:59:50,696 INFO agent=score_divergence event=complete student_id=S-I039 skill_id=python.iteration status=insufficient_data elapsed_ms=0.56
+2026-09-19 22:59:50,696 INFO agent=verify_flag event=start student_id=S-I039 skill_id=python.iteration
+2026-09-19 22:59:50,696 INFO agent=verify_flag event=complete student_id=S-I039 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.16
+2026-09-19 22:59:50,716 INFO agent=score_divergence event=start student_id=S-I039 skill_id=python.loops
+2026-09-19 22:59:50,717 INFO agent=score_divergence event=complete student_id=S-I039 skill_id=python.loops status=insufficient_data elapsed_ms=0.46
+2026-09-19 22:59:50,717 INFO agent=verify_flag event=start student_id=S-I039 skill_id=python.loops
+2026-09-19 22:59:50,717 INFO agent=verify_flag event=complete student_id=S-I039 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.18
+2026-09-19 22:59:50,747 INFO agent=score_divergence event=start student_id=S-I040 skill_id=math.fractions
+2026-09-19 22:59:50,748 INFO agent=score_divergence event=complete student_id=S-I040 skill_id=math.fractions status=insufficient_data elapsed_ms=0.38
+2026-09-19 22:59:50,748 INFO agent=verify_flag event=start student_id=S-I040 skill_id=math.fractions
+2026-09-19 22:59:50,748 INFO agent=verify_flag event=complete student_id=S-I040 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,770 INFO agent=score_divergence event=start student_id=S-I040 skill_id=math.ratios
+2026-09-19 22:59:50,771 INFO agent=score_divergence event=complete student_id=S-I040 skill_id=math.ratios status=insufficient_data elapsed_ms=0.48
+2026-09-19 22:59:50,771 INFO agent=verify_flag event=start student_id=S-I040 skill_id=math.ratios
+2026-09-19 22:59:50,771 INFO agent=verify_flag event=complete student_id=S-I040 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.19
+2026-09-19 22:59:50,801 INFO agent=score_divergence event=start student_id=S-I041 skill_id=python.iteration
+2026-09-19 22:59:50,802 INFO agent=score_divergence event=complete student_id=S-I041 skill_id=python.iteration status=insufficient_data elapsed_ms=0.74
+2026-09-19 22:59:50,802 INFO agent=verify_flag event=start student_id=S-I041 skill_id=python.iteration
+2026-09-19 22:59:50,802 INFO agent=verify_flag event=complete student_id=S-I041 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.17
+2026-09-19 22:59:50,824 INFO agent=score_divergence event=start student_id=S-I041 skill_id=python.loops
+2026-09-19 22:59:50,824 INFO agent=score_divergence event=complete student_id=S-I041 skill_id=python.loops status=insufficient_data elapsed_ms=0.46
+2026-09-19 22:59:50,824 INFO agent=verify_flag event=start student_id=S-I041 skill_id=python.loops
+2026-09-19 22:59:50,825 INFO agent=verify_flag event=complete student_id=S-I041 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.18
+2026-09-19 22:59:50,858 INFO agent=score_divergence event=start student_id=S-I042 skill_id=math.fractions
+2026-09-19 22:59:50,859 INFO agent=score_divergence event=complete student_id=S-I042 skill_id=math.fractions status=insufficient_data elapsed_ms=1.26
+2026-09-19 22:59:50,859 INFO agent=verify_flag event=start student_id=S-I042 skill_id=math.fractions
+2026-09-19 22:59:50,859 INFO agent=verify_flag event=complete student_id=S-I042 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.23
+2026-09-19 22:59:50,881 INFO agent=score_divergence event=start student_id=S-I042 skill_id=math.ratios
+2026-09-19 22:59:50,882 INFO agent=score_divergence event=complete student_id=S-I042 skill_id=math.ratios status=insufficient_data elapsed_ms=0.87
+2026-09-19 22:59:50,882 INFO agent=verify_flag event=start student_id=S-I042 skill_id=math.ratios
+2026-09-19 22:59:50,882 INFO agent=verify_flag event=complete student_id=S-I042 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.23
+2026-09-19 22:59:50,900 INFO agent=score_divergence event=start student_id=S-I043 skill_id=python.iteration
+2026-09-19 22:59:50,900 INFO agent=score_divergence event=complete student_id=S-I043 skill_id=python.iteration status=insufficient_data elapsed_ms=0.37
+2026-09-19 22:59:50,900 INFO agent=verify_flag event=start student_id=S-I043 skill_id=python.iteration
+2026-09-19 22:59:50,900 INFO agent=verify_flag event=complete student_id=S-I043 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:50,909 INFO agent=score_divergence event=start student_id=S-I043 skill_id=python.loops
+2026-09-19 22:59:50,910 INFO agent=score_divergence event=complete student_id=S-I043 skill_id=python.loops status=insufficient_data elapsed_ms=0.28
+2026-09-19 22:59:50,910 INFO agent=verify_flag event=start student_id=S-I043 skill_id=python.loops
+2026-09-19 22:59:50,910 INFO agent=verify_flag event=complete student_id=S-I043 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,922 INFO agent=score_divergence event=start student_id=S-I044 skill_id=math.fractions
+2026-09-19 22:59:50,922 INFO agent=score_divergence event=complete student_id=S-I044 skill_id=math.fractions status=insufficient_data elapsed_ms=0.41
+2026-09-19 22:59:50,922 INFO agent=verify_flag event=start student_id=S-I044 skill_id=math.fractions
+2026-09-19 22:59:50,922 INFO agent=verify_flag event=complete student_id=S-I044 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,931 INFO agent=score_divergence event=start student_id=S-I044 skill_id=math.ratios
+2026-09-19 22:59:50,932 INFO agent=score_divergence event=complete student_id=S-I044 skill_id=math.ratios status=insufficient_data elapsed_ms=0.48
+2026-09-19 22:59:50,932 INFO agent=verify_flag event=start student_id=S-I044 skill_id=math.ratios
+2026-09-19 22:59:50,932 INFO agent=verify_flag event=complete student_id=S-I044 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:50,945 INFO agent=score_divergence event=start student_id=S-I045 skill_id=python.iteration
+2026-09-19 22:59:50,945 INFO agent=score_divergence event=complete student_id=S-I045 skill_id=python.iteration status=insufficient_data elapsed_ms=0.28
+2026-09-19 22:59:50,945 INFO agent=verify_flag event=start student_id=S-I045 skill_id=python.iteration
+2026-09-19 22:59:50,945 INFO agent=verify_flag event=complete student_id=S-I045 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:50,955 INFO agent=score_divergence event=start student_id=S-I045 skill_id=python.loops
+2026-09-19 22:59:50,956 INFO agent=score_divergence event=complete student_id=S-I045 skill_id=python.loops status=insufficient_data elapsed_ms=0.31
+2026-09-19 22:59:50,956 INFO agent=verify_flag event=start student_id=S-I045 skill_id=python.loops
+2026-09-19 22:59:50,956 INFO agent=verify_flag event=complete student_id=S-I045 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.09
+2026-09-19 22:59:50,966 INFO agent=score_divergence event=start student_id=S-I046 skill_id=math.fractions
+2026-09-19 22:59:50,966 INFO agent=score_divergence event=complete student_id=S-I046 skill_id=math.fractions status=insufficient_data elapsed_ms=0.27
+2026-09-19 22:59:50,966 INFO agent=verify_flag event=start student_id=S-I046 skill_id=math.fractions
+2026-09-19 22:59:50,966 INFO agent=verify_flag event=complete student_id=S-I046 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:50,975 INFO agent=score_divergence event=start student_id=S-I046 skill_id=math.ratios
+2026-09-19 22:59:50,976 INFO agent=score_divergence event=complete student_id=S-I046 skill_id=math.ratios status=insufficient_data elapsed_ms=0.31
+2026-09-19 22:59:50,976 INFO agent=verify_flag event=start student_id=S-I046 skill_id=math.ratios
+2026-09-19 22:59:50,976 INFO agent=verify_flag event=complete student_id=S-I046 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.13
+2026-09-19 22:59:50,990 INFO agent=score_divergence event=start student_id=S-I047 skill_id=python.iteration
+2026-09-19 22:59:50,991 INFO agent=score_divergence event=complete student_id=S-I047 skill_id=python.iteration status=insufficient_data elapsed_ms=0.61
+2026-09-19 22:59:50,991 INFO agent=verify_flag event=start student_id=S-I047 skill_id=python.iteration
+2026-09-19 22:59:50,991 INFO agent=verify_flag event=complete student_id=S-I047 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.20
+2026-09-19 22:59:51,004 INFO agent=score_divergence event=start student_id=S-I047 skill_id=python.loops
+2026-09-19 22:59:51,004 INFO agent=score_divergence event=complete student_id=S-I047 skill_id=python.loops status=insufficient_data elapsed_ms=0.39
+2026-09-19 22:59:51,005 INFO agent=verify_flag event=start student_id=S-I047 skill_id=python.loops
+2026-09-19 22:59:51,005 INFO agent=verify_flag event=complete student_id=S-I047 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:51,023 INFO agent=score_divergence event=start student_id=S-I048 skill_id=math.fractions
+2026-09-19 22:59:51,023 INFO agent=score_divergence event=complete student_id=S-I048 skill_id=math.fractions status=insufficient_data elapsed_ms=0.69
+2026-09-19 22:59:51,024 INFO agent=verify_flag event=start student_id=S-I048 skill_id=math.fractions
+2026-09-19 22:59:51,024 INFO agent=verify_flag event=complete student_id=S-I048 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:51,039 INFO agent=score_divergence event=start student_id=S-I048 skill_id=math.ratios
+2026-09-19 22:59:51,039 INFO agent=score_divergence event=complete student_id=S-I048 skill_id=math.ratios status=insufficient_data elapsed_ms=0.52
+2026-09-19 22:59:51,040 INFO agent=verify_flag event=start student_id=S-I048 skill_id=math.ratios
+2026-09-19 22:59:51,040 INFO agent=verify_flag event=complete student_id=S-I048 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:51,056 INFO agent=score_divergence event=start student_id=S-I049 skill_id=python.iteration
+2026-09-19 22:59:51,057 INFO agent=score_divergence event=complete student_id=S-I049 skill_id=python.iteration status=insufficient_data elapsed_ms=0.47
+2026-09-19 22:59:51,057 INFO agent=verify_flag event=start student_id=S-I049 skill_id=python.iteration
+2026-09-19 22:59:51,057 INFO agent=verify_flag event=complete student_id=S-I049 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.13
+2026-09-19 22:59:51,068 INFO agent=score_divergence event=start student_id=S-I049 skill_id=python.loops
+2026-09-19 22:59:51,069 INFO agent=score_divergence event=complete student_id=S-I049 skill_id=python.loops status=insufficient_data elapsed_ms=0.42
+2026-09-19 22:59:51,069 INFO agent=verify_flag event=start student_id=S-I049 skill_id=python.loops
+2026-09-19 22:59:51,069 INFO agent=verify_flag event=complete student_id=S-I049 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:51,081 INFO agent=score_divergence event=start student_id=S-I050 skill_id=math.fractions
+2026-09-19 22:59:51,082 INFO agent=score_divergence event=complete student_id=S-I050 skill_id=math.fractions status=insufficient_data elapsed_ms=0.62
+2026-09-19 22:59:51,082 INFO agent=verify_flag event=start student_id=S-I050 skill_id=math.fractions
+2026-09-19 22:59:51,083 INFO agent=verify_flag event=complete student_id=S-I050 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.30
+2026-09-19 22:59:51,093 INFO agent=score_divergence event=start student_id=S-I050 skill_id=math.ratios
+2026-09-19 22:59:51,094 INFO agent=score_divergence event=complete student_id=S-I050 skill_id=math.ratios status=insufficient_data elapsed_ms=0.45
+2026-09-19 22:59:51,094 INFO agent=verify_flag event=start student_id=S-I050 skill_id=math.ratios
+2026-09-19 22:59:51,094 INFO agent=verify_flag event=complete student_id=S-I050 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:51,106 INFO agent=score_divergence event=start student_id=S-I051 skill_id=python.iteration
+2026-09-19 22:59:51,106 INFO agent=score_divergence event=complete student_id=S-I051 skill_id=python.iteration status=insufficient_data elapsed_ms=0.34
+2026-09-19 22:59:51,106 INFO agent=verify_flag event=start student_id=S-I051 skill_id=python.iteration
+2026-09-19 22:59:51,106 INFO agent=verify_flag event=complete student_id=S-I051 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:51,115 INFO agent=score_divergence event=start student_id=S-I051 skill_id=python.loops
+2026-09-19 22:59:51,116 INFO agent=score_divergence event=complete student_id=S-I051 skill_id=python.loops status=insufficient_data elapsed_ms=0.28
+2026-09-19 22:59:51,116 INFO agent=verify_flag event=start student_id=S-I051 skill_id=python.loops
+2026-09-19 22:59:51,116 INFO agent=verify_flag event=complete student_id=S-I051 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:51,128 INFO agent=score_divergence event=start student_id=S-I052 skill_id=math.fractions
+2026-09-19 22:59:51,129 INFO agent=score_divergence event=complete student_id=S-I052 skill_id=math.fractions status=insufficient_data elapsed_ms=0.30
+2026-09-19 22:59:51,129 INFO agent=verify_flag event=start student_id=S-I052 skill_id=math.fractions
+2026-09-19 22:59:51,129 INFO agent=verify_flag event=complete student_id=S-I052 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:51,137 INFO agent=score_divergence event=start student_id=S-I052 skill_id=math.ratios
+2026-09-19 22:59:51,138 INFO agent=score_divergence event=complete student_id=S-I052 skill_id=math.ratios status=insufficient_data elapsed_ms=0.27
+2026-09-19 22:59:51,138 INFO agent=verify_flag event=start student_id=S-I052 skill_id=math.ratios
+2026-09-19 22:59:51,138 INFO agent=verify_flag event=complete student_id=S-I052 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:51,151 INFO agent=score_divergence event=start student_id=S-I053 skill_id=python.iteration
+2026-09-19 22:59:51,151 INFO agent=score_divergence event=complete student_id=S-I053 skill_id=python.iteration status=insufficient_data elapsed_ms=0.49
+2026-09-19 22:59:51,151 INFO agent=verify_flag event=start student_id=S-I053 skill_id=python.iteration
+2026-09-19 22:59:51,152 INFO agent=verify_flag event=complete student_id=S-I053 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.19
+2026-09-19 22:59:51,162 INFO agent=score_divergence event=start student_id=S-I053 skill_id=python.loops
+2026-09-19 22:59:51,162 INFO agent=score_divergence event=complete student_id=S-I053 skill_id=python.loops status=insufficient_data elapsed_ms=0.33
+2026-09-19 22:59:51,162 INFO agent=verify_flag event=start student_id=S-I053 skill_id=python.loops
+2026-09-19 22:59:51,163 INFO agent=verify_flag event=complete student_id=S-I053 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:51,181 INFO agent=score_divergence event=start student_id=S-I054 skill_id=math.fractions
+2026-09-19 22:59:51,185 INFO agent=score_divergence event=complete student_id=S-I054 skill_id=math.fractions status=insufficient_data elapsed_ms=3.69
+2026-09-19 22:59:51,185 INFO agent=verify_flag event=start student_id=S-I054 skill_id=math.fractions
+2026-09-19 22:59:51,185 INFO agent=verify_flag event=complete student_id=S-I054 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.20
+2026-09-19 22:59:51,208 INFO agent=score_divergence event=start student_id=S-I054 skill_id=math.ratios
+2026-09-19 22:59:51,209 INFO agent=score_divergence event=complete student_id=S-I054 skill_id=math.ratios status=insufficient_data elapsed_ms=1.13
+2026-09-19 22:59:51,209 INFO agent=verify_flag event=start student_id=S-I054 skill_id=math.ratios
+2026-09-19 22:59:51,209 INFO agent=verify_flag event=complete student_id=S-I054 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.21
+2026-09-19 22:59:51,239 INFO agent=score_divergence event=start student_id=S-I055 skill_id=python.iteration
+2026-09-19 22:59:51,239 INFO agent=score_divergence event=complete student_id=S-I055 skill_id=python.iteration status=insufficient_data elapsed_ms=0.31
+2026-09-19 22:59:51,240 INFO agent=verify_flag event=start student_id=S-I055 skill_id=python.iteration
+2026-09-19 22:59:51,240 INFO agent=verify_flag event=complete student_id=S-I055 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.18
+2026-09-19 22:59:51,267 INFO agent=score_divergence event=start student_id=S-I055 skill_id=python.loops
+2026-09-19 22:59:51,268 INFO agent=score_divergence event=complete student_id=S-I055 skill_id=python.loops status=insufficient_data elapsed_ms=1.07
+2026-09-19 22:59:51,268 INFO agent=verify_flag event=start student_id=S-I055 skill_id=python.loops
+2026-09-19 22:59:51,268 INFO agent=verify_flag event=complete student_id=S-I055 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:51,289 INFO agent=score_divergence event=start student_id=S-I056 skill_id=math.fractions
+2026-09-19 22:59:51,289 INFO agent=score_divergence event=complete student_id=S-I056 skill_id=math.fractions status=insufficient_data elapsed_ms=0.45
+2026-09-19 22:59:51,289 INFO agent=verify_flag event=start student_id=S-I056 skill_id=math.fractions
+2026-09-19 22:59:51,290 INFO agent=verify_flag event=complete student_id=S-I056 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.18
+2026-09-19 22:59:51,314 INFO agent=score_divergence event=start student_id=S-I056 skill_id=math.ratios
+2026-09-19 22:59:51,315 INFO agent=score_divergence event=complete student_id=S-I056 skill_id=math.ratios status=insufficient_data elapsed_ms=0.54
+2026-09-19 22:59:51,315 INFO agent=verify_flag event=start student_id=S-I056 skill_id=math.ratios
+2026-09-19 22:59:51,315 INFO agent=verify_flag event=complete student_id=S-I056 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:51,337 INFO agent=score_divergence event=start student_id=S-I057 skill_id=python.iteration
+2026-09-19 22:59:51,337 INFO agent=score_divergence event=complete student_id=S-I057 skill_id=python.iteration status=insufficient_data elapsed_ms=0.36
+2026-09-19 22:59:51,337 INFO agent=verify_flag event=start student_id=S-I057 skill_id=python.iteration
+2026-09-19 22:59:51,338 INFO agent=verify_flag event=complete student_id=S-I057 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:51,361 INFO agent=score_divergence event=start student_id=S-I057 skill_id=python.loops
+2026-09-19 22:59:51,362 INFO agent=score_divergence event=complete student_id=S-I057 skill_id=python.loops status=insufficient_data elapsed_ms=0.66
+2026-09-19 22:59:51,362 INFO agent=verify_flag event=start student_id=S-I057 skill_id=python.loops
+2026-09-19 22:59:51,362 INFO agent=verify_flag event=complete student_id=S-I057 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.12
+2026-09-19 22:59:51,395 INFO agent=score_divergence event=start student_id=S-I058 skill_id=math.fractions
+2026-09-19 22:59:51,396 INFO agent=score_divergence event=complete student_id=S-I058 skill_id=math.fractions status=insufficient_data elapsed_ms=0.41
+2026-09-19 22:59:51,396 INFO agent=verify_flag event=start student_id=S-I058 skill_id=math.fractions
+2026-09-19 22:59:51,396 INFO agent=verify_flag event=complete student_id=S-I058 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.14
+2026-09-19 22:59:51,415 INFO agent=score_divergence event=start student_id=S-I058 skill_id=math.ratios
+2026-09-19 22:59:51,416 INFO agent=score_divergence event=complete student_id=S-I058 skill_id=math.ratios status=insufficient_data elapsed_ms=0.50
+2026-09-19 22:59:51,416 INFO agent=verify_flag event=start student_id=S-I058 skill_id=math.ratios
+2026-09-19 22:59:51,416 INFO agent=verify_flag event=complete student_id=S-I058 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.15
+2026-09-19 22:59:51,429 INFO agent=score_divergence event=start student_id=S-I059 skill_id=python.iteration
+2026-09-19 22:59:51,429 INFO agent=score_divergence event=complete student_id=S-I059 skill_id=python.iteration status=insufficient_data elapsed_ms=0.36
+2026-09-19 22:59:51,430 INFO agent=verify_flag event=start student_id=S-I059 skill_id=python.iteration
+2026-09-19 22:59:51,430 INFO agent=verify_flag event=complete student_id=S-I059 skill_id=python.iteration verdict=downgraded confidence=low elapsed_ms=0.16
+2026-09-19 22:59:51,443 INFO agent=score_divergence event=start student_id=S-I059 skill_id=python.loops
+2026-09-19 22:59:51,443 INFO agent=score_divergence event=complete student_id=S-I059 skill_id=python.loops status=insufficient_data elapsed_ms=0.34
+2026-09-19 22:59:51,443 INFO agent=verify_flag event=start student_id=S-I059 skill_id=python.loops
+2026-09-19 22:59:51,443 INFO agent=verify_flag event=complete student_id=S-I059 skill_id=python.loops verdict=downgraded confidence=low elapsed_ms=0.10
+2026-09-19 22:59:51,459 INFO agent=score_divergence event=start student_id=S-I060 skill_id=math.fractions
+2026-09-19 22:59:51,460 INFO agent=score_divergence event=complete student_id=S-I060 skill_id=math.fractions status=insufficient_data elapsed_ms=0.37
+2026-09-19 22:59:51,460 INFO agent=verify_flag event=start student_id=S-I060 skill_id=math.fractions
+2026-09-19 22:59:51,460 INFO agent=verify_flag event=complete student_id=S-I060 skill_id=math.fractions verdict=downgraded confidence=low elapsed_ms=0.11
+2026-09-19 22:59:51,469 INFO agent=score_divergence event=start student_id=S-I060 skill_id=math.ratios
+2026-09-19 22:59:51,469 INFO agent=score_divergence event=complete student_id=S-I060 skill_id=math.ratios status=insufficient_data elapsed_ms=0.25
+2026-09-19 22:59:51,469 INFO agent=verify_flag event=start student_id=S-I060 skill_id=math.ratios
+2026-09-19 22:59:51,469 INFO agent=verify_flag event=complete student_id=S-I060 skill_id=math.ratios verdict=downgraded confidence=low elapsed_ms=0.09
+2026-09-19 22:59:51,480 INFO agent=score_divergence event=start student_id=S-N001 skill_id=python.iteration
+2026-09-19 22:59:51,480 INFO agent=score_divergence event=complete student_id=S-N001 skill_id=python.iteration status=narrowing elapsed_ms=0.58
+2026-09-19 22:59:51,481 INFO agent=verify_flag event=start student_id=S-N001 skill_id=python.iteration
+2026-09-19 22:59:51,481 INFO agent=verify_flag event=complete student_id=S-N001 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.40
+2026-09-19 22:59:51,491 INFO agent=score_divergence event=start student_id=S-N001 skill_id=python.loops
+2026-09-19 22:59:51,491 INFO agent=score_divergence event=complete student_id=S-N001 skill_id=python.loops status=narrowing elapsed_ms=0.61
+2026-09-19 22:59:51,492 INFO agent=verify_flag event=start student_id=S-N001 skill_id=python.loops
+2026-09-19 22:59:51,492 INFO agent=verify_flag event=complete student_id=S-N001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.15
+2026-09-19 22:59:51,502 INFO agent=score_divergence event=start student_id=S-N002 skill_id=math.fractions
+2026-09-19 22:59:51,503 INFO agent=score_divergence event=complete student_id=S-N002 skill_id=math.fractions status=narrowing elapsed_ms=0.64
+2026-09-19 22:59:51,503 INFO agent=verify_flag event=start student_id=S-N002 skill_id=math.fractions
+2026-09-19 22:59:51,503 INFO agent=verify_flag event=complete student_id=S-N002 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:59:51,515 INFO agent=score_divergence event=start student_id=S-N002 skill_id=math.ratios
+2026-09-19 22:59:51,515 INFO agent=score_divergence event=complete student_id=S-N002 skill_id=math.ratios status=narrowing elapsed_ms=0.73
+2026-09-19 22:59:51,515 INFO agent=verify_flag event=start student_id=S-N002 skill_id=math.ratios
+2026-09-19 22:59:51,516 INFO agent=verify_flag event=complete student_id=S-N002 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.14
+2026-09-19 22:59:51,530 INFO agent=score_divergence event=start student_id=S-N003 skill_id=python.iteration
+2026-09-19 22:59:51,530 INFO agent=score_divergence event=complete student_id=S-N003 skill_id=python.iteration status=narrowing elapsed_ms=0.79
+2026-09-19 22:59:51,531 INFO agent=verify_flag event=start student_id=S-N003 skill_id=python.iteration
+2026-09-19 22:59:51,531 INFO agent=verify_flag event=complete student_id=S-N003 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.17
+2026-09-19 22:59:51,544 INFO agent=score_divergence event=start student_id=S-N003 skill_id=python.loops
+2026-09-19 22:59:51,544 INFO agent=score_divergence event=complete student_id=S-N003 skill_id=python.loops status=narrowing elapsed_ms=0.95
+2026-09-19 22:59:51,545 INFO agent=verify_flag event=start student_id=S-N003 skill_id=python.loops
+2026-09-19 22:59:51,545 INFO agent=verify_flag event=complete student_id=S-N003 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.22
+2026-09-19 22:59:51,564 INFO agent=score_divergence event=start student_id=S-N004 skill_id=math.fractions
+2026-09-19 22:59:51,565 INFO agent=score_divergence event=complete student_id=S-N004 skill_id=math.fractions status=narrowing elapsed_ms=0.84
+2026-09-19 22:59:51,565 INFO agent=verify_flag event=start student_id=S-N004 skill_id=math.fractions
+2026-09-19 22:59:51,565 INFO agent=verify_flag event=complete student_id=S-N004 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.15
+2026-09-19 22:59:51,575 INFO agent=score_divergence event=start student_id=S-N004 skill_id=math.ratios
+2026-09-19 22:59:51,576 INFO agent=score_divergence event=complete student_id=S-N004 skill_id=math.ratios status=narrowing elapsed_ms=0.48
+2026-09-19 22:59:51,576 INFO agent=verify_flag event=start student_id=S-N004 skill_id=math.ratios
+2026-09-19 22:59:51,576 INFO agent=verify_flag event=complete student_id=S-N004 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.29
+2026-09-19 22:59:51,589 INFO agent=score_divergence event=start student_id=S-N005 skill_id=python.iteration
+2026-09-19 22:59:51,589 INFO agent=score_divergence event=complete student_id=S-N005 skill_id=python.iteration status=narrowing elapsed_ms=0.55
+2026-09-19 22:59:51,589 INFO agent=verify_flag event=start student_id=S-N005 skill_id=python.iteration
+2026-09-19 22:59:51,590 INFO agent=verify_flag event=complete student_id=S-N005 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.23
+2026-09-19 22:59:51,602 INFO agent=score_divergence event=start student_id=S-N005 skill_id=python.loops
+2026-09-19 22:59:51,603 INFO agent=score_divergence event=complete student_id=S-N005 skill_id=python.loops status=narrowing elapsed_ms=0.50
+2026-09-19 22:59:51,603 INFO agent=verify_flag event=start student_id=S-N005 skill_id=python.loops
+2026-09-19 22:59:51,603 INFO agent=verify_flag event=complete student_id=S-N005 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.20
+2026-09-19 22:59:51,617 INFO agent=score_divergence event=start student_id=S-N006 skill_id=math.fractions
+2026-09-19 22:59:51,617 INFO agent=score_divergence event=complete student_id=S-N006 skill_id=math.fractions status=narrowing elapsed_ms=0.45
+2026-09-19 22:59:51,617 INFO agent=verify_flag event=start student_id=S-N006 skill_id=math.fractions
+2026-09-19 22:59:51,617 INFO agent=verify_flag event=complete student_id=S-N006 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:59:51,627 INFO agent=score_divergence event=start student_id=S-N006 skill_id=math.ratios
+2026-09-19 22:59:51,628 INFO agent=score_divergence event=complete student_id=S-N006 skill_id=math.ratios status=narrowing elapsed_ms=0.51
+2026-09-19 22:59:51,628 INFO agent=verify_flag event=start student_id=S-N006 skill_id=math.ratios
+2026-09-19 22:59:51,628 INFO agent=verify_flag event=complete student_id=S-N006 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:59:51,640 INFO agent=score_divergence event=start student_id=S-N007 skill_id=python.iteration
+2026-09-19 22:59:51,640 INFO agent=score_divergence event=complete student_id=S-N007 skill_id=python.iteration status=narrowing elapsed_ms=0.52
+2026-09-19 22:59:51,640 INFO agent=verify_flag event=start student_id=S-N007 skill_id=python.iteration
+2026-09-19 22:59:51,641 INFO agent=verify_flag event=complete student_id=S-N007 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:59:51,650 INFO agent=score_divergence event=start student_id=S-N007 skill_id=python.loops
+2026-09-19 22:59:51,651 INFO agent=score_divergence event=complete student_id=S-N007 skill_id=python.loops status=narrowing elapsed_ms=0.44
+2026-09-19 22:59:51,651 INFO agent=verify_flag event=start student_id=S-N007 skill_id=python.loops
+2026-09-19 22:59:51,651 INFO agent=verify_flag event=complete student_id=S-N007 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.10
+2026-09-19 22:59:51,662 INFO agent=score_divergence event=start student_id=S-N008 skill_id=math.fractions
+2026-09-19 22:59:51,662 INFO agent=score_divergence event=complete student_id=S-N008 skill_id=math.fractions status=narrowing elapsed_ms=0.66
+2026-09-19 22:59:51,663 INFO agent=verify_flag event=start student_id=S-N008 skill_id=math.fractions
+2026-09-19 22:59:51,663 INFO agent=verify_flag event=complete student_id=S-N008 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.19
+2026-09-19 22:59:51,674 INFO agent=score_divergence event=start student_id=S-N008 skill_id=math.ratios
+2026-09-19 22:59:51,675 INFO agent=score_divergence event=complete student_id=S-N008 skill_id=math.ratios status=narrowing elapsed_ms=0.54
+2026-09-19 22:59:51,675 INFO agent=verify_flag event=start student_id=S-N008 skill_id=math.ratios
+2026-09-19 22:59:51,675 INFO agent=verify_flag event=complete student_id=S-N008 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.18
+2026-09-19 22:59:51,691 INFO agent=score_divergence event=start student_id=S-N009 skill_id=python.iteration
+2026-09-19 22:59:51,692 INFO agent=score_divergence event=complete student_id=S-N009 skill_id=python.iteration status=narrowing elapsed_ms=0.83
+2026-09-19 22:59:51,692 INFO agent=verify_flag event=start student_id=S-N009 skill_id=python.iteration
+2026-09-19 22:59:51,692 INFO agent=verify_flag event=complete student_id=S-N009 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.20
+2026-09-19 22:59:51,708 INFO agent=score_divergence event=start student_id=S-N009 skill_id=python.loops
+2026-09-19 22:59:51,708 INFO agent=score_divergence event=complete student_id=S-N009 skill_id=python.loops status=narrowing elapsed_ms=0.50
+2026-09-19 22:59:51,709 INFO agent=verify_flag event=start student_id=S-N009 skill_id=python.loops
+2026-09-19 22:59:51,709 INFO agent=verify_flag event=complete student_id=S-N009 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:51,725 INFO agent=score_divergence event=start student_id=S-N010 skill_id=math.fractions
+2026-09-19 22:59:51,725 INFO agent=score_divergence event=complete student_id=S-N010 skill_id=math.fractions status=narrowing elapsed_ms=0.56
+2026-09-19 22:59:51,726 INFO agent=verify_flag event=start student_id=S-N010 skill_id=math.fractions
+2026-09-19 22:59:51,726 INFO agent=verify_flag event=complete student_id=S-N010 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.30
+2026-09-19 22:59:51,737 INFO agent=score_divergence event=start student_id=S-N010 skill_id=math.ratios
+2026-09-19 22:59:51,737 INFO agent=score_divergence event=complete student_id=S-N010 skill_id=math.ratios status=narrowing elapsed_ms=0.41
+2026-09-19 22:59:51,738 INFO agent=verify_flag event=start student_id=S-N010 skill_id=math.ratios
+2026-09-19 22:59:51,738 INFO agent=verify_flag event=complete student_id=S-N010 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.10
+2026-09-19 22:59:51,748 INFO agent=score_divergence event=start student_id=S-N011 skill_id=python.iteration
+2026-09-19 22:59:51,749 INFO agent=score_divergence event=complete student_id=S-N011 skill_id=python.iteration status=narrowing elapsed_ms=0.44
+2026-09-19 22:59:51,749 INFO agent=verify_flag event=start student_id=S-N011 skill_id=python.iteration
+2026-09-19 22:59:51,749 INFO agent=verify_flag event=complete student_id=S-N011 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.11
+2026-09-19 22:59:51,758 INFO agent=score_divergence event=start student_id=S-N011 skill_id=python.loops
+2026-09-19 22:59:51,759 INFO agent=score_divergence event=complete student_id=S-N011 skill_id=python.loops status=narrowing elapsed_ms=0.54
+2026-09-19 22:59:51,759 INFO agent=verify_flag event=start student_id=S-N011 skill_id=python.loops
+2026-09-19 22:59:51,759 INFO agent=verify_flag event=complete student_id=S-N011 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.17
+2026-09-19 22:59:51,775 INFO agent=score_divergence event=start student_id=S-N012 skill_id=math.fractions
+2026-09-19 22:59:51,776 INFO agent=score_divergence event=complete student_id=S-N012 skill_id=math.fractions status=narrowing elapsed_ms=0.68
+2026-09-19 22:59:51,776 INFO agent=verify_flag event=start student_id=S-N012 skill_id=math.fractions
+2026-09-19 22:59:51,776 INFO agent=verify_flag event=complete student_id=S-N012 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:51,787 INFO agent=score_divergence event=start student_id=S-N012 skill_id=math.ratios
+2026-09-19 22:59:51,788 INFO agent=score_divergence event=complete student_id=S-N012 skill_id=math.ratios status=narrowing elapsed_ms=0.47
+2026-09-19 22:59:51,788 INFO agent=verify_flag event=start student_id=S-N012 skill_id=math.ratios
+2026-09-19 22:59:51,788 INFO agent=verify_flag event=complete student_id=S-N012 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:59:51,803 INFO agent=score_divergence event=start student_id=S-S001 skill_id=python.iteration
+2026-09-19 22:59:51,804 INFO agent=score_divergence event=complete student_id=S-S001 skill_id=python.iteration status=stable elapsed_ms=0.73
+2026-09-19 22:59:51,804 INFO agent=verify_flag event=start student_id=S-S001 skill_id=python.iteration
+2026-09-19 22:59:51,804 INFO agent=verify_flag event=complete student_id=S-S001 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.29
+2026-09-19 22:59:51,820 INFO agent=score_divergence event=start student_id=S-S001 skill_id=python.loops
+2026-09-19 22:59:51,821 INFO agent=score_divergence event=complete student_id=S-S001 skill_id=python.loops status=stable elapsed_ms=0.95
+2026-09-19 22:59:51,821 INFO agent=verify_flag event=start student_id=S-S001 skill_id=python.loops
+2026-09-19 22:59:51,821 INFO agent=verify_flag event=complete student_id=S-S001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.22
+2026-09-19 22:59:51,835 INFO agent=score_divergence event=start student_id=S-S002 skill_id=math.fractions
+2026-09-19 22:59:51,836 INFO agent=score_divergence event=complete student_id=S-S002 skill_id=math.fractions status=stable elapsed_ms=0.64
+2026-09-19 22:59:51,836 INFO agent=verify_flag event=start student_id=S-S002 skill_id=math.fractions
+2026-09-19 22:59:51,836 INFO agent=verify_flag event=complete student_id=S-S002 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.14
+2026-09-19 22:59:51,850 INFO agent=score_divergence event=start student_id=S-S002 skill_id=math.ratios
+2026-09-19 22:59:51,851 INFO agent=score_divergence event=complete student_id=S-S002 skill_id=math.ratios status=stable elapsed_ms=0.78
+2026-09-19 22:59:51,851 INFO agent=verify_flag event=start student_id=S-S002 skill_id=math.ratios
+2026-09-19 22:59:51,851 INFO agent=verify_flag event=complete student_id=S-S002 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.20
+2026-09-19 22:59:51,868 INFO agent=score_divergence event=start student_id=S-S003 skill_id=python.iteration
+2026-09-19 22:59:51,868 INFO agent=score_divergence event=complete student_id=S-S003 skill_id=python.iteration status=stable elapsed_ms=0.43
+2026-09-19 22:59:51,868 INFO agent=verify_flag event=start student_id=S-S003 skill_id=python.iteration
+2026-09-19 22:59:51,868 INFO agent=verify_flag event=complete student_id=S-S003 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.15
+2026-09-19 22:59:51,877 INFO agent=score_divergence event=start student_id=S-S003 skill_id=python.loops
+2026-09-19 22:59:51,878 INFO agent=score_divergence event=complete student_id=S-S003 skill_id=python.loops status=stable elapsed_ms=0.41
+2026-09-19 22:59:51,878 INFO agent=verify_flag event=start student_id=S-S003 skill_id=python.loops
+2026-09-19 22:59:51,878 INFO agent=verify_flag event=complete student_id=S-S003 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.11
+2026-09-19 22:59:51,889 INFO agent=score_divergence event=start student_id=S-S004 skill_id=math.fractions
+2026-09-19 22:59:51,889 INFO agent=score_divergence event=complete student_id=S-S004 skill_id=math.fractions status=stable elapsed_ms=0.41
+2026-09-19 22:59:51,889 INFO agent=verify_flag event=start student_id=S-S004 skill_id=math.fractions
+2026-09-19 22:59:51,889 INFO agent=verify_flag event=complete student_id=S-S004 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:51,898 INFO agent=score_divergence event=start student_id=S-S004 skill_id=math.ratios
+2026-09-19 22:59:51,899 INFO agent=score_divergence event=complete student_id=S-S004 skill_id=math.ratios status=stable elapsed_ms=0.58
+2026-09-19 22:59:51,899 INFO agent=verify_flag event=start student_id=S-S004 skill_id=math.ratios
+2026-09-19 22:59:51,899 INFO agent=verify_flag event=complete student_id=S-S004 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.15
+2026-09-19 22:59:51,911 INFO agent=score_divergence event=start student_id=S-S005 skill_id=python.iteration
+2026-09-19 22:59:51,911 INFO agent=score_divergence event=complete student_id=S-S005 skill_id=python.iteration status=stable elapsed_ms=0.51
+2026-09-19 22:59:51,912 INFO agent=verify_flag event=start student_id=S-S005 skill_id=python.iteration
+2026-09-19 22:59:51,912 INFO agent=verify_flag event=complete student_id=S-S005 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.14
+2026-09-19 22:59:51,923 INFO agent=score_divergence event=start student_id=S-S005 skill_id=python.loops
+2026-09-19 22:59:51,923 INFO agent=score_divergence event=complete student_id=S-S005 skill_id=python.loops status=stable elapsed_ms=0.61
+2026-09-19 22:59:51,924 INFO agent=verify_flag event=start student_id=S-S005 skill_id=python.loops
+2026-09-19 22:59:51,924 INFO agent=verify_flag event=complete student_id=S-S005 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.19
+2026-09-19 22:59:51,940 INFO agent=score_divergence event=start student_id=S-S006 skill_id=math.fractions
+2026-09-19 22:59:51,941 INFO agent=score_divergence event=complete student_id=S-S006 skill_id=math.fractions status=stable elapsed_ms=0.85
+2026-09-19 22:59:51,941 INFO agent=verify_flag event=start student_id=S-S006 skill_id=math.fractions
+2026-09-19 22:59:51,941 INFO agent=verify_flag event=complete student_id=S-S006 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.17
+2026-09-19 22:59:51,958 INFO agent=score_divergence event=start student_id=S-S006 skill_id=math.ratios
+2026-09-19 22:59:51,959 INFO agent=score_divergence event=complete student_id=S-S006 skill_id=math.ratios status=stable elapsed_ms=0.76
+2026-09-19 22:59:51,959 INFO agent=verify_flag event=start student_id=S-S006 skill_id=math.ratios
+2026-09-19 22:59:51,959 INFO agent=verify_flag event=complete student_id=S-S006 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.26
+2026-09-19 22:59:51,981 INFO agent=score_divergence event=start student_id=S-S007 skill_id=python.iteration
+2026-09-19 22:59:51,981 INFO agent=score_divergence event=complete student_id=S-S007 skill_id=python.iteration status=stable elapsed_ms=0.69
+2026-09-19 22:59:51,982 INFO agent=verify_flag event=start student_id=S-S007 skill_id=python.iteration
+2026-09-19 22:59:51,982 INFO agent=verify_flag event=complete student_id=S-S007 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.17
+2026-09-19 22:59:51,992 INFO agent=score_divergence event=start student_id=S-S007 skill_id=python.loops
+2026-09-19 22:59:51,993 INFO agent=score_divergence event=complete student_id=S-S007 skill_id=python.loops status=stable elapsed_ms=0.55
+2026-09-19 22:59:51,993 INFO agent=verify_flag event=start student_id=S-S007 skill_id=python.loops
+2026-09-19 22:59:51,993 INFO agent=verify_flag event=complete student_id=S-S007 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.19
+2026-09-19 22:59:52,007 INFO agent=score_divergence event=start student_id=S-S008 skill_id=math.fractions
+2026-09-19 22:59:52,007 INFO agent=score_divergence event=complete student_id=S-S008 skill_id=math.fractions status=stable elapsed_ms=0.46
+2026-09-19 22:59:52,007 INFO agent=verify_flag event=start student_id=S-S008 skill_id=math.fractions
+2026-09-19 22:59:52,008 INFO agent=verify_flag event=complete student_id=S-S008 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.11
+2026-09-19 22:59:52,018 INFO agent=score_divergence event=start student_id=S-S008 skill_id=math.ratios
+2026-09-19 22:59:52,018 INFO agent=score_divergence event=complete student_id=S-S008 skill_id=math.ratios status=stable elapsed_ms=0.55
+2026-09-19 22:59:52,018 INFO agent=verify_flag event=start student_id=S-S008 skill_id=math.ratios
+2026-09-19 22:59:52,019 INFO agent=verify_flag event=complete student_id=S-S008 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:52,034 INFO agent=score_divergence event=start student_id=S-S009 skill_id=python.iteration
+2026-09-19 22:59:52,034 INFO agent=score_divergence event=complete student_id=S-S009 skill_id=python.iteration status=stable elapsed_ms=0.78
+2026-09-19 22:59:52,035 INFO agent=verify_flag event=start student_id=S-S009 skill_id=python.iteration
+2026-09-19 22:59:52,035 INFO agent=verify_flag event=complete student_id=S-S009 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:52,048 INFO agent=score_divergence event=start student_id=S-S009 skill_id=python.loops
+2026-09-19 22:59:52,049 INFO agent=score_divergence event=complete student_id=S-S009 skill_id=python.loops status=stable elapsed_ms=0.54
+2026-09-19 22:59:52,049 INFO agent=verify_flag event=start student_id=S-S009 skill_id=python.loops
+2026-09-19 22:59:52,049 INFO agent=verify_flag event=complete student_id=S-S009 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,067 INFO agent=score_divergence event=start student_id=S-S010 skill_id=math.fractions
+2026-09-19 22:59:52,067 INFO agent=score_divergence event=complete student_id=S-S010 skill_id=math.fractions status=stable elapsed_ms=0.61
+2026-09-19 22:59:52,068 INFO agent=verify_flag event=start student_id=S-S010 skill_id=math.fractions
+2026-09-19 22:59:52,068 INFO agent=verify_flag event=complete student_id=S-S010 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.15
+2026-09-19 22:59:52,084 INFO agent=score_divergence event=start student_id=S-S010 skill_id=math.ratios
+2026-09-19 22:59:52,084 INFO agent=score_divergence event=complete student_id=S-S010 skill_id=math.ratios status=stable elapsed_ms=0.74
+2026-09-19 22:59:52,085 INFO agent=verify_flag event=start student_id=S-S010 skill_id=math.ratios
+2026-09-19 22:59:52,085 INFO agent=verify_flag event=complete student_id=S-S010 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:52,099 INFO agent=score_divergence event=start student_id=S-S011 skill_id=python.iteration
+2026-09-19 22:59:52,099 INFO agent=score_divergence event=complete student_id=S-S011 skill_id=python.iteration status=stable elapsed_ms=0.69
+2026-09-19 22:59:52,100 INFO agent=verify_flag event=start student_id=S-S011 skill_id=python.iteration
+2026-09-19 22:59:52,100 INFO agent=verify_flag event=complete student_id=S-S011 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.25
+2026-09-19 22:59:52,116 INFO agent=score_divergence event=start student_id=S-S011 skill_id=python.loops
+2026-09-19 22:59:52,116 INFO agent=score_divergence event=complete student_id=S-S011 skill_id=python.loops status=stable elapsed_ms=0.69
+2026-09-19 22:59:52,117 INFO agent=verify_flag event=start student_id=S-S011 skill_id=python.loops
+2026-09-19 22:59:52,117 INFO agent=verify_flag event=complete student_id=S-S011 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.33
+2026-09-19 22:59:52,133 INFO agent=score_divergence event=start student_id=S-S012 skill_id=math.fractions
+2026-09-19 22:59:52,133 INFO agent=score_divergence event=complete student_id=S-S012 skill_id=math.fractions status=stable elapsed_ms=0.58
+2026-09-19 22:59:52,134 INFO agent=verify_flag event=start student_id=S-S012 skill_id=math.fractions
+2026-09-19 22:59:52,134 INFO agent=verify_flag event=complete student_id=S-S012 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,143 INFO agent=score_divergence event=start student_id=S-S012 skill_id=math.ratios
+2026-09-19 22:59:52,144 INFO agent=score_divergence event=complete student_id=S-S012 skill_id=math.ratios status=stable elapsed_ms=0.45
+2026-09-19 22:59:52,144 INFO agent=verify_flag event=start student_id=S-S012 skill_id=math.ratios
+2026-09-19 22:59:52,144 INFO agent=verify_flag event=complete student_id=S-S012 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.11
+2026-09-19 22:59:52,155 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:59:52,156 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.iteration status=widening elapsed_ms=0.45
+2026-09-19 22:59:52,156 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:59:52,156 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,165 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:52,166 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.42
+2026-09-19 22:59:52,166 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:52,166 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:52,178 INFO agent=score_divergence event=start student_id=S-W002 skill_id=math.fractions
+2026-09-19 22:59:52,178 INFO agent=score_divergence event=complete student_id=S-W002 skill_id=math.fractions status=widening elapsed_ms=0.40
+2026-09-19 22:59:52,178 INFO agent=verify_flag event=start student_id=S-W002 skill_id=math.fractions
+2026-09-19 22:59:52,178 INFO agent=verify_flag event=complete student_id=S-W002 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,188 INFO agent=score_divergence event=start student_id=S-W002 skill_id=math.ratios
+2026-09-19 22:59:52,189 INFO agent=score_divergence event=complete student_id=S-W002 skill_id=math.ratios status=widening elapsed_ms=0.52
+2026-09-19 22:59:52,189 INFO agent=verify_flag event=start student_id=S-W002 skill_id=math.ratios
+2026-09-19 22:59:52,189 INFO agent=verify_flag event=complete student_id=S-W002 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:59:52,204 INFO agent=score_divergence event=start student_id=S-W003 skill_id=python.iteration
+2026-09-19 22:59:52,204 INFO agent=score_divergence event=complete student_id=S-W003 skill_id=python.iteration status=widening elapsed_ms=0.62
+2026-09-19 22:59:52,204 INFO agent=verify_flag event=start student_id=S-W003 skill_id=python.iteration
+2026-09-19 22:59:52,205 INFO agent=verify_flag event=complete student_id=S-W003 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.18
+2026-09-19 22:59:52,219 INFO agent=score_divergence event=start student_id=S-W003 skill_id=python.loops
+2026-09-19 22:59:52,219 INFO agent=score_divergence event=complete student_id=S-W003 skill_id=python.loops status=widening elapsed_ms=0.60
+2026-09-19 22:59:52,220 INFO agent=verify_flag event=start student_id=S-W003 skill_id=python.loops
+2026-09-19 22:59:52,220 INFO agent=verify_flag event=complete student_id=S-W003 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:52,238 INFO agent=score_divergence event=start student_id=S-W004 skill_id=math.fractions
+2026-09-19 22:59:52,238 INFO agent=score_divergence event=complete student_id=S-W004 skill_id=math.fractions status=widening elapsed_ms=0.50
+2026-09-19 22:59:52,238 INFO agent=verify_flag event=start student_id=S-W004 skill_id=math.fractions
+2026-09-19 22:59:52,238 INFO agent=verify_flag event=complete student_id=S-W004 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.14
+2026-09-19 22:59:52,250 INFO agent=score_divergence event=start student_id=S-W004 skill_id=math.ratios
+2026-09-19 22:59:52,250 INFO agent=score_divergence event=complete student_id=S-W004 skill_id=math.ratios status=widening elapsed_ms=0.59
+2026-09-19 22:59:52,250 INFO agent=verify_flag event=start student_id=S-W004 skill_id=math.ratios
+2026-09-19 22:59:52,251 INFO agent=verify_flag event=complete student_id=S-W004 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.19
+2026-09-19 22:59:52,265 INFO agent=score_divergence event=start student_id=S-W005 skill_id=python.iteration
+2026-09-19 22:59:52,265 INFO agent=score_divergence event=complete student_id=S-W005 skill_id=python.iteration status=widening elapsed_ms=0.46
+2026-09-19 22:59:52,266 INFO agent=verify_flag event=start student_id=S-W005 skill_id=python.iteration
+2026-09-19 22:59:52,266 INFO agent=verify_flag event=complete student_id=S-W005 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,275 INFO agent=score_divergence event=start student_id=S-W005 skill_id=python.loops
+2026-09-19 22:59:52,275 INFO agent=score_divergence event=complete student_id=S-W005 skill_id=python.loops status=widening elapsed_ms=0.43
+2026-09-19 22:59:52,275 INFO agent=verify_flag event=start student_id=S-W005 skill_id=python.loops
+2026-09-19 22:59:52,276 INFO agent=verify_flag event=complete student_id=S-W005 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,290 INFO agent=score_divergence event=start student_id=S-W006 skill_id=math.fractions
+2026-09-19 22:59:52,290 INFO agent=score_divergence event=complete student_id=S-W006 skill_id=math.fractions status=widening elapsed_ms=0.59
+2026-09-19 22:59:52,290 INFO agent=verify_flag event=start student_id=S-W006 skill_id=math.fractions
+2026-09-19 22:59:52,290 INFO agent=verify_flag event=complete student_id=S-W006 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.15
+2026-09-19 22:59:52,303 INFO agent=score_divergence event=start student_id=S-W006 skill_id=math.ratios
+2026-09-19 22:59:52,304 INFO agent=score_divergence event=complete student_id=S-W006 skill_id=math.ratios status=widening elapsed_ms=0.71
+2026-09-19 22:59:52,304 INFO agent=verify_flag event=start student_id=S-W006 skill_id=math.ratios
+2026-09-19 22:59:52,304 INFO agent=verify_flag event=complete student_id=S-W006 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.14
+2026-09-19 22:59:52,319 INFO agent=score_divergence event=start student_id=S-W007 skill_id=python.iteration
+2026-09-19 22:59:52,319 INFO agent=score_divergence event=complete student_id=S-W007 skill_id=python.iteration status=widening elapsed_ms=0.72
+2026-09-19 22:59:52,320 INFO agent=verify_flag event=start student_id=S-W007 skill_id=python.iteration
+2026-09-19 22:59:52,320 INFO agent=verify_flag event=complete student_id=S-W007 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.19
+2026-09-19 22:59:52,336 INFO agent=score_divergence event=start student_id=S-W007 skill_id=python.loops
+2026-09-19 22:59:52,337 INFO agent=score_divergence event=complete student_id=S-W007 skill_id=python.loops status=widening elapsed_ms=0.66
+2026-09-19 22:59:52,337 INFO agent=verify_flag event=start student_id=S-W007 skill_id=python.loops
+2026-09-19 22:59:52,337 INFO agent=verify_flag event=complete student_id=S-W007 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:52,352 INFO agent=score_divergence event=start student_id=S-W008 skill_id=math.fractions
+2026-09-19 22:59:52,352 INFO agent=score_divergence event=complete student_id=S-W008 skill_id=math.fractions status=widening elapsed_ms=0.66
+2026-09-19 22:59:52,352 INFO agent=verify_flag event=start student_id=S-W008 skill_id=math.fractions
+2026-09-19 22:59:52,353 INFO agent=verify_flag event=complete student_id=S-W008 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,362 INFO agent=score_divergence event=start student_id=S-W008 skill_id=math.ratios
+2026-09-19 22:59:52,363 INFO agent=score_divergence event=complete student_id=S-W008 skill_id=math.ratios status=widening elapsed_ms=0.83
+2026-09-19 22:59:52,363 INFO agent=verify_flag event=start student_id=S-W008 skill_id=math.ratios
+2026-09-19 22:59:52,363 INFO agent=verify_flag event=complete student_id=S-W008 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 22:59:52,380 INFO agent=score_divergence event=start student_id=S-W009 skill_id=python.iteration
+2026-09-19 22:59:52,381 INFO agent=score_divergence event=complete student_id=S-W009 skill_id=python.iteration status=widening elapsed_ms=0.79
+2026-09-19 22:59:52,381 INFO agent=verify_flag event=start student_id=S-W009 skill_id=python.iteration
+2026-09-19 22:59:52,381 INFO agent=verify_flag event=complete student_id=S-W009 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.17
+2026-09-19 22:59:52,394 INFO agent=score_divergence event=start student_id=S-W009 skill_id=python.loops
+2026-09-19 22:59:52,394 INFO agent=score_divergence event=complete student_id=S-W009 skill_id=python.loops status=widening elapsed_ms=0.51
+2026-09-19 22:59:52,394 INFO agent=verify_flag event=start student_id=S-W009 skill_id=python.loops
+2026-09-19 22:59:52,394 INFO agent=verify_flag event=complete student_id=S-W009 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,408 INFO agent=score_divergence event=start student_id=S-W010 skill_id=math.fractions
+2026-09-19 22:59:52,409 INFO agent=score_divergence event=complete student_id=S-W010 skill_id=math.fractions status=widening elapsed_ms=0.60
+2026-09-19 22:59:52,409 INFO agent=verify_flag event=start student_id=S-W010 skill_id=math.fractions
+2026-09-19 22:59:52,409 INFO agent=verify_flag event=complete student_id=S-W010 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,419 INFO agent=score_divergence event=start student_id=S-W010 skill_id=math.ratios
+2026-09-19 22:59:52,420 INFO agent=score_divergence event=complete student_id=S-W010 skill_id=math.ratios status=widening elapsed_ms=0.51
+2026-09-19 22:59:52,420 INFO agent=verify_flag event=start student_id=S-W010 skill_id=math.ratios
+2026-09-19 22:59:52,420 INFO agent=verify_flag event=complete student_id=S-W010 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.18
+2026-09-19 22:59:52,431 INFO agent=score_divergence event=start student_id=S-W011 skill_id=python.iteration
+2026-09-19 22:59:52,431 INFO agent=score_divergence event=complete student_id=S-W011 skill_id=python.iteration status=widening elapsed_ms=0.43
+2026-09-19 22:59:52,431 INFO agent=verify_flag event=start student_id=S-W011 skill_id=python.iteration
+2026-09-19 22:59:52,431 INFO agent=verify_flag event=complete student_id=S-W011 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.11
+2026-09-19 22:59:52,441 INFO agent=score_divergence event=start student_id=S-W011 skill_id=python.loops
+2026-09-19 22:59:52,442 INFO agent=score_divergence event=complete student_id=S-W011 skill_id=python.loops status=widening elapsed_ms=0.57
+2026-09-19 22:59:52,442 INFO agent=verify_flag event=start student_id=S-W011 skill_id=python.loops
+2026-09-19 22:59:52,442 INFO agent=verify_flag event=complete student_id=S-W011 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.15
+2026-09-19 22:59:52,456 INFO agent=score_divergence event=start student_id=S-W012 skill_id=math.fractions
+2026-09-19 22:59:52,457 INFO agent=score_divergence event=complete student_id=S-W012 skill_id=math.fractions status=widening elapsed_ms=0.83
+2026-09-19 22:59:52,457 INFO agent=verify_flag event=start student_id=S-W012 skill_id=math.fractions
+2026-09-19 22:59:52,457 INFO agent=verify_flag event=complete student_id=S-W012 skill_id=math.fractions verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:59:52,471 INFO agent=score_divergence event=start student_id=S-W012 skill_id=math.ratios
+2026-09-19 22:59:52,474 INFO agent=score_divergence event=complete student_id=S-W012 skill_id=math.ratios status=widening elapsed_ms=3.31
+2026-09-19 22:59:52,475 INFO agent=verify_flag event=start student_id=S-W012 skill_id=math.ratios
+2026-09-19 22:59:52,475 INFO agent=verify_flag event=complete student_id=S-W012 skill_id=math.ratios verdict=confirmed confidence=high elapsed_ms=0.18
+2026-09-19 22:59:53,521 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:53,523 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:53,523 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.64
+2026-09-19 22:59:53,523 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:53,524 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.17
+2026-09-19 22:59:53,524 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:53,524 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:59:53,526 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:53,830 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:54,106 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:54,375 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:54,638 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1114.35
+2026-09-19 22:59:54,640 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:54,641 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:54,896 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=255.15
+2026-09-19 22:59:54,896 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:54,896 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.17
+2026-09-19 22:59:56,497 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:56,500 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:56,500 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.54
+2026-09-19 22:59:56,501 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:56,501 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.21
+2026-09-19 22:59:56,501 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:56,501 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:59:56,503 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:56,846 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:57,150 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:57,429 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:59:57,725 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1223.67
+2026-09-19 22:59:57,727 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:57,727 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.29
+2026-09-19 22:59:59,262 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:59:59,264 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:59,265 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.64
+2026-09-19 22:59:59,265 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:59,265 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.15
+2026-09-19 22:59:59,265 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:59:59,265 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:59:59,267 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:59,518 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:59,780 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 22:59:59,984 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:00,206 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=940.57
+2026-09-19 23:00:00,209 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:00,209 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:00,417 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=208.34
+2026-09-19 23:00:00,417 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:00,417 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.11
+2026-09-19 23:00:00.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-09-19 23:00:01,073 INFO agent=collect_traces event=start student_id=multiple(108) skill_id=multiple(4)
+2026-09-19 23:00:01,094 INFO agent=collect_traces event=complete student_id=multiple(108) skill_id=multiple(4) stored_versions=0 elapsed_ms=21.58
+2026-09-19 23:00:01,609 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 23:00:01,610 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:01,610 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.52
+2026-09-19 23:00:01,611 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:01,611 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.14
+2026-09-19 23:00:01,611 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:01,611 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 23:00:01,613 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 23:00:01,831 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 23:00:02,046 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=11
+2026-09-19 23:00:02,271 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:02,468 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=857.00
+2026-09-19 23:00:02,470 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:02,471 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:02,679 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=208.99
+2026-09-19 23:00:02,679 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:02,679 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.11
+2026-09-19 23:00:02,720 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:02,721 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:02,925 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=204.99
+2026-09-19 23:00:02,996 INFO agent=collect_traces event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:03,003 INFO agent=collect_traces event=complete student_id=S-W001 skill_id=python.loops stored_versions=3 elapsed_ms=6.47
+2026-09-19 23:00:03,006 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 23:00:03,007 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:03,008 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.34
+2026-09-19 23:00:03,008 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:03,008 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.16
+2026-09-19 23:00:03,008 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:03,008 INFO chroma operation=upsert collection=skill-erosion-attempts items=13
+2026-09-19 23:00:03,305 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=14
+2026-09-19 23:00:03,546 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=14
+2026-09-19 23:00:03,918 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=14
+2026-09-19 23:00:04,165 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:04,618 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1609.53
+2026-09-19 23:00:04,624 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:04,626 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:04,855 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=230.17
+2026-09-19 23:00:04,855 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 23:00:04,855 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.11
+2026-09-19 23:00:04.862 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-09-19 23:00:05,346 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 23:00:05,347 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:05,348 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.iteration status=widening elapsed_ms=0.48
+2026-09-19 23:00:05,348 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:05,348 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 23:00:05,349 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:05,349 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 23:00:06,405 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=24
+2026-09-19 23:00:06,591 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=24
+2026-09-19 23:00:06,782 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=24
+2026-09-19 23:00:06,965 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:07,157 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.iteration count=1 elapsed_ms=1808.62
+2026-09-19 23:00:07,159 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:07,160 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:07,348 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.iteration status=ready elapsed_ms=188.73
+2026-09-19 23:00:07,348 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:07,348 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.iteration result=ready elapsed_ms=0.11
+2026-09-19 23:00:07,354 INFO agent=parent_chat event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:07,354 INFO agent=parent_chat event=complete student_id=S-W001 skill_id=python.iteration answer=filtered_template elapsed_ms=0.19
+2026-09-19 23:00:07,373 INFO agent=parent_chat event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:07,374 INFO agent=parent_chat event=complete student_id=S-W001 skill_id=python.iteration answer=filtered_template elapsed_ms=0.22
+2026-09-19 23:00:07,375 INFO agent=parent_chat event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:07,376 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:07,572 INFO agent=parent_chat event=complete student_id=S-W001 skill_id=python.iteration answer=filtered_template elapsed_ms=196.87
+2026-09-19 23:00:07,591 INFO agent=parent_chat event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:07,591 INFO agent=parent_chat event=complete student_id=S-W001 skill_id=python.iteration answer=filtered_template elapsed_ms=0.25
+2026-09-19 23:00:07,593 INFO agent=parent_chat event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 23:00:07,593 INFO agent=parent_chat event=complete student_id=S-W001 skill_id=python.iteration answer=filtered_template elapsed_ms=0.14
+2026-09-19 23:00:07,634 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 23:00:07,635 INFO agent=score_divergence event=start student_id=S-N001 skill_id=python.iteration
+2026-09-19 23:00:07,635 INFO agent=score_divergence event=complete student_id=S-N001 skill_id=python.iteration status=narrowing elapsed_ms=0.49
+2026-09-19 23:00:07,635 INFO agent=verify_flag event=start student_id=S-N001 skill_id=python.iteration
+2026-09-19 23:00:07,635 INFO agent=verify_flag event=complete student_id=S-N001 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.10
+2026-09-19 23:00:07,635 INFO agent=cluster_misconceptions event=start student_id=S-N001 skill_id=python.iteration
+2026-09-19 23:00:07,636 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 23:00:08,217 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=34
+2026-09-19 23:00:08,425 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=34
+2026-09-19 23:00:08,608 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=34
+2026-09-19 23:00:08,853 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:09,066 INFO agent=cluster_misconceptions event=complete student_id=S-N001 skill_id=python.iteration count=1 elapsed_ms=1430.29
+2026-09-19 23:00:09,069 INFO agent=recommend_remediation event=start student_id=S-N001 skill_id=python.iteration
+2026-09-19 23:00:09,070 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 23:00:09,284 INFO agent=recommend_remediation event=complete student_id=S-N001 skill_id=python.iteration status=ready elapsed_ms=215.37
+2026-09-19 23:00:09,285 INFO agent=explain_flag event=start student_id=S-N001 skill_id=python.iteration
+2026-09-19 23:00:09,285 INFO agent=explain_flag event=complete student_id=S-N001 skill_id=python.iteration result=ready elapsed_ms=0.11
+2026-09-19 23:00:09,293 INFO agent=parent_chat event=start student_id=S-N001 skill_id=python.iteration
+2026-09-19 23:00:09,293 INFO agent=parent_chat event=complete student_id=S-N001 skill_id=python.iteration answer=filtered_template elapsed_ms=0.27
+ok
+test_no_match_and_insufficient_evidence (test_remediation.RemediationTests.test_no_match_and_insufficient_evidence) ... ok
+test_semantic_resource_and_alternative (test_remediation.RemediationTests.test_semantic_resource_and_alternative) ... ok
+test_equal_task_set_weight (test_scoring.ScoringTests.test_equal_task_set_weight) ... ok
+test_five_scenarios (test_scoring.ScoringTests.test_five_scenarios) ... ok
+test_student_scope_and_latest_version (test_scoring.ScoringTests.test_student_scope_and_latest_version) ... ok
+test_unmatched_and_rubric_mismatch_are_not_pairs (test_scoring.ScoringTests.test_unmatched_and_rubric_mismatch_are_not_pairs) ... ok
+test_expanded_expected_scenarios_csv_json_and_transfer (test_synthetic.SyntheticTests.test_expanded_expected_scenarios_csv_json_and_transfer) ... ok
+test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation (test_synthetic.SyntheticTests.test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation) ... ok
+test_retest_and_checkin_do_not_invent_a_paired_gap (test_synthetic.SyntheticTests.test_retest_and_checkin_do_not_invent_a_paired_gap) ... ok
+test_strong_history_confirmed (test_verification.VerificationTests.test_strong_history_confirmed) ... ok
+test_thin_noisy_and_short_history_downgraded (test_verification.VerificationTests.test_thin_noisy_and_short_history_downgraded) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 46.454s
+
+OK

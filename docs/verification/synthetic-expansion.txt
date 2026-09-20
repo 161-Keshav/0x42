@@ -1,0 +1,90 @@
+{
+  "baseline_provenance": "Recreated baseline; no historical dataset was supplied.",
+  "before": {
+    "widening_narrowing_trajectory_separation": 1.2,
+    "mean_net_gap_change": {
+      "widening": 0.6,
+      "narrowing": -0.6,
+      "stable": 0.0,
+      "contradictory": 0.0,
+      "insufficient_data": 0.0
+    },
+    "per_category_gap_stats": {
+      "widening": {
+        "gap_mean": 0.4,
+        "gap_std": 0.2121
+      },
+      "narrowing": {
+        "gap_mean": 0.4,
+        "gap_std": 0.2121
+      },
+      "stable": {
+        "gap_mean": 0.204,
+        "gap_std": 0.0049
+      },
+      "contradictory": {
+        "gap_mean": 0.3,
+        "gap_std": 0.2258
+      },
+      "insufficient_data": {
+        "gap_mean": 0.2,
+        "gap_std": 0.0
+      }
+    },
+    "rows": 200,
+    "students": 18,
+    "category_counts": {
+      "widening": 40,
+      "narrowing": 40,
+      "stable": 40,
+      "contradictory": 40,
+      "insufficient_data": 40
+    },
+    "gap_mean": 0.3008,
+    "gap_std": 0.1899
+  },
+  "after": {
+    "widening_narrowing_trajectory_separation": 1.35,
+    "mean_net_gap_change": {
+      "widening": 0.675,
+      "narrowing": -0.675,
+      "stable": 0.0,
+      "contradictory": 0.0,
+      "insufficient_data": 0.0
+    },
+    "per_category_gap_stats": {
+      "widening": {
+        "gap_mean": 0.425,
+        "gap_std": 0.2399
+      },
+      "narrowing": {
+        "gap_mean": 0.425,
+        "gap_std": 0.2399
+      },
+      "stable": {
+        "gap_mean": 0.204,
+        "gap_std": 0.0049
+      },
+      "contradictory": {
+        "gap_mean": 0.32,
+        "gap_std": 0.2511
+      },
+      "insufficient_data": {
+        "gap_mean": 0.2,
+        "gap_std": 0.0
+      }
+    },
+    "rows": 1200,
+    "students": 108,
+    "category_counts": {
+      "widening": 240,
+      "narrowing": 240,
+      "stable": 240,
+      "contradictory": 240,
+      "insufficient_data": 240
+    },
+    "gap_mean": 0.3148,
+    "gap_std": 0.2135
+  },
+  "interpretation": "The first 200 rows and all category proportions are preserved. Added widening/narrowing scenarios deliberately span stronger effects, increasing the separation of their mean net gap changes. This is synthetic scenario design, not evidence that row count improves validity."
+}

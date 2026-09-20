@@ -1,0 +1,3 @@
+http://127.0.0.1:8501/_stcore/health HTTP 200 ok
+http://127.0.0.1:8502/_stcore/health HTTP 200 ok
+http://127.0.0.1:8503/_stcore/health HTTP 200 ok

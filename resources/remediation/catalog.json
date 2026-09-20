@@ -1,0 +1,66 @@
+[
+  {
+    "resource_id": "loops-number-line",
+    "title": "See where range stops",
+    "description": "Python range excludes the upper endpoint. Trace loop boundaries, off-by-one errors and the final iteration on a number line.",
+    "teacher_summary": "Ask the learner to predict the first and last values before running the loop.",
+    "student_exercise": "Write every value in range(2, 6). Circle the last value, then explain why 6 is excluded.",
+    "path": "resources/remediation/loops-number-line.md"
+  },
+  {
+    "resource_id": "loops-trace-table",
+    "title": "Trace the last iteration",
+    "description": "Python loop range stopping boundaries and excluded upper limits. Use a trace table to reason about off-by-one iteration mistakes.",
+    "teacher_summary": "Compare a prediction against a trace table and discuss the stopping condition.",
+    "student_exercise": "Make a table of values for range(1, 4) and range(1, 5). What changes? Explain which upper boundary is excluded.",
+    "path": "resources/remediation/loops-trace-table.md"
+  },
+  {
+    "resource_id": "iteration-accumulator",
+    "title": "Follow an accumulator",
+    "description": "Python iteration, updating totals once per list element and tracking accumulator state through a loop.",
+    "teacher_summary": "Have the learner update total one step at a time with a short list.",
+    "student_exercise": "Start total at 0. For each value in [2, 3, 4], add the value to total. Record total after each step.",
+    "path": "resources/remediation/iteration-accumulator.md"
+  },
+  {
+    "resource_id": "iteration-tracing",
+    "title": "Walk through a list",
+    "description": "Reasoning about list iteration and accumulation. Track each repeated update and distinguish item values from loop counts.",
+    "teacher_summary": "Use a hand trace before asking the student to write code.",
+    "student_exercise": "Trace a loop that counts values greater than 3 in [1, 5, 4]. Show the count after each element.",
+    "path": "resources/remediation/iteration-tracing.md"
+  },
+  {
+    "resource_id": "fractions-common-parts",
+    "title": "Build common parts",
+    "description": "Adding fractions requires common denominators, equivalent fractions and equal-sized pieces. Do not add denominators.",
+    "teacher_summary": "Use equal-sized visual pieces to explain why denominators cannot be added.",
+    "student_exercise": "Draw 1/2 and 1/3 using sixths. Add the shaded parts and write the resulting fraction.",
+    "path": "resources/remediation/fractions-common-parts.md"
+  },
+  {
+    "resource_id": "fractions-equivalence",
+    "title": "Rename before adding",
+    "description": "Equivalent fractions and common denominators for fraction addition. Express both quantities in the same unit before combining numerators.",
+    "teacher_summary": "Ask why one half is three sixths, then combine equivalent fractions.",
+    "student_exercise": "Rewrite 1/4 and 1/2 with denominator 4. Add them, keeping the denominator unchanged.",
+    "path": "resources/remediation/fractions-equivalence.md"
+  },
+  {
+    "resource_id": "ratios-scale",
+    "title": "Scale both quantities",
+    "description": "Proportional reasoning uses multiplicative scaling. Equivalent ratios require multiplying both quantities by the same factor.",
+    "teacher_summary": "Contrast adding a constant with multiplying both quantities in a ratio.",
+    "student_exercise": "A recipe uses 2 cups of rice and 3 cups of water. For 6 cups of rice, how much water keeps the same ratio? Explain the multiplier.",
+    "path": "resources/remediation/ratios-scale.md"
+  },
+  {
+    "resource_id": "ratios-unit-rate",
+    "title": "Find one unit first",
+    "description": "Ratios, proportions and unit rates. Divide to find the amount for one unit and multiply to scale both quantities consistently.",
+    "teacher_summary": "Encourage a unit-rate explanation before cross multiplication.",
+    "student_exercise": "Four notebooks cost 12 units. Find the cost per notebook, then the cost of seven notebooks.",
+    "path": "resources/remediation/ratios-unit-rate.md"
+  }
+]

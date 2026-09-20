@@ -1,0 +1,8 @@
+test_expanded_expected_scenarios_csv_json_and_transfer (test_synthetic.SyntheticTests.test_expanded_expected_scenarios_csv_json_and_transfer) ... ok
+test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation (test_synthetic.SyntheticTests.test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation) ... ok
+test_retest_and_checkin_do_not_invent_a_paired_gap (test_synthetic.SyntheticTests.test_retest_and_checkin_do_not_invent_a_paired_gap) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.615s
+
+OK

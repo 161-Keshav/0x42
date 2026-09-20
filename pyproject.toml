@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "gaptrace"
+version = "0.1.0"
+description = "Local evidence-led skill development tracker"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.7,<3", "streamlit>=1.64,<2", "pandas>=2,<4", "fastmcp>=3,<5", "chromadb>=1,<2", "httpx>=0.27", "reportlab>=4", "Pillow>=10"]
+[project.scripts]
+gaptrace = "skill_erosion.__main__:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+skill_erosion = ["assets/*.css", "assets/*.ttf", "assets/OFL.txt"]

@@ -1,0 +1,17 @@
+Parent question inputs: 1; current source line 37
+35:     st.write("Try asking how to help with practice, or what the recent learning pattern means.")
+36:     with st.form("parent_question"):
+37:         question=st.text_input("Ask a question",key="question",placeholder="How can I help with practice?")
+38:         asked=st.form_submit_button("Ask")
+39:     if asked:
+40:         if not question.strip(): st.warning("Write a question first.")
+41:         else:
+42:             try:
+43:                 journey=journey or pipeline.for_parent(account,skill)
+44:                 st.session_state["parent_journey"]=journey
+45:                 st.session_state["parent_answer"]=parent_chat(question,journey,pipeline.vectors)
+46:             except Exception as exc: error(exc)
+47:     if st.session_state.get("parent_answer"):
+48:         st.markdown("**Learning companion**")
+49:         st.write(st.session_state["parent_answer"])
+50: main()

@@ -1,0 +1,19 @@
+{
+  "unit_tests": 32,
+  "unit_result": "OK",
+  "pytest_passed": 103,
+  "organizer_external_tests_skipped": 3,
+  "protected_upstream_files": 54,
+  "synthetic_attempts": 1200,
+  "students": 108,
+  "chroma_after_teacher_and_parent": {
+    "skill-erosion-attempts": 20,
+    "skill-erosion-resources": 8
+  },
+  "mcp_http": "verified",
+  "ports": [
+    8501,
+    8502,
+    8503
+  ]
+}

@@ -1,0 +1,17 @@
+test_expanded_expected_scenarios_csv_json_and_transfer (test_synthetic.SyntheticTests.test_expanded_expected_scenarios_csv_json_and_transfer) ... ok
+test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation (test_synthetic.SyntheticTests.test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation) ... ERROR
+test_retest_and_checkin_do_not_invent_a_paired_gap (test_synthetic.SyntheticTests.test_retest_and_checkin_do_not_invent_a_paired_gap) ... ok
+
+======================================================================
+ERROR: test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation (test_synthetic.SyntheticTests.test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\amana\Downloads\suman hackathon\tests\unit\test_synthetic.py", line 45, in test_expansion_preserves_baseline_and_strengthens_visible_trajectory_separation
+    self.assertGreater(new["widening_narrowing_trajectory_separation"],old["widening_narrowing_trajectory_separation"])
+                       ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'widening_narrowing_trajectory_separation'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.604s
+
+FAILED (errors=1)

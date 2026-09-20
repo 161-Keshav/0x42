@@ -1,0 +1,8 @@
+{
+  "chroma_counts": {
+    "skill-erosion-attempts": 20,
+    "skill-erosion-resources": 8
+  },
+  "transfer": "positive_transfer",
+  "parent_question_inputs": 1
+}

@@ -1,0 +1,11 @@
+{
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "pydantic": "2.13.5",
+    "streamlit": "1.64.0",
+    "pandas": "3.0.6",
+    "fastmcp": "4.0.5",
+    "chromadb": "1.5.9",
+    "pytest": "9.1.1"
+  }
+}

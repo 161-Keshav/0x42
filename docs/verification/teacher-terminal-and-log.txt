@@ -1,0 +1,72 @@
+2026-09-19 22:55:47.493 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-09-19 22:55:49,590 INFO agent=collect_traces event=start student_id=multiple(108) skill_id=multiple(4)
+2026-09-19 22:55:49,624 INFO agent=collect_traces event=complete student_id=multiple(108) skill_id=multiple(4) stored_versions=1200 elapsed_ms=33.63
+2026-09-19 22:55:51,096 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:55:51,726 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:51,726 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.61
+2026-09-19 22:55:51,727 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:51,727 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:55:51,727 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:51,727 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:55:52,319 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:55:52,503 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:55:52,675 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:55:52,848 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:55:53,024 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1297.12
+2026-09-19 22:55:53,027 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:53,027 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:55:53,213 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=185.98
+2026-09-19 22:55:53,213 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:53,213 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.12
+2026-09-19 22:55:53.966 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+TEACHER JOURNEY widening confirmed 1 clusters
+TEACHER LOG FILE CONTENT
+2026-09-19 22:55:49,590 INFO agent=collect_traces event=start student_id=multiple(108) skill_id=multiple(4)
+2026-09-19 22:55:49,624 INFO agent=collect_traces event=complete student_id=multiple(108) skill_id=multiple(4) stored_versions=1200 elapsed_ms=33.63
+2026-09-19 22:55:51,096 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:55:51,726 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:51,726 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.61
+2026-09-19 22:55:51,727 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:51,727 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.13
+2026-09-19 22:55:51,727 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:51,727 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:55:52,319 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:55:52,503 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:55:52,675 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:55:52,848 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:55:53,024 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1297.12
+2026-09-19 22:55:53,027 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:53,027 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:55:53,213 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=185.98
+2026-09-19 22:55:53,213 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:55:53,213 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.12
+
+2026-09-19 22:55:54,357 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:55:54,358 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:55:54,359 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.iteration status=widening elapsed_ms=0.44
+2026-09-19 22:55:54,359 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:55:54,359 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.iteration verdict=confirmed confidence=high elapsed_ms=0.12
+2026-09-19 22:55:54,359 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:55:54,359 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:55:54,927 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=20
+2026-09-19 22:55:55,101 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=20
+2026-09-19 22:55:55,270 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=20
+2026-09-19 22:55:55,445 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:55:55,616 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.iteration count=1 elapsed_ms=1256.14
+2026-09-19 22:55:55,618 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:55:55,618 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:55:55,795 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.iteration status=ready elapsed_ms=177.09
+2026-09-19 22:55:55,795 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:55:55,795 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.iteration result=ready elapsed_ms=0.17
+2026-09-19 22:55:55,801 INFO agent=parent_chat event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:55:55,801 INFO agent=parent_chat event=complete student_id=S-W001 skill_id=python.iteration answer=filtered_template elapsed_ms=0.20
+2026-09-19 22:55:55,821 INFO agent=parent_chat event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:55:55,821 INFO agent=parent_chat event=complete student_id=S-W001 skill_id=python.iteration answer=filtered_template elapsed_ms=0.22
+2026-09-19 22:55:55,822 INFO agent=parent_chat event=start student_id=S-W001 skill_id=python.iteration
+2026-09-19 22:55:55,823 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:55:55,995 INFO agent=parent_chat event=complete student_id=S-W001 skill_id=python.iteration answer=filtered_template elapsed_ms=172.65
+PARENT QUESTION INPUTS 1
+PARENT ANSWER Invite your child to explain one small idea in their own words. Keep practice brief and encouraging, and ask their teacher which next step would fit best. A relevant practice resource is available for their teacher to review.
+CHROMA COUNTS {"skill-erosion-attempts": 20, "skill-erosion-resources": 8}
+CALCULATE_METRICS RELATED SKILLS {"hint_dependency_ratio": 0.5, "retention_decay": null, "error_pattern_diversity": 0.6, "repeated_error_ratio": 0.4, "confidence_calibration": "underconfident", "cross_skill_transfer": "positive_transfer"}
+UI EVIDENCE VERIFIED

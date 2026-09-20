@@ -1,0 +1,5 @@
+GapTrace portable project archive
+Created: 2026-09-20
+Included: source, apps, tests, resources, configuration, documentation, synthetic data, scripts, and verification evidence.
+Excluded as machine-specific/recreatable: .venv, Python/pytest caches, .git metadata, data/logs, data/processed, and data/processed-before-scenario-expansion.
+Setup: create a Python 3.11+ virtual environment, install requirements-gaptrace.txt, then run scripts/run_apps.py or Start-GapTrace.ps1.

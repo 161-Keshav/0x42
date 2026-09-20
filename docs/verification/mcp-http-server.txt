@@ -1,0 +1,64 @@
+
+
++-----------------------------------------------------------------------------+
+|                                                                             |
+|                                                                             |
+|                        \u2584\u2580\u2580 \u2584\u2580\u2588 \u2588\u2580\u2580 \u2580\u2588\u2580 \u2588\u2580\u2584\u2580\u2588 \u2588\u2580\u2580 \u2588\u2580\u2588                        |
+|                        \u2588\u2580  \u2588\u2580\u2588 \u2584\u2584\u2588  \u2588  \u2588 \u2580 \u2588 \u2588\u2584\u2584 \u2588\u2580\u2580                        |
+|                                                                             |
+|                                                                             |
+|                                                                             |
+|                                FastMCP 4.0.5                                |
+|                            https://gofastmcp.com                            |
+|                                                                             |
+|                \U0001f5a5  Server:      GapTrace local agents, 4.0.5                 |
+|                \U0001f680 Deploy free: https://horizon.prefect.io                   |
+|                                                                             |
++-----------------------------------------------------------------------------+
+
+
+[09/19/26 22:48:18] INFO     Starting MCP server 'GapTrace     transport.py:363
+                             local agents' with transport                      
+                             'http' on                                         
+                             http://127.0.0.1:55175/mcp                        
+INFO:     Started server process [22700]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:55175 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55183 - "POST /mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55183 - "POST /mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55186 - "POST /mcp HTTP/1.1" 200 OK
+2026-09-19 22:48:19,219 INFO agent=collect_traces event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:48:19,226 INFO agent=collect_traces event=complete student_id=S-W001 skill_id=python.loops stored_versions=10 elapsed_ms=6.77
+INFO:     127.0.0.1:55186 - "POST /mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55186 - "POST /mcp HTTP/1.1" 200 OK
+2026-09-19 22:48:19,241 INFO agent=score_divergence event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:48:19,242 INFO agent=score_divergence event=complete student_id=S-W001 skill_id=python.loops status=widening elapsed_ms=0.53
+INFO:     127.0.0.1:55186 - "POST /mcp HTTP/1.1" 200 OK
+2026-09-19 22:48:19,248 INFO agent=verify_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:48:19,248 INFO agent=verify_flag event=complete student_id=S-W001 skill_id=python.loops verdict=confirmed confidence=high elapsed_ms=0.18
+INFO:     127.0.0.1:55186 - "POST /mcp HTTP/1.1" 200 OK
+2026-09-19 22:48:19,253 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:48:19,838 INFO agent=cluster_misconceptions event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:48:19,838 INFO chroma operation=upsert collection=skill-erosion-attempts items=10
+2026-09-19 22:48:20,406 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:48:20,582 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:48:20,766 INFO chroma operation=query collection=skill-erosion-attempts items=1 stored_items=10
+2026-09-19 22:48:20,938 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:48:21,120 INFO agent=cluster_misconceptions event=complete student_id=S-W001 skill_id=python.loops count=1 elapsed_ms=1282.35
+INFO:     127.0.0.1:55186 - "POST /mcp HTTP/1.1" 200 OK
+2026-09-19 22:48:21,128 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:48:21,129 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:48:21,130 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:48:21,305 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=175.74
+INFO:     127.0.0.1:55186 - "POST /mcp HTTP/1.1" 200 OK
+2026-09-19 22:48:21,311 INFO agent=explain_flag event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:48:21,311 INFO agent=explain_flag event=complete student_id=S-W001 skill_id=python.loops result=ready elapsed_ms=0.17
+INFO:     127.0.0.1:55186 - "POST /mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55189 - "POST /mcp HTTP/1.1" 200 OK
+2026-09-19 22:48:21,335 INFO chroma operation=upsert collection=skill-erosion-resources items=8
+2026-09-19 22:48:21,336 INFO agent=recommend_remediation event=start student_id=S-W001 skill_id=python.loops
+2026-09-19 22:48:21,336 INFO chroma operation=query collection=skill-erosion-resources items=1 stored_items=8
+2026-09-19 22:48:21,518 INFO agent=recommend_remediation event=complete student_id=S-W001 skill_id=python.loops status=ready elapsed_ms=182.39
+INFO:     127.0.0.1:55189 - "POST /mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55189 - "POST /mcp HTTP/1.1" 200 OK
